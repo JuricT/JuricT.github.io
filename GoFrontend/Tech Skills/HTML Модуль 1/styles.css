@@ -1,0 +1,56 @@
+body {
+	background:#eeeeee;
+	font-family: TimesNewRoman;
+	font-size: 20px;
+}
+
+#main {
+	background: #fff;
+	width: 148mm;
+	height: 210mm;
+
+	clear: both;
+
+	padding: 1px;
+	margin: 0px auto;
+	border: 0px;
+	-webkit-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.23);
+	-moz-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.23);
+	box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.23);
+}
+
+#main div {
+	border: 0px;
+	padding: 0px;	
+	margin: 0px 60px;
+	border-bottom: 1px solid #000;
+}
+
+#main div:last-child {
+	border-bottom: none;
+}
+
+h1{
+	font-size: 120%;
+	margin-top: 60px;
+	border: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+#avatar {
+	width: 150px;
+	display: block;
+	margin: 0px auto;
+}
+
+p, ul {
+	margin: 14px;
+	border: 0px;
+	padding: 0px;
+}
+
+ul {
+	border: 0px;
+	padding: 0px;
+}

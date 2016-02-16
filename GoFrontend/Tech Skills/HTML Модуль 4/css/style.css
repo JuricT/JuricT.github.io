@@ -16,7 +16,7 @@ main {
 	-moz-box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.4);
 	box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.4);
 }
-
+ /* Логотип */
 .logo {
 	float: left;
 	color: #128aa7;
@@ -29,13 +29,15 @@ main {
 	font-size: 12px;
 }
 
+/* Меню стран */
 .contact {
 	float: right;
-	margin: 10px 40px 30px auto;
+	margin: 10px 40px 10px auto;
 }
 .contact a, .contact h3 {
 	display: block;
 	color: #128aa7;
+	margin: 5px auto;
 }
 
 .contries {
@@ -58,39 +60,106 @@ main {
 }
 
 
+/* Главное меню */
 
-#header-menu {
+.headermenu {
   height: 30px;
   background: #343434;
 }
-
-#header-menu li{
-  display: inline-block;
-  height: 30px;
-  width: 150px;
-  overflow: hidden;
+.headermenu ul {
+	display: block;
+	margin: auto 0;
+	padding: 2px;
+	list-style: none;
+	color: blue;
+	font-size: 14px;
+}
+.claerfix:after {
+	display: block;
+	content: ' ';
+	clear: both;
+	float: none;
+}
+ul.menu>li {
+	float: left;
+	position: relative;
+}
+ul.menu>li>a {
+	display: block;
+	padding: 6px 35px;
+	color: #fff;	
+}
+ul.menu >li>a:hover {
+	background-color: #343434;
+}
+ul.submenu {
+	display: none;
+	position: absolute;
+	width: 153px;
+	top: 26px;
+	left: 0;
+}
+ul.submenu>li {
+	display: block;
+}
+ul.submenu>li>a {
+	display: block;
+	padding: 6px;
+	color: #fff;
+	background-color: #343434;
+	text-indent: 10px;
+}
+ul.submenu >li>a:hover {
+	text-decoration: underline;
+}
+ul.menu>li:hover>ul.submenu {
+    display: block;
 }
 
-#header-menu li a {
-  display: block;
-  height: 30px;
-
-  color: #fff;
-  font-size: 15px;
-  text-shadow: 1px 1px 0 rgba(0,0,0,.5);
-  line-height: 30px;
-  text-align: center;
+a.triangle:after {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-top: 6px solid white;
+	border-left: 3px solid transparent;
+	border-right: 3px solid transparent;
+	content: " ";
+	margin-left: 5px;
 }
 
-#header-menu li a:first-letter {
-  text-transform: capitalize;
+/* wrapper */
+.wrapper {
+	widows: 1000px;
+	background: url(../img/columnbackground.png) repeat-y;
+	float: left;
 }
-
-#header-menu li a:hover {
-  margin-left: -1px;
-  background: #911;
-  background: linear-gradient(#2e2e2e,#4a4a4a);
-  border-left: 1px solid #838383;
-  border-right: 1px solid #838383;
-  
+.asideLeft {
+	width: 210px;
+	float: left;
+}
+.centerColumn {
+	width: 580px;
+	float: left;
+}
+.asideRight {
+	width: 210px;
+	float: left;
+}
+.asideLeft h2, .asideRight h2 {
+	color: #424c43;
+	font-size: 18px;
+	text-align: center;
+	margin: 10px auto;
+}
+.asideLeft p, .asideRight p {
+	color: #424c43;
+	font-size: 14px;
+	text-align: center;
+	margin: 5px;
+}
+footer {
+	color: #fff;
+	margin: 5px;
+	text-align: center;
+	font-size: 12px;
 }

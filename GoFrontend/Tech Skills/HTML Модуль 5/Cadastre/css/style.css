@@ -8,24 +8,28 @@
     font-weight: normal;
     font-style: normal;
 }
+html,
+body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+}
 
 body {
+	overflow: auto; 
 	background-color: #f4f4f4;
-	min-width: 710px;
-	/*background-image: url('../img/BodyBackground.jpg');*/
 }
 main {
 	display: block;
-	/*max-width: 1215px;*/
+	min-width: 710px;
+    min-height: 100%;
 	margin: 0 auto;
-	background: url('../img/BodyBackgroundFull.jpg');
-
 }
 header {
 	display: block;
 	height: 37px;
 	background-color: #07508f;
-	/*background-image: url('../img/HeadeerBacground.png');*/
 }
 
 /*Heder buttons*/
@@ -116,14 +120,13 @@ button {
 	height: 35px;
 	margin: 35px auto 0 auto;
 	background: url('../img/LogInWithFacebook.png') no-repeat;
-
 }
+
 .p2 {
 	color: #999999;
 	font-size: 14px;
 	line-height: 62px;
 	background: url('../img/ou.png') no-repeat center;
-
 }
 
 input {
@@ -178,6 +181,12 @@ input[type="submit"] {
 	background: url('../img/ButtonCreateMyAccound.png') no-repeat;
 }
 
+label:hover,
+input[type="submit"]:hover,
+button:hover {
+	cursor: pointer;
+}
+
 .p3 {
 	color: #ccc;
 	font-size: 11px;
@@ -185,4 +194,23 @@ input[type="submit"] {
 }
 .dialog {
 	padding-bottom: 1px;
+}
+
+
+section {
+	transform-style: preserve-3d;
+	position: relative;
+ 	top: 0;
+ 	left: 0;
+ 	width: 100vw;
+ 	height: calc(100vh - 37px);
+ 	min-height: 612px;
+ 	background: url('../img/BodyBackgroundFull.jpg') center no-repeat;
+}
+
+.singUp {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }

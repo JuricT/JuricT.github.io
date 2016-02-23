@@ -5,9 +5,23 @@ td {
 	border: 2px solid #000;	
 	width: 50px;
 }
+td[colspan="2"] {
+	width: 100px;
+}
+td[colspan="3"] {
+	width: 150px;
+}
+
 tr {
 	height: 50px;
 }
+tr td[rowspan="2"] {
+	height: 100px;
+}
+tr td[rowspan="3"] {
+	height: 150px;
+}
+
 .black {
 	background: black;
 }

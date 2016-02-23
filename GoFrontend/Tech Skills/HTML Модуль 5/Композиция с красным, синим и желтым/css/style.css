@@ -1,0 +1,22 @@
+table {
+	table-layout: fixed;
+}
+td {
+	border: 2px solid #000;	
+	width: 50px;
+}
+tr {
+	height: 50px;
+}
+.black {
+	background: black;
+}
+.red {
+	background: red;
+}
+.yellow {
+	background: yellow;
+}
+.blue {
+	background: blue;
+}

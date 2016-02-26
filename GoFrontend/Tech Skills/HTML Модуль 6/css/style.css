@@ -1,0 +1,173 @@
+body {
+	margin: 0px auto;
+	width: 910px;
+	position: relative;
+	font-family: "Lucida Sans Unicode";
+}
+
+/*Номера телефонов phone nombers*/
+.phone {
+	display: inline-block;
+	margin-top: 24px;
+	margin-left: 0px;
+	font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+	font-size: 18px;
+	letter-spacing: 0.46px;
+	color: #5e696d;
+}
+.phone:first-child{
+	margin-left: 32px;
+}
+.phone:first-child::before{
+	content: '';
+	position: absolute;
+	display: block;
+	height: 21px;
+	width: 22px;
+	top: 22px;
+	left: 7px;
+	background: url(../img/phone.png) center no-repeat;	
+}
+
+/*Меню регистрации login menu*/
+#login-form {
+	display: block;
+	position: absolute;
+	width: 494px;
+	height: 26px;
+	top: 18px;
+	left: 314px;
+	border-radius: 4px;
+	background: linear-gradient(to bottom, #206988 0%, #114165 59%, #0c3256 100%);
+	box-shadow: 3px 3px 3px 0px rgba(150,150,150,1), 0px 0px 3px 0px rgba(150,150,150,1);
+}
+
+#login-form input[name="name"],
+#login-form input[name="password"]{
+	display: inline-block;
+	margin-top: 4px;
+	padding: 0;
+	width: 110px;
+	height: 12px;
+	font-size: 10.81px;
+	color: #97a2ab;
+}
+
+#login-form input[name="name"]{
+	margin-left: 25px;
+	margin-right: 2px;
+}
+#login-form:before {
+	content: '';
+	position: absolute;
+	display: block;
+	height: 18px;
+	width: 14px;
+	top: 4px;
+	left: 7px;
+	background: url(../img/signin.png) center no-repeat;
+}
+
+#login-form input[type="submit"]{
+	border: 0;
+	padding: 0;
+	margin-right: 0;
+	margin-left: 3px;
+	background: rgba(0,0,0,0);
+	font-size: 10.91px;
+	color: #fff;
+	letter-spacing: 0.5px;
+}
+
+.signup {
+	font-size: 11.91px;
+	color: #fff;
+	text-decoration: none;	
+	letter-spacing: -.8px;
+}
+.signup:before {
+	content: "|";
+	margin-left: -2px;
+	padding: 0;
+	margin-right: 3px;
+}
+
+.forget-password {
+	font-size: 10.91px;
+	color: #fff;
+	margin-left: 17px;
+	letter-spacing: 0.6px;
+}
+
+.nav-mini {
+	display: block;
+	position: absolute;
+	height: 33px;
+	width: 85px;
+	top: 14px;
+	right: 3px;
+	background: url(../img/nav-mini-background.png) center no-repeat;
+}
+.home {
+	display: inline-block;
+	width: 12px;
+	height: 11px;
+	margin-top: 8px;
+	margin-left: 13px;
+	background: url(../img/home.png);
+}
+.sitemap {
+	display: inline-block;
+	width: 14px;
+	height: 10px;
+	margin-left: 3px;
+	background: url(../img/sitemap.png);
+}
+.email {
+	display: inline-block;
+	width: 12px;
+	height: 9px;
+	margin-left: 4px;
+	background: url(../img/mail.png);
+}
+
+#header-img {
+	margin-top: 12px;
+	display: block;
+}
+.header-menu {
+	margin-top: 6px;
+	box-shadow: 2px 3px 5px -1px rgba(0,0,0,.75);
+	background: linear-gradient(to top, #000 0%, #2b3034 85%, #576068 97%);
+	border-radius: 4px;
+	border: 1px solid #2c345a;
+	height: 33px;
+}
+.nav-main {
+	display: inline-block;
+	line-height: 33px;
+	margin-top: -1px;
+	margin-left: 125px;
+	letter-spacing: -1px;
+}
+.nav-main a{
+	display: inline-block;
+	/*margin: 2px 12.5px;*/
+	margin: 2px 0;
+	padding: 0 13px;
+	font-size: 15px;
+	line-height: 25px;
+	color: #b1bcc0;
+	text-decoration: none;
+}
+.nav-main a:hover{
+	color: #fff;
+	border-radius: 15px;
+	/*background: linear-gradient(to top, #206988 0%, #114165 59%, #0c3256 100%);*/
+	background: linear-gradient(to top, #0d3458, #25617b)
+}
+
+.header-menu span:first-child {
+	margin-left: 64px;
+	background: red;
+}

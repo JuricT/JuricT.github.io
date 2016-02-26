@@ -142,6 +142,7 @@ body {
 	border-radius: 4px;
 	border: 1px solid #2c345a;
 	height: 33px;
+	
 }
 .nav-main {
 	display: inline-block;
@@ -167,7 +168,27 @@ body {
 	background: linear-gradient(to top, #0d3458, #25617b)
 }
 
-.header-menu span:first-child {
+.koshuk-text{
+	font-size: 11px;
+	color: #929b9f;
+}
+.koshuk-num {
+	font-size: 12px;
+	color: #0d5a8f;
+}
+
+#first-span {
 	margin-left: 64px;
-	background: red;
+	position: relative;
+	text-decoration: none;
+}
+#first-span:before{
+	content: "";
+	display: block;
+	position: absolute;
+	width: 21px;
+	height: 17px;
+	top: 0px;
+	left: -22px;
+	background: url(../img/basket.png) center no-repeat;
 }

@@ -94,7 +94,7 @@ body {
 
 .forget-password {
 	font-size: 10.91px;
-	color: #fff;
+	color: #bfbfbf;
 	margin-left: 17px;
 	letter-spacing: 0.6px;
 }
@@ -142,21 +142,20 @@ body {
 	border-radius: 4px;
 	border: 1px solid #2c345a;
 	height: 33px;
-	
+	position: relative;
 }
 .nav-main {
 	display: inline-block;
 	line-height: 33px;
 	margin-top: -1px;
-	margin-left: 125px;
-	letter-spacing: -1px;
+	margin-left: 130px;
+	letter-spacing: -0.5px;
 }
 .nav-main a{
 	display: inline-block;
-	/*margin: 2px 12.5px;*/
 	margin: 2px 0;
 	padding: 0 13px;
-	font-size: 15px;
+	font-size: 14px;
 	line-height: 25px;
 	color: #b1bcc0;
 	text-decoration: none;
@@ -164,21 +163,40 @@ body {
 .nav-main a:hover{
 	color: #fff;
 	border-radius: 15px;
-	/*background: linear-gradient(to top, #206988 0%, #114165 59%, #0c3256 100%);*/
 	background: linear-gradient(to top, #0d3458, #25617b)
 }
 
-.koshuk-text{
+
+.koshuk-text1{
+	position: absolute;
+	top: -2px;
+	left: 81px;
 	font-size: 11px;
 	color: #929b9f;
 }
-.koshuk-num {
+.koshuk-num1 {
+	position: absolute;
+	top: 10px;
+	right: 142px;
+	font-size: 12px;
+	color: #0d5a8f;
+}
+.koshuk-text2{
+	position: absolute;
+	top: 10px;
+	right: 74px;
+	font-size: 11px;
+	color: #929b9f;
+}
+.koshuk-num2 {
+	position: absolute;
+	top: 10px;
+	right: 9px;
 	font-size: 12px;
 	color: #0d5a8f;
 }
 
 #first-span {
-	margin-left: 64px;
 	position: relative;
 	text-decoration: none;
 }
@@ -189,6 +207,138 @@ body {
 	width: 21px;
 	height: 17px;
 	top: 0px;
-	left: -22px;
+	left: -27px;
 	background: url(../img/basket.png) center no-repeat;
+}
+
+/******  FOOTER  *******/
+/*     Brand menu      */
+.brandlogo {
+	display: block;
+	height: 64px;
+	position: relative;
+}
+.brandlogo a {
+	display: block;
+	position: absolute;
+}
+#brandlogo1 {
+	top: 16px;
+	left: 117px;
+	width: 83px;
+	height: 21px;
+	background: url(../img/brandlogo/brandlogo1.png);
+}
+#brandlogo1:hover {
+	background: url(../img/brandlogo/brandlogo1_hover.png);
+}
+#brandlogo2 {
+	top: 16px;
+	left: 212px;
+	width: 97px;
+	height: 14px;
+	background: url(../img/brandlogo/brandlogo2.png);
+}
+#brandlogo2:hover {
+	background: url(../img/brandlogo/brandlogo2_hover.png);
+}
+#brandlogo3 {
+	top: 12px;
+	left: 575px;
+	width: 57px;
+	height: 27px;
+	background: url(../img/brandlogo/brandlogo3.png);
+}
+#brandlogo3:hover {
+	background: url(../img/brandlogo/brandlogo3_hover.png);
+}
+#brandlogo4 {
+	top: 17px;
+	left: 485px;
+	width: 77px;
+	height: 13px;
+	background: url(../img/brandlogo/brandlogo4.png);
+}
+#brandlogo4:hover {
+	background: url(../img/brandlogo/brandlogo4_hover.png);
+}
+#brandlogo5 {
+	top: 15px;
+	left: 414px;
+	width: 59px;
+	height: 21px;
+	background: url(../img/brandlogo/brandlogo5.png);
+}
+#brandlogo5:hover {
+	background: url(../img/brandlogo/brandlogo5_hover.png);
+}
+#brandlogo6 {
+	top: 17px;
+	left: 645px;
+	width: 61px;
+	height: 14px;
+	background: url(../img/brandlogo/brandlogo6.png);
+}
+#brandlogo6:hover {
+	background: url(../img/brandlogo/brandlogo6_hover.png);
+}
+#brandlogo7 {
+	top: 16px;
+	left: 322px;
+	width: 77px;
+	height: 21px;
+	background: url(../img/brandlogo/brandlogo7.png);
+}
+#brandlogo7:hover {
+	background: url(../img/brandlogo/brandlogo7_hover.png);
+}
+#brandlogo8 {
+	top: 17px;
+	left: 721px;
+	width: 72px;
+	height: 13px;
+	background: url(../img/brandlogo/brandlogo8.png);
+}
+#brandlogo8:hover {
+	background: url(../img/brandlogo/brandlogo8_hover.png);
+}
+
+/*     futer menu      */
+footer *{
+	text-decoration: none;
+	font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+}
+.footem-menu {
+	display: block;
+	height: 35px;
+	background: #213a4d;
+}
+
+.footem-menu a:first-child {
+	margin-left: 308px;
+}
+.footem-menu a {
+	margin-left: 6px;
+	color: #bec6c9;
+	line-height: 35px;
+	font-size: 13.2px;
+}
+.footem-menu a:not(:last-child):after {
+	content: "|";
+	margin-left: 10px;
+	color: #bec6c9; 
+}
+
+.footem-menu a:hover {
+	color: #52abcb;
+}
+
+address {
+	background: #213a4d;
+	text-align: center;
+	padding-bottom: 49px;
+}
+footer address * {
+	color: #7f4740;
+	font-size: 10px;
 }

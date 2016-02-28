@@ -836,7 +836,7 @@ div.wrapper {
 
 .aside-right h1 {
 	display: block;
-	margin-top: 2px;
+	margin-top: 1px;
 	margin-left: 10px;
 	height: 25px;
 	width: 180px;
@@ -857,6 +857,7 @@ div.wrapper {
 .aside-right h2 {
 	margin-left: 24px;
 	margin-top: 14px;
+	margin-bottom: -3px;
 	width: 135px;
 	height: 26px;
 	border: 1px solid #79878d;
@@ -869,13 +870,18 @@ div.wrapper {
 	background-position: 3px 1px;
 }
 .aside-right label {
+	font-size: 14px;
 	display: block;
 	margin-top: 6px;
-	margin-left: 30px;
+	margin-left: 31px;
 }
+.aside-right label input[type="checkbox"] {
+	margin-right: 9px;
+}
+
 .aside-right input[type="submit"]{
 	margin-left: 34px;
-	margin-top: 18px;
+	margin-top: 21px;
 	width: 81px;
 	height: 26px;
 	border: none;

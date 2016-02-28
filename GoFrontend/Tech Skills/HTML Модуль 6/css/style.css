@@ -766,16 +766,17 @@ main header form input[type="checkbox"] {
 .content {
 	display: block;
 	float: left;
-	width: 525px;
-	text-align: center;
+	width: 515px;
+	text-align: left;
+	padding: 0px 5px;
 
 	background: linear-gradient(to bottom, #e4e6e7, #93a7b0);
 }
 .content figure {
 	display: inline-block;
 	text-align: center;
-	margin: 15px 0px 0px 0px;
-	width: 32%;
+	margin: 15px -5px 9px 0px;
+	width: 168px;
 
 }
 .content a {
@@ -783,26 +784,43 @@ main header form input[type="checkbox"] {
 }
 .content h2 {
 	font-size: 16px;
+	text-indent: 2px;
+	letter-spacing: -0.3px;
 	color: #206988;
 }
 .content a p {
-	font-size: 14px;
+	margin-top: -2px;
+	margin-bottom: 2px;
+	text-indent: 7px;
+	font-size: 13px;
 	color: #1f2528;
 }
 .price {
+	margin-top: 4px;
 	font-size: 17px;
+	text-indent: 12px;
+	letter-spacing: -1.1px;
 	font-style: italic;
 	color: #114165;
 	font-weight: bold;
 	font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
 }
 
-.content .wrapper {
+div.wrapper {
 	display: block;
+	height: 127px;
+	width: 136px;
+	margin-left: 16px;
+	margin-top: -2px;
+	background: #fff;
 	border: 1px solid #a7b1b4;
-	height: 126px;
-	width: 131px;
+	border-radius: 9px;
 }
+.wrapper img {
+	margin: 5px;
+}
+
+
 
 .aside-right {
 	display: block;

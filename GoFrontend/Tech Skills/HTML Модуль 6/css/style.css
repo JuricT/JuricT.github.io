@@ -165,7 +165,7 @@ body {
 	border-radius: 15px;
 	background: linear-gradient(to top, #0d3458, #25617b)
 }
-
+	
 
 .koshuk-text1{
 	position: absolute;
@@ -191,8 +191,9 @@ body {
 .koshuk-num2 {
 	position: absolute;
 	top: 10px;
-	right: 9px;
+	right: 10px;
 	font-size: 12px;
+	letter-spacing: -0.1px;
 	color: #0d5a8f;
 }
 
@@ -342,3 +343,523 @@ footer address * {
 	color: #7f4740;
 	font-size: 10px;
 }
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+/*MAIN HEADER*/
+main header form {
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 16px;
+	height: 133px;
+	border: 1px solid #9c9c9d;
+	border-radius: 20px;
+	box-shadow: 3px 4px 5px 0px rgba(150,150,150,0.75);
+}
+main header form h2,
+main header form h3{
+	position: absolute;
+	font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+	font-weight: 900;
+	font-size: 12px;
+	color: #114165;
+}
+main header form h3 {
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: -0.3px;
+}
+
+main header form p {
+	position: absolute;
+	font-size: 10px;
+
+	/*top: 500px;*/
+}
+main header form span {
+	position: absolute;
+	font-size: 9px;
+	color: #77858b;
+}
+header form select {
+	position: absolute;
+	font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+	font-size: 11px;
+	color: black;
+}
+header form input[type="submit"] {
+	position: absolute;
+	font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+	font-size: 14px;
+	letter-spacing: 0.2px;
+	color: #154467;
+	font-style: italic;
+	text-decoration: underline;
+	border: none;
+	background: rgba(255,255,255,0);
+}
+header form label {
+	position: absolute;
+	font-size: 12px;
+}
+header form input[type="checkbox"] {
+	position: absolute;
+	top: -2px;
+	left: -16px;
+	height: 12px;
+}
+
+/*форма поиска по автомобилю*/
+.search-automobile {
+	display: block;
+	float: left;
+	width: 413px;
+	margin-left: 5px;
+}
+.search-automobile h2 {
+	top: 1px;
+	left: 124px;
+	letter-spacing: 0.3px;
+}
+.diski h3 {
+	top: 5px;
+	left: 18px;
+}
+.diski .brend-auto {
+	top: 27px;
+	left: 16px;
+}
+.diski .brend-auto span {
+	top: 1px;
+	left: 34px;
+}
+.diski .model-auto {
+	top: 43px;
+	left: 16px;
+}
+.diski .model-auto span {
+	top: 8.5px;
+	left: 0.5px;
+}
+.diski .year {
+	top: 65px;
+	left: 16px;
+}
+.diski .year span {
+	top: 8.5px;
+	left: 0.5px;
+}
+.diski .kompl {
+	top: 91px;
+	left: 16px;
+}
+
+.tire h3 {
+	top: 3px;
+	left: 352px;
+}
+
+.tire .brend-auto {
+	top: 25px;
+	left: 221px;
+}
+.tire .brend-auto span {
+	top: 1px;
+	left: 34px;
+}
+.tire .model-auto {
+	top: 41px;
+	left: 221px;
+}
+.tire .model-auto span {
+	top: 8.5px;
+	left: 0.5px;
+}
+.tire .year {
+	top: 63px;
+	left: 221px;
+}
+.tire .year span {
+	top: 8.5px;
+	left: 0.5px;
+}
+.tire .kompl {
+	top: 89px;
+	left: 221px;
+}
+.search-automobile select {
+	width: 100px;
+}
+
+.search-automobile select[name="marka-disks"] {
+	top: 21px;
+	left: 93px;
+}
+.search-automobile select[name="model-disks"] {
+	top: 43px;
+	left: 93px;
+}
+.search-automobile select[name="year-disks"] {
+	top: 65px;
+	left: 93px;
+	width: 57px;
+}
+.search-automobile select[name="accessories-disks"] {
+	top: 87px;
+	left: 93px;
+}
+
+.search-automobile select[name="marka-tire"] {
+	top: 19px;
+	left: 298px;
+}
+.search-automobile select[name="model-tire"] {
+	top: 41px;
+	left: 298px;
+}
+.search-automobile select[name="year-tire"] {
+	top: 63px;
+	left: 298px;
+	width: 57px;
+}
+.search-automobile select[name="accessories-tire"] {
+	top: 85px;
+	left: 298px;
+}
+.search-automobile input[type="submit"]{
+	top: 107px;
+	right: 15px;
+}
+
+/*Форма поиска шин*/
+.find-tires {
+	display: block;
+	float: left;
+	width: 192px;
+	margin-left: 13px;
+}
+
+.find-tires h3 {
+	top: 4px;
+	left: 10px;
+	font-size: 10px;
+	letter-spacing: 0.2px;
+}
+
+#size {
+	top: 30px;
+	left: 14px;
+}
+#r {
+	top: 52px;
+	left: 47px;
+}
+#season {
+	top: 70px;
+	left: 15px;
+}
+#drob {
+	top: 28px;
+	left: 115px;
+}
+
+.find-tires select{
+	width: 50px;
+}
+.find-tires select[name="size-tire1"] {
+	top: 23px;
+	left: 60px;
+}
+.find-tires select[name="size-tire2"] {
+	top: 23px;
+	left: 126px;
+}
+.find-tires select[name="size-tire3"] {
+	top: 47px;
+	left: 60px;
+	width: 45px;
+}
+
+.season-summer {
+	top: 71px;
+	left: 71px;
+}
+.season-winter {
+	top: 84px;
+	left: 71px;
+}
+.season-all {
+	top: 98px;
+	left: 71px;
+}
+
+.find-tires input[type="submit"]{
+	top: 107px;
+	right: 13px;
+}
+/*форма поиска дисков*/
+.find-disks {
+	display: block;
+	float: left;
+	width: 266px;
+	margin-left: 9px;
+}
+
+.find-disks h3 {
+	top: 4px;
+	left: 8px;
+	letter-spacing: 0.2px;
+}
+
+.find-disks .text1 {
+	top: 24px;
+	left: 15px;
+	letter-spacing: 0.7px;
+}
+.find-disks>.text1 span {
+	top: 1px;
+	left: 54px;
+}
+
+.find-disks>.text2 {
+	top: 40px;
+	left: 15px;
+	letter-spacing: 0.7px;
+}
+
+.find-disks>.text3 {
+	top: 70px;
+	left: 15px;
+	letter-spacing: 0.7px;
+}
+.find-disks>.text3 span {
+	line-height: 112%;
+}
+
+.find-disks select[name="size-disk"] {
+	top: 20px;
+	left: 106px;
+	width: 57px;
+}
+
+.find-disks select[name="number-holes"] {
+	top: 51px;
+	left: 106px;
+	width: 50px;
+}
+.find-disks select[name="diameter-holes"] {
+	top: 83px;
+	left: 106px;
+	width: 58px;
+}
+
+#DCO {
+	position: absolute;
+	height: 106px;
+	width: 90px;
+	top: 3px;
+	left: 175px;
+	border-left: 1px solid #bdc6ca;
+}
+
+#DCO select[name="dco"] {
+	top: 39px;
+	left: 11px;
+	width: 58px;
+}
+
+#DCO select[name="et"] {
+	top: 84px;
+	left: 11px;
+	width: 58px;
+}
+
+#DCO .text1 {
+	top: 2px;
+	left: 9px;
+}
+#DCO .text1 span {
+	width: 80px;
+	line-height: 90%;
+}
+
+#DCO .text2 {
+	top: 63px;
+	left: 10px;
+}
+#DCO .text2 span {
+	top: 9px;
+	width: 80px;
+}
+
+.find-disks input[type="submit"]{
+	top: 107px;
+	right: 13px;
+}
+
+/* ASIDE LAFT */
+.aside-laft {
+	display: block;
+	float: left;
+	width: 192px;
+}
+.aside-laft h1 {
+	display: block;
+	margin-top: 3px;
+	height: 26px;
+	width: 180px;
+
+	font-size: 13px;
+	color: #114165;
+	text-indent: 26px;
+	line-height: 26px;
+	letter-spacing: -0.2px;
+
+	border: 1px solid #79878d;
+	border-radius: 13px;
+	box-shadow: 2px 2px 3px 0 rgba(150,150,150,.75);
+	background: url(../img/h1.png) left no-repeat;
+	background-position: 1px 1px;
+}
+
+.aside-laft>ul {
+	margin-top: 17px;
+}
+
+.aside-laft h2 {
+	margin-left: 1px;
+	margin-top: -4px;
+	width: 148px;
+	height: 26px;
+	border: 1px solid #79878d;
+	border-radius: 16px;
+	line-height: 26px;
+	color: #114165;
+	font-size: 15px;
+	text-indent: 28px;
+	background: url(../img/h2.png) left no-repeat;
+	background-position: 3px 1px;
+}
+
+.aside-laft a {
+	display: block;
+	line-height: 26px;
+	margin-left: 36px;
+	font-size: 13px;
+	text-indent: 10px;
+	text-decoration: none;
+	background: url(../img/li.png) left no-repeat;
+}
+
+.aside-laft a:hover {
+	font-weight: bold;
+	text-decoration: underline;
+	letter-spacing: 0.5px;
+	background: url(../img/li-hover.png) left no-repeat;
+}
+
+.content {
+	display: block;
+	float: left;
+	width: 525px;
+	text-align: center;
+
+	background: linear-gradient(to bottom, #e4e6e7, #93a7b0);
+}
+.content figure {
+	display: inline-block;
+	text-align: center;
+	margin: 15px 0px 0px 0px;
+	width: 32%;
+
+}
+.content a {
+	text-decoration: none;
+}
+.content h2 {
+	font-size: 16px;
+	color: #206988;
+}
+.content a p {
+	font-size: 14px;
+	color: #1f2528;
+}
+.price {
+	font-size: 17px;
+	font-style: italic;
+	color: #114165;
+	font-weight: bold;
+	font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+}
+
+.content .wrapper {
+	display: block;
+	border: 1px solid #a7b1b4;
+	height: 126px;
+	width: 131px;
+}
+
+.aside-right {
+	display: block;
+	float: left;
+	width: 192px;
+}
+
+.aside-right h1 {
+	display: block;
+	margin-top: 2px;
+	margin-left: 10px;
+	height: 25px;
+	width: 180px;
+
+	font-size: 13px;
+	color: #114165;
+	text-indent: 30px;
+	line-height: 26px;
+	letter-spacing: 0.6px;
+
+	border: 1px solid #79878d;
+	border-radius: 13px;
+	box-shadow: 2px 2px 3px 0 rgba(150,150,150,.75);
+	background: url(../img/h1.png) left no-repeat;
+	background-position: 3px 1px;
+}
+
+.aside-right h2 {
+	margin-left: 24px;
+	margin-top: 14px;
+	width: 135px;
+	height: 26px;
+	border: 1px solid #79878d;
+	border-radius: 16px;
+	line-height: 26px;
+	color: #114165;
+	font-size: 15px;
+	text-indent: 28px;
+	background: url(../img/h2.png) left no-repeat;
+	background-position: 3px 1px;
+}
+.aside-right label {
+	display: block;
+	margin-top: 6px;
+	margin-left: 30px;
+}
+.aside-right input[type="submit"]{
+	margin-left: 34px;
+	margin-top: 18px;
+	width: 81px;
+	height: 26px;
+	border: none;
+	border-radius: 14px;
+
+	font-size: 11px;
+	color: #e5e9ea;
+	box-shadow: 2px 3px 5px -1px rgba(188,188,188,.75);
+	background: linear-gradient(to top, #0c3357, #1f6787);
+}
+

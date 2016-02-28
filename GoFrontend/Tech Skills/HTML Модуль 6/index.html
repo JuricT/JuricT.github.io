@@ -43,86 +43,85 @@
 			
 		</div>
 	</header>
-<!-- 	<main>
-		<header>
+	<main class="clearfix">
+		<header class="clearfix">
 			<form class="search-automobile" action="#">
 				<h2>Поиск по автомобилю</h2>
 				<section class="diski">
 					<h3>Диски:</h3>
-					<p>Марка <span>авто:</span> </p>
+					<p class="brend-auto">Марка <span>авто:</span> </p>
 
-					<p>Модель <span>автомобиля:</span></p>
-					<p>Год выпуска<span>автомобиля:</span></p>
-					<p>Комплектация:</p>			
+					<p class="model-auto">Модель <span>автомобиля:</span></p>
+					<p class="year">Год выпуска<span>автомобиля:</span></p>
+					<p class="kompl">Комплектация:</p>			
 				</section>
 				<section class="tire">
-					<h3>Диски:</h3>
-					<p>Марка <span>авто:</span> </p>
+					<h3>Шины:</h3>
+					<p class="brend-auto">Марка <span>авто:</span> </p>
 
-					<p>Модель <span>автомобиля:</span></p>
-					<p>Год выпуска<span>автомобиля:</span></p>
-					<p>Комплектация:</p>			
+					<p class="model-auto">Модель <span>автомобиля:</span></p>
+					<p class="year">Год выпуска<span>автомобиля:</span></p>
+					<p class="kompl">Комплектация:</p>			
 				</section>
 				
 				<select name="marka-disks">
 					<option value="все">все</option>
 				</select>
-				<select name="marka-tire">
+				<select name="model-disks">
 					<option value="все">все</option>
 				</select>
-
-				<select name="model-disks">
+				<select name="year-disks">
+					<option value="все">все</option>
+				</select>
+				<select name="accessories-disks">
+					<option value="все">все</option>
+				</select>
+				
+				<select name="marka-tire">
 					<option value="все">все</option>
 				</select>
 				<select name="model-tire">
 					<option value="все">все</option>
 				</select>
 
-				<select name="year-disks">
-					<option value="все">все</option>
-				</select>
 				<select name="year-tire">
 					<option value="все">все</option>
 				</select>
 
-				<select name="accessories-disks">
-					<option value="все">все</option>
-				</select>
 				<select name="accessories-tire">
 					<option value="все">все</option>
 				</select>
 
-				<input type="submit" value="поиск">
+				<input type="submit" value="поиск...">
 			</form>
+
 			<form class="find-tires" action="#">
-				<h3>Поиск шин</h3>
-				<p>Размер:</p>
+				<h3>ПОИСК ШИН</h3>
+				<p id="size">Размер:</p>
 				<select name="size-tire1">
 					<option value="145">145</option>
 				</select>
-				<span>/</span>
+				<span id="drob">/</span>
 				<select name="size-tire2">
 					<option value=""></option>
 				</select>
-				<p>R</p>
+				<p id="r">R</p>
 				<select name="size-tire3">
 					<option value="12">12</option>
 				</select>
-				<p>Сезон:</p>
-				<label><input name="season-summer" value="summer" type="checkbox">лето</label>
-				<label><input name="season-winter" value="winter" type="checkbox">зима</label>
-				<label><input name="season-all" value="all" type="checkbox">всесез</label>
+				<p id="season">Сезон:</p>
+				<label class="season-summer"><input name="season-summer" value="summer" type="checkbox">лето</label>
+				<label class="season-winter"><input name="season-winter" value="winter" type="checkbox">зима</label>
+				<label class="season-all"><input name="season-all" value="all" type="checkbox">всесез</label>
 
-				<input type="submit" value="поиск">
+				<input type="submit" value="поиск...">
 			</form>
-			<form class="find-disks" action="#">
-				<h3>Поиск дисков</h3>
-				<section>
-					<p>Диаметр <span>диска:</span></p>
-					<p>Количество <span>крепёжных отверстий:</span></p>
-					<p>Диаметр <span>расположения крепёжных отверстий:</span></p>
-				</section>
 
+			<form class="find-disks" action="#">
+				<h3>ПОИСК ДИСКОВ</h3>
+				<p class="text1">Диаметр <span>диска:</span></p>
+				<p class="text2">Количество <span>крепёжных отверстий:</span></p>
+				<p class="text3">Диаметр <span>расположения крепёжных отверстий:</span></p>
 				<select name="size-disk">
 					<option value="14">14</option>
 				</select>
@@ -135,19 +134,20 @@
 					<option value="12">12</option>
 				</select>
 
-				<section>
-					<p>ДЦО <span>(диаметр центрального отверстия):</span></p>
+				<section id="DCO" class="clearfix">
+					<p class="text1">ДЦО <span>(диаметр центрального отверстия):</span></p>
 					<select name="dco">
 						<option value="12">12</option>
 					</select>
-					<p>ET <span>(вылет диска):</span></p>
+					<p class="text2">ET <span>(вылет диска):</span></p>
 					<select name="et">
 						<option value="12">12</option>
 					</select>				
 				</section>
-				<input type="submit" value="поиск">
-			</form>			
+				<input type="submit" value="поиск...">
+			</form>	
 		</header>
+
 		<aside class="aside-laft">
 			<h1>КАТАЛОГ ПРОДУКЦИИ:</h1>
 			<ul>
@@ -177,12 +177,15 @@
 				</li>
 			</ul>
 		</aside>
-		<section>
+
+		<section class="content">
 			<figure>
 				<a href="#">
 					<h2>Goodyear</h2>
 					<p>Ultra Grip Extreme</p>
-					<img src="img/img1.jpg" alt="Goodyear - Ultra Grip Extreme">
+					<div class="wrapper">
+						<img src="img/img1.jpg" alt="Goodyear - Ultra Grip Extreme">
+					</div>
 				</a>
 				<p class="price">90.00 грн.</p>
 			</figure>	
@@ -259,6 +262,7 @@
 				<p class="price">393.00 грн.</p>
 			</figure>
 		</section>
+
 		<aside class="aside-right">
 			<form action="#">
 				<h1>БРЕНДЫ:</h1>
@@ -282,10 +286,11 @@
 				<label>
 					<input name="disk-brend3" value="1" type="checkbox">Бренд 3
 				</label>
-				<input type="submit" value="поиск">
+				<input type="submit" value="ВЫБРАТЬ">
 			</form>
 		</aside>
-	</main> -->
+
+	</main>
 	<footer>
 		<nav class="brandlogo">
 			<a id="brandlogo1" href="#"></a>

@@ -386,13 +386,13 @@ main header form span {
 	font-size: 9px;
 	color: #77858b;
 }
-header form select {
+main header form select {
 	position: absolute;
 	font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
 	font-size: 11px;
 	color: black;
 }
-header form input[type="submit"] {
+main header form input[type="submit"] {
 	position: absolute;
 	font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
 	font-size: 14px;
@@ -403,11 +403,11 @@ header form input[type="submit"] {
 	border: none;
 	background: rgba(255,255,255,0);
 }
-header form label {
+main header form label {
 	position: absolute;
 	font-size: 12px;
 }
-header form input[type="checkbox"] {
+main header form input[type="checkbox"] {
 	position: absolute;
 	top: -2px;
 	left: -16px;

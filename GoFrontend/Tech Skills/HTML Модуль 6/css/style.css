@@ -309,6 +309,9 @@ footer *{
 	text-decoration: none;
 	font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
 }
+footer {
+	margin-top: 27px;
+}
 .footem-menu {
 	display: block;
 	height: 35px;
@@ -769,6 +772,7 @@ main header form input[type="checkbox"] {
 	width: 515px;
 	text-align: left;
 	padding: 0px 5px;
+	padding-bottom: 23px;
 
 	background: linear-gradient(to bottom, #e4e6e7, #93a7b0);
 }

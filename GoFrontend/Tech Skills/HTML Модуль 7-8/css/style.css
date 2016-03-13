@@ -23,7 +23,7 @@ body,
 .main-wrapper {
     min-width: 320px;
     overflow-x: hidden;
-    overflow: hidden;
+    /*overflow: hidden;*/
     margin: 0 auto;
 }
 .header-bg {

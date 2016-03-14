@@ -342,6 +342,11 @@ visibility: hidden;
 .blurbs-bg {
     border-top: 1px solid #33253b;
     border-bottom: 1px solid #21333b;
+
+    background-color: #000000;
+    background-repeat: repeat-y;
+    background-image: url(../img/bggrad.png);
+
     background: -moz-linear-gradient(bottom, #36293d, #745183);
     background: linear-gradient(to top, #36293d, #745183);
     

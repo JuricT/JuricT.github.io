@@ -23,7 +23,6 @@ body,
 .main-wrapper {
     min-width: 320px;
     overflow-x: hidden;
-    /*overflow: hidden;*/
     margin: 0 auto;
 }
 .header-bg {
@@ -36,11 +35,11 @@ body,
 }
 
 .clearfix:after {
-content: ".";
-display: block;
-height: 0;
-clear: both;
-visibility: hidden;
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
 }
 
 

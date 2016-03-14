@@ -331,6 +331,7 @@ body,
     border-bottom: 1px solid #21333b;
     background-color: #000000;
     background: url('../img/bggrad.png') repeat-y;
+    width: 768px;
 
 }
 .blurbs {

@@ -1,0 +1,16 @@
+#body {
+	background: #222;
+}
+
+.timer {
+	background: #222;
+	color: #aaa;
+	text-align: center;
+}
+.btn {
+	width: 74px;
+}
+.timer-list {
+	padding-top: 15px;
+	font-size: 24px;
+}

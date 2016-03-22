@@ -1,5 +1,7 @@
 var timer = new Timer();
-var clockface = document.querySelector('.timer-clockface');
+var timerContainer = document.querySelector('.timer');
+var clockface = timerContainer.querySelector('.timer-clockface');
+var timerList = timerContainer.querySelector('.timer-list');
 var startPauseButton = document.querySelector('.timer-startStop');
 var splitButton      = document.querySelector('.timer-Split');
 var clearButton      = document.querySelector('.timer-Reset');
@@ -21,11 +23,13 @@ function startPauseClick(){
 		clearInterval(timerEvent);
 		startPauseButton.innerHTML = 'Start';
 		//Добавляем строку 5 Stop: 00:00:00.000
+		addSplits('Stop');
 	}
 }
 
 function splitButtonClick(){
 	//Добавляем строку 5 Split: 00:00:00.000
+	addSplits('Split');
 }
 
 function resetButtonClick() {
@@ -34,14 +38,31 @@ function resetButtonClick() {
 	printTimer(clockface, timer);
 	startPauseButton.innerHTML = 'Start';
 	//очищаем список
+	counter(0);
+	timerList.innerHTML = '';
 }
 
 // =============================
 // ======== Functions ==========
 
 function addSplits(label){
-	
+	var p = document.createElement('p');
+	var str = counter() + ' ' + label + ': ' + clockface.innerHTML;
+	p.innerHTML = str;
+	timerList.appendChild(p);
+
 }
+
+//Счетчик записей в списке засечек времени.
+var counter = (function(){
+	var count = 1;
+	return function(num){
+		count = num !== undefined ? num : count;
+		return count++;
+	}
+}());
+
+
 
 function timerRun(){
 	timer.msecInc(13);

@@ -4,13 +4,14 @@
 
 #timer {
 	background: #222;
-	width: 240px;
+	width: 260px;
 	margin: 0 auto;
 	color: #aaa;
 	text-align: center;
 }
 .timer-clockface {
 	text-align: left;
+	margin-left: 9px;
 }
 .btn {
 	width: 74px;

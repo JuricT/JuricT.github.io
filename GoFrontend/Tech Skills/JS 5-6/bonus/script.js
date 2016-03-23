@@ -1,3 +1,4 @@
+;(function(){
 var timer = new Timer();
 var timerContainer = document.querySelector('.timer');
 var clockface = timerContainer.querySelector('.timer-clockface');
@@ -6,6 +7,7 @@ var startPauseButton = document.querySelector('.timer-startStop');
 var splitButton      = document.querySelector('.timer-Split');
 var clearButton      = document.querySelector('.timer-Reset');
 var timerEvent;
+var timeStart;
 
 startPauseButton.addEventListener('click', startPauseClick);
 splitButton.addEventListener('click', splitButtonClick);
@@ -17,18 +19,17 @@ clearButton.addEventListener('click', resetButtonClick);
 function startPauseClick(){
 	if (startPauseButton.innerHTML === 'Start') {
 		timer.reset();
-		timerEvent = setInterval(timerRun, 13);
+		timeStart = Date.now();
+		timerEvent = setInterval(timerRun, 1);
 		startPauseButton.innerHTML = 'Stop';
 	}else {
 		clearInterval(timerEvent);
 		startPauseButton.innerHTML = 'Start';
-		//Добавляем строку 5 Stop: 00:00:00.000
 		addSplits('Stop');
 	}
 }
 
 function splitButtonClick(){
-	//Добавляем строку 5 Split: 00:00:00.000
 	addSplits('Split');
 }
 
@@ -65,7 +66,21 @@ var counter = (function(){
 
 
 function timerRun(){
-	timer.msecInc(13);
+	var interval = Date.now() - timeStart;
+	var H = 60 * 60 * 1000;
+	var M = 60 * 1000;
+	var S = 1000;
+
+	timer.hour = (interval / H) >> 0;
+	interval = interval % H;
+
+	timer.min = (interval / M) >> 0;
+	interval = interval % M;
+
+	timer.sec = (interval / S) >> 0;
+	interval = interval % S;
+
+	timer.msec = interval;
 	printTimer(clockface, timer);
 }
 
@@ -132,3 +147,4 @@ function Timer(){
 		}
 	};
 };
+}());

@@ -1,19 +1,24 @@
+;(function(){
 var timer = new Timer();
 var clockface = document.querySelector('.timer-clockface');
 var startPauseButton = document.querySelector('.start-pause');
 var clearButton = document.querySelector('.clear');
 var timerEvent;
+var START_BUTTON_TEXT = 'Start';
+var PAUSE_BUTTON_TEXT = 'Pause';
+var timeStart;
 
-startPauseButton.addEventListener('click', startPauseClick);
-clearButton.addEventListener('click', clearButtonClick);
+startPauseButton.addEventListener('click', startPauseClick);//Клик кнопки Запуск/пауза таймера
+clearButton.addEventListener('click', clearButtonClick);//Клик кнопки Сброс таймера
 
 function startPauseClick(){
-	if (startPauseButton.innerHTML === 'Start') {
-		timerEvent = setInterval(timerRun, 13);
-		startPauseButton.innerHTML = 'Pause';
+	if (startPauseButton.innerHTML === START_BUTTON_TEXT) {
+		timeStart = Date.now();
+		timerEvent = setInterval(timerRun, 1);
+		startPauseButton.innerHTML = PAUSE_BUTTON_TEXT;
 	}else {
 		clearInterval(timerEvent);
-		startPauseButton.innerHTML = 'Start';
+		startPauseButton.innerHTML = START_BUTTON_TEXT;
 	}
 }
 
@@ -21,11 +26,26 @@ function clearButtonClick() {
 	clearInterval(timerEvent);
 	timer.reset();
 	printTimer(clockface, timer);
-	startPauseButton.innerHTML = 'Start';
+	startPauseButton.innerHTML = START_BUTTON_TEXT;
 }
 
 function timerRun(){
-	timer.msecInc(13);
+	var interval = Date.now() - timeStart;
+	var H = 60 * 60 * 1000;
+	var M = 60 * 1000;
+	var S = 1000;
+
+	timer.hour = (interval / H) >> 0;
+	interval = interval % H;
+
+	timer.min = (interval / M) >> 0;
+	interval = interval % M;
+
+	timer.sec = (interval / S) >> 0;
+	interval = interval % S;
+
+	timer.msec = interval;
+
 	printTimer(clockface, timer);
 }
 
@@ -91,3 +111,4 @@ function Timer(){
 		}
 	};
 };
+}());

@@ -2,10 +2,15 @@
 	background: #222;
 }
 
-.timer {
+#timer {
 	background: #222;
+	width: 240px;
+	margin: 0 auto;
 	color: #aaa;
 	text-align: center;
+}
+.timer-clockface {
+	text-align: left;
 }
 .start-pause {
 	width: 103px;

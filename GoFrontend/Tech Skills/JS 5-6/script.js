@@ -7,6 +7,7 @@ var timerEvent;
 var START_BUTTON_TEXT = 'Start';
 var PAUSE_BUTTON_TEXT = 'Pause';
 var timeStart;
+var pause = 0;
 
 startPauseButton.addEventListener('click', startPauseClick);//Клик кнопки Запуск/пауза таймера
 clearButton.addEventListener('click', clearButtonClick);//Клик кнопки Сброс таймера
@@ -18,6 +19,7 @@ function startPauseClick(){
 		startPauseButton.innerHTML = PAUSE_BUTTON_TEXT;
 	}else {
 		clearInterval(timerEvent);
+		pause = Date.now() - timeStart + pause;
 		startPauseButton.innerHTML = START_BUTTON_TEXT;
 	}
 }
@@ -30,7 +32,12 @@ function clearButtonClick() {
 }
 
 function timerRun(){
-	var interval = Date.now() - timeStart;
+	interval(timeStart, Date.now(), timer);
+	printTimer(clockface, timer);
+}
+
+function interval(startTime, endTime, timer) {
+	var interval = Date.now() - timeStart + pause;
 	var H = 60 * 60 * 1000;
 	var M = 60 * 1000;
 	var S = 1000;
@@ -45,8 +52,7 @@ function timerRun(){
 	interval = interval % S;
 
 	timer.msec = interval;
-
-	printTimer(clockface, timer);
+	return timer;
 }
 
 function printTimer(element, timer){

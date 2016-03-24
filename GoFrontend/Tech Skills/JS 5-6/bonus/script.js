@@ -8,6 +8,7 @@ var splitButton      = document.querySelector('.timer-Split');
 var clearButton      = document.querySelector('.timer-Reset');
 var timerEvent;
 var timeStart;
+var pause = 0;
 
 startPauseButton.addEventListener('click', startPauseClick);
 splitButton.addEventListener('click', splitButtonClick);
@@ -23,6 +24,7 @@ function startPauseClick(){
 		timerEvent = setInterval(timerRun, 1);
 		startPauseButton.innerHTML = 'Stop';
 	}else {
+		pause = Date.now() - timeStart + pause;
 		clearInterval(timerEvent);
 		startPauseButton.innerHTML = 'Start';
 		addSplits('Stop');
@@ -66,7 +68,7 @@ var counter = (function(){
 
 
 function timerRun(){
-	var interval = Date.now() - timeStart;
+	var interval = Date.now() - timeStart + pause;
 	var H = 60 * 60 * 1000;
 	var M = 60 * 1000;
 	var S = 1000;

@@ -25,6 +25,7 @@ function startPauseClick(){
 }
 
 function clearButtonClick() {
+	pause = 0;
 	clearInterval(timerEvent);
 	timer.reset();
 	printTimer(clockface, timer);

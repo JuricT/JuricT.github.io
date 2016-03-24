@@ -41,6 +41,7 @@ function resetButtonClick() {
 	printTimer(clockface, timer);
 	startPauseButton.innerHTML = 'Start';
 	//очищаем список
+	pause = 0;
 	counter(0);
 	timerList.innerHTML = '';
 }

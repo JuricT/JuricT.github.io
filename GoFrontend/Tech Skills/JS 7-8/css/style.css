@@ -8,7 +8,6 @@
 	visibility: hidden;
 }
 
-
 body {
 	background: #111;
 	color: #EEE;
@@ -67,7 +66,6 @@ body {
 	padding: 15px 14px;
 	border-radius: 0px 0px 5px 5px;
 	background: #222;
-	/*color:;*/
 	color: #eed;
 	font-size: 14px;
 	line-height: 16px;
@@ -119,14 +117,14 @@ body {
     border: 7px solid transparent;
     border-right: 10px solid rgb(237,173,0);
 }
+
 .tooltip::after {
 	border-right: 10px solid #444;
 	left: -15px;
 }
 
 .form input[type="submit"] {
-	/*float: right;*/
-	margin-left: 180px;
+	float: right;
 	text-align: center;
 	background: #333;
 	color:  #eed;

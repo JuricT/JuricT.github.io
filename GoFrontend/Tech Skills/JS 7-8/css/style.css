@@ -1,0 +1,140 @@
+@import url(https://fonts.googleapis.com/css?family=Oxygen:300);
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+
+body {
+	background: #111;
+	color: #EEE;
+	font-family: 'Oxygen', Arial sans-serif;
+}
+
+.wrapper {
+	min-width: 480px;
+	max-width: 768px;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+.tabs-menu {
+	overflow: hidden;
+	padding: 0 4px;
+	border-radius: 5px 5px 0px 0px;
+	border-bottom: none;
+	background: linear-gradient(to bottom, rgba(4,4,4,1) 0%, rgba(34,34,34,1) 100%);
+	border: 1px solid #666;
+	border-bottom: none;
+}
+
+.tabs-item {
+	display: block;
+	float: left;
+	margin-top: 8px;
+	margin-left: 4px;
+	line-height: 29px;
+	border-radius: 3px 3px 0px 0px;
+	border: 1px solid #666;
+	border-bottom: none;
+	background: linear-gradient(to bottom, rgba(67,59,0,1) 0%, rgba(115,105,51,1) 100%);
+	padding: 0 10px;
+	text-decoration: none;
+	color: rgb(167,167,167);
+}
+
+.tabs-item:hover {
+	color: #fff;
+	cursor: pointer;
+}
+
+.tabs-item--active {
+	background: rgb(218,154,0);
+	border: 1px solid rgb(205,196,162);
+	border-bottom: none;
+	color: rgb(240,240,240);
+  	text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+}
+
+.tabs-content {
+	display: none;
+	border: 1px solid #666;
+	border-top: 3px solid rgb(218,154,0);
+	padding: 15px 14px;
+	border-radius: 0px 0px 5px 5px;
+	background: #222;
+	/*color:;*/
+	color: #eed;
+	font-size: 14px;
+	line-height: 16px;
+	letter-spacing: 0.5px;
+}
+
+.tabs-content--acvive {
+	display: block;
+}
+
+.form {
+	display: block;
+	width: 260px;
+}
+
+.form-label {
+	display: block;
+	margin: 15px 0px;
+	overflow: hidden;
+}
+.form-input {
+	float: right;
+	padding-left: 7px;
+	margin-left: 10px;
+	color: #ddc;
+	background: #333;
+	border: 2px inset rgb(218,154,0);
+}
+
+.form-input:focus {
+	outline: none;
+	background: #444;
+	border: 2px solid rgb(237,173,0);
+}
+
+.form .tooltip{
+	display: none;
+	float: right;
+	padding: 2px 5px;
+	background: #444;
+	border-radius: 2px;
+	border: 1px solid rgb(237,173,0);
+}
+
+.tooltip::before, .tooltip::after {
+    content: ''; 
+    position: absolute;
+    left: -17px; bottom: 3px;
+    border: 7px solid transparent;
+    border-right: 10px solid rgb(237,173,0);
+}
+.tooltip::after {
+	border-right: 10px solid #444;
+	left: -15px;
+}
+
+.form input[type="submit"] {
+	/*float: right;*/
+	margin-left: 180px;
+	text-align: center;
+	background: #333;
+	color:  #eed;
+	border: 2px outset rgb(218,154,0);
+}
+
+.form input[type="submit"]:focus {
+	outline: none;
+	background: #292929;
+	border: 2px inset rgb(237,173,0);
+}

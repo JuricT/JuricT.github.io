@@ -19,7 +19,11 @@
    });
 
    // Tooltip
-   $('.form .form-input').hover(function(){
+   $('.form .form-input').hover(showTooltip, hideTooltip);
+   $('.form .tooltip').hover(showTooltip, hideTooltip);
+});
+
+function showTooltip(){
       var $position = $(this).offset();
       var $form = $(this).closest('.form');
       var $tooltip = $form.find('.tooltip');
@@ -30,12 +34,11 @@
       $tooltip.text($text);
       $tooltip.show();
       $tooltip.offset($position);
+};
 
-   }, function(){
-      var $form = $(this).closest('.form');
-      $form.find('.tooltip').hide();
-   });
+function hideTooltip(){
+   var timeout1 = setTimeout(function(elem){
+      elem.closest('.form').find('.tooltip').hide();
+   }($(this)), 5000);
 
-
-
-});
+};

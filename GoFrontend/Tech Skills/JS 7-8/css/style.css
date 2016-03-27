@@ -72,6 +72,11 @@ body {
 	letter-spacing: 0.5px;
 }
 
+.tabs-content p {
+	margin-top: 5px;
+	text-indent: 15px;
+}
+
 .tabs-content--acvive {
 	display: block;
 }
@@ -128,7 +133,10 @@ body {
 	text-align: center;
 	background: #333;
 	color:  #eed;
+	padding: 3px 10px;
 	border: 2px outset rgb(218,154,0);
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 .form input[type="submit"]:focus {

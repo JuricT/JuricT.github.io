@@ -39,6 +39,6 @@ function showTooltip(){
 function hideTooltip(){
    var timeout1 = setTimeout(function(elem){
       elem.closest('.form').find('.tooltip').hide();
-   }($(this)), 5000);
+   }($(this)), 500);
 
 };

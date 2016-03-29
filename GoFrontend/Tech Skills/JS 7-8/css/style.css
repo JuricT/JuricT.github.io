@@ -108,7 +108,8 @@ body {
 
 .form .tooltip{
 	display: none;
-	float: right;
+	position: absolute;
+	/*float: right;*/
 	padding: 2px 5px;
 	background: #444;
 	border-radius: 2px;
@@ -128,7 +129,8 @@ body {
 	left: -15px;
 }
 
-.form input[type="submit"] {
+.form .button {
+	outline: none;
 	float: right;
 	text-align: center;
 	background: #333;
@@ -139,7 +141,7 @@ body {
 	cursor: pointer;
 }
 
-.form input[type="submit"]:focus {
+.form .button-click {
 	outline: none;
 	background: #292929;
 	border: 2px inset rgb(237,173,0);

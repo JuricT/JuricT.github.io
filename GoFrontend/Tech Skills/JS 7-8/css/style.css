@@ -109,7 +109,6 @@ body {
 .form .tooltip{
 	display: none;
 	position: absolute;
-	/*float: right;*/
 	padding: 2px 5px;
 	background: #444;
 	border-radius: 2px;

@@ -1,0 +1,152 @@
+.home {
+    height: auto;
+}
+
+body {
+    background: url("../img/bg.jpg") repeat scroll 0 0 #F0EFE7;
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    color: #4E443C;
+    text-shadow: 0 1px 0 #fff;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Arvo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  text-rendering: optimizelegibility;
+    color: #4E443C;
+}
+
+
+#wrapper {
+    width: 100%;
+}
+.stage-wrapper {
+    background: url("../img/bg-glow.png") #4E443C;
+    
+}
+
+.stage-wrapper,
+.select-wrapper,
+.box-wrapper,
+.menu-wrapper,
+.content-wrapper {
+    min-width: 768px;
+    position: relative;
+}
+
+
+.stage,
+.select-wrapper,
+.box-wrapper,
+.menu,
+.content {
+    position: relative;
+    max-width: 768px;
+    margin: auto;
+}
+
+.stage {
+    padding: 35px 0;
+}
+
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+@media (max-width: 808px) {
+    .stage-wrapper,
+    .select-wrapper {
+        min-width: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.wid1 {
+    width: 150px !important;
+    background: red;
+}
+
+.box-wrapper h4{
+    text-align: center;
+}
+
+.boxs-jq,
+.boxs-CSS {
+    display: block;
+    width: 50%;
+    float: left;
+}
+
+/*MENU*/
+.menu-wrapper {
+    background: rgb(255,100,100);
+    color: #eee;
+    font-family: 'Ubuntu', sans-serif;
+}
+.menu {
+    height: 60px;
+    cursor: pointer;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    text-shadow: none;
+    font-size: 15px;
+
+
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: rgb(225,75,75);
+    width: 150px;
+    z-index: 999;
+    /*padding: 0 5px;*/
+}
+
+.menu > li > a {
+    display: block;
+    position: relative;
+    float: left;
+    line-height: 60px;
+    margin: 0 14px;
+    padding: 0 12px;
+}
+
+.menu > li > a:hover{
+    color: #000;
+}
+
+.menu li {
+    position: relative;
+}
+
+.dropdown > a {
+    background: url('../img/arrow-down.png') right 29px no-repeat;
+}
+
+.menu li li.dropdown {
+    background: url('../img/arrow-right.png') right 12px no-repeat;
+
+}
+
+.menu li li {
+    text-indent: 10px;
+    line-height: 33px;
+    border-bottom:solid 1px rgb(200,50,50);
+}
+.menu li li:last-child {
+    border-bottom:none;
+}
+
+.menu li li:hover,
+.menu li li.dropdown:hover {
+    background-color: rgb(255,100,100);
+}

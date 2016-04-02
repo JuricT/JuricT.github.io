@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Урок 9-10</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jcarousel.css">
+    <link rel="stylesheet" href="css/cusel.css">
+    <link rel="stylesheet" href="css/checkbox.css">
+
+
+    <script src="js/modernizr.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="js/jquery.jcarousel.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+
+    <script src="js/jcarousel.basic.js"></script>
+    
+    <script src="js/cusel.min.js"></script>
+
+    <script src="js/jquery.checkbox.js"></script>
+
+    <script src="js/script.js"></script>
+
+	
+
+</head>
+<body class="home">
+    <div id="wrapper">
+         <div class="stage-wrapper clearfix">
+        	 <div class="stage clearfix">
+                <div class="stage-container">
+                    <div class="jcarousel-wrapper">
+                        <div class="jcarousel">
+                            <ul class="clearfix">
+                                <li><img src="img/pic/img1.jpg" width="748" height="300" alt=""></li>
+                                <li><img src="img/pic/img2.jpg" width="748" height="300" alt=""></li>
+                                <li><img src="img/pic/img3.jpg" width="748" height="300" alt=""></li>
+                            </ul>
+                        </div>
+
+                         <p class="photo-credits">Демонстрация подключения плагина "карусели"</p>
+
+                        <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                        <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+
+                        <p class="jcarousel-pagination">Демонстрация подключения плагина "карусели"</p>
+                    </div>
+                </div>
+            </div>
+         </div>
+        <div class="select-wrapper clearfix">
+            <h4>Нестандартные select</h4>
+            <select id="sel1" class="selector wid1" name="nameSelect">
+                <option value="option 1">текст option 1</option>
+                <option value="option 2">текст option 2</option>
+                <option value="option 3">текст option 3</option>
+                <option value="option 4">текст option 4</option>
+                <option value="option 5">текст option 5</option>
+                <option value="option 6">текст option 6</option>
+            </select>
+        </div>
+        <div class="box-wrapper clearfix">
+            <h4>Нестандартные чекбоксы </h4>
+            <form action="/" class="boxs">
+                <div class="boxs-jq">
+                    <p>При помощью jquery</p>
+                    <label class="niceCheck"><input type="checkbox" name="ch1">checkbox 1 </label>
+                    <label class="niceCheck"><input type="checkbox" name="ch2" disabled="disabled">checkbox disabled </label>
+                    <label class="niceCheck"><input type="checkbox" name="ch3" disabled="disabled" checked>checkbox disabled and checked </label>
+                </div>
+
+                <div class="boxs-CSS">
+                    <p>При помощью CSS</p>
+                    <input class="check-box-input" type="checkbox" name="ch1" id="ch1">
+                    <label class="check-box-label" for="ch1">checkbox 1 </label>
+
+                    <input class="check-box-input" type="checkbox" name="ch1" id="ch2">
+                    <label class="check-box-label" for="ch2">checkbox 2 </label>
+
+                    <input class="check-box-input" type="checkbox" name="ch1" id="ch3">
+                    <label class="check-box-label" for="ch3">checkbox 3 </label>
+                </div>
+                
+            </form>
+        </div>
+        <div class="menu-wrapper clearfix">
+            <nav>
+                <ul class="menu clearfix">
+                    <li><a href="#">Nav 1</a></li>
+                    <li><a href="#">Nav 2</a></li>
+                    <li class="dropdown">
+                        <a href="#">Nav 3</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Nav 3.1</a></li>
+                            <li><a href="#">Nav 3.2</a></li>
+                            <li><a href="#">Nav 3.3</a></li>
+                            <li class="dropdown">
+                                <a href="#">Nav 3.4</a>
+                                <ul class="sub-menu">
+                                    <li><a href="#">Nav 3.4.1</a></li>
+                                    <li class="dropdown">
+                                        <a href="#">Nav 3.4.2</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#">Nav 3.4.2.1</a></li>
+                                            <li><a href="#">Nav 3.4.2.2</a></li>
+                                            <li><a href="#">Nav 3.4.2.3</a></li>
+                                            <li><a href="#">Nav 3.4.2.4</a></li>
+                                            <li><a href="#">Nav 3.4.2.5</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Nav 3.4.3</a></li>
+                                    <li><a href="#">Nav 3.4.4</a></li>
+                                    <li><a href="#">Nav 3.4.5</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Nav 3.5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Nav 4</a></li>
+                    <li><a href="#">Nav 5</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content-wrapper">
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis minima, dicta molestiae reprehenderit enim temporibus ad, culpa. Cupiditate similique dolorem quasi obcaecati sint explicabo fugiat est recusandae debitis laborum culpa tenetur sapiente, accusantium, rem animi! Et quibusdam labore atque! Consequatur tempora repellendus illum animi doloremque reiciendis recusandae repudiandae molestias libero soluta inventore hic ut delectus odio, ab commodi ex eligendi quidem omnis mollitia. Velit laborum rerum ab nisi tenetur voluptate totam, beatae architecto quod nobis dignissimos ipsum aspernatur exercitationem delectus nam voluptas mollitia obcaecati excepturi animi. Facere aperiam repudiandae eius minima nostrum eveniet dolore necessitatibus ea in quam perferendis tempore neque ipsa corporis deserunt, porro incidunt provident impedit error! A repellendus, placeat nisi dolor quos corporis sunt perspiciatis deleniti voluptas accusantium laudantium cumque expedita dicta labore dolorum velit officia iure, laboriosam optio rem tempora dolorem ullam odio. Nostrum voluptates quidem doloremque nulla, eaque at, deserunt asperiores quasi saepe soluta esse, quia quo aliquid rerum dicta reprehenderit provident. Distinctio non molestiae laborum porro pariatur cupiditate aliquam harum recusandae impedit in hic soluta repellendus accusamus sint earum inventore error ipsa maiores placeat numquam facere, nostrum amet consectetur nihil! Repellendus dolor itaque veritatis voluptate quasi doloribus obcaecati quae, quos minima animi. Aut, perspiciatis.</p>
+            </div>
+        </div>
+</body>
+</html>

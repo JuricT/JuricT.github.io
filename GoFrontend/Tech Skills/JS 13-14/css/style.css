@@ -1,0 +1,29 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic);
+body {
+	font-family:'Open Sans',Helvetica,Arial,sans-serif;
+	background: rgb(245,245,245);
+}
+
+h1 {
+	font-size: 18px;
+	margin: 10px auto;
+	text-align: center;
+}
+
+#wrapper {
+	width: 640px;
+	margin: 0 auto;
+	padding: 10px;
+	border: 1px solid #666;
+	background: #fff;
+}
+
+input[type="submit"] {
+	display: block;
+	margin: 0 auto;
+}
+
+form {
+	margin: 0 auto;
+	width: 70%;
+}

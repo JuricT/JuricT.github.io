@@ -6,14 +6,52 @@
   <link rel="stylesheet" href="css/style.css">
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="js/template.js"></script>
   <script src="js/jquery.testform.js"></script>
   <script src="js/script.js"></script>
 </head>
-<body id="body">
-	<div id="wrapper">
+<body>
+	<div class="wrapper">
 
 	</div>
 
-  <!-- // <script src="js/createDOM.js"></script> -->
+
+<script type="text/html" id="test-form">
+  <div class="test-form-wrapper clearfix">
+    <h1 class="test-form-title"><%= title %></h1>
+    <form class="test-form">
+      <ol>
+      <% questions.forEach(function(item){ %>
+      <% var question = item; %>
+        <li>
+          <p class="headerQuestion"><%= question.question %></p>
+          <% question.answers.forEach(function(item2){ %>
+          <% var answers = item2; %>
+            <label class="checkbox">
+              <input type="checkbox" correct="<%= answers.correct %>">
+              <span class="answerText"><%= answers.answer %></span>
+            </label>
+          <% }); %>
+        </li>
+      <% }); %>
+      </ol>
+      <input class="bnt-check-res" type="submit" value="Проверить мои результаты">
+    </form>
+  </div>
+</script>
+
+<div class="modal-bg">
+  <div class="modal-body">
+    <header>
+      <span class="header-close close">x</span>
+      <h4 class="modal-heder">Результат тестирования</h2>
+    </header>
+    <p class="modal-content">Вы дали Х правильных ответов, из У возможных.</p>
+    <footer class="modal-footer">
+      <button class="btn-close close">Закрыть</button>
+    </footer>
+  </div>
+</div>
+
 </body>
 </html>

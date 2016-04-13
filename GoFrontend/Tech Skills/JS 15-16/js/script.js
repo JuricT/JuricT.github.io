@@ -49,33 +49,152 @@ function googleCallback(jQuery, data) {
 //===  Object Oriented Programming (OOP) ===
 //==========================================
 
-function Human(){};
-function Worker(){};
-function Student(){};
+//Create class Human 
+function Human(){
+	var name,
+			age,
+			sex,
+			height,
+			weight;
+	this.setName = function(setName){
+		name = setName;
+	};
+
+	this.getName = function(){
+		return name;
+	};
+
+	this.setAge = function(setAge){
+		age = setAge;
+	};
+
+	this.getAge = function(){
+		return age;
+	};
+
+	this.setSex = function(setSex){
+		sex = setSex;
+	};
+
+	this.getSex = function(){
+		return (sex) ? 'муж.' : 'жен.' ;
+	};
+
+	this.setHeight = function(setHeight){
+		height = setHeight;
+	};
+
+	this.getHeight = function(){
+		return height;
+	};
+
+	this.setWeight = function(setWeight){
+		weight = setWeight;
+	};
+
+	this.getWeight = function(){
+		return weight;
+	};
+};
+
+//Create class Worker
+function Worker(){
+	var company,
+			salary;
+
+	this.setCompany = function(setCompany){
+		company = setCompany;
+	};
+
+	this.getCompany = function(){
+		return company;
+	};
+
+	this.setSalary = function(setSalary){
+		salary = setSalary;
+	};
+
+	this.getSalary = function(){
+		return salary;
+	};
+
+	this.working = function(){
+		console.log("work as a programmer - it's cool");
+	};
+};
+
+//Create class Student
+function Student(){
+	var institution,
+			stipend;
+
+	this.setInstitution = function(setInstitution){
+		institution = setInstitution;
+	};
+
+	this.getInstitution = function(){
+		return institution;
+	};
+
+	this.setStipend = function(setStipend){
+		stipend = setStipend;
+	};
+
+	this.getStipend = function(){
+		return stipend;
+	};
+
+	this.watchTVShows = function(){
+		console.log('institution - ' + this.institution);
+	};
+};
 
 var human = new Human();
-human.name = 'Bill';
-human.age = 24;
-human.sex = true;
-human.height = 150;
-human.weight = 75;
 
 Worker.prototype = human;
 var worker = new Worker();
 
-worker.company = 'Google';
-worker.salary = 5000;
-worker.working = function(){console.log("work as a programmer - it's cool")};
-
 Student.prototype = human;
 var student = new Student();
 
-student.institution = 'DPI';
-student.stipend = 120;
-student.watchTVShows = function(){
-	console.log('institution - ' + this.institution);
-};
 
-console.log(student);
-console.log(student.name);
-console.log(student.age);
+//Create student
+student.setName('Иван');
+student.setAge(22);
+student.setSex(true);
+student.setHeight(180);
+student.setWeight(85);
+
+student.setInstitution('ДПИ');
+student.setStipend(120);
+
+console.log('Студент:');
+console.log('Имя - ' + student.getName());
+console.log('Возраст - ' + student.getAge());
+console.log('Пол - ' + student.getSex());
+console.log('Рост - ' + student.getHeight() + 'см');
+console.log('Вес - ' + student.getWeight(85)+ 'кг');
+
+console.log('Образовательное заведение - ' + student.getInstitution());
+console.log('Размер стипендии - ' + student.getStipend() + 'грн');
+
+//Create worker
+worker.setName('Иван');
+worker.setAge(22);
+worker.setSex(true);
+worker.setHeight(180);
+worker.setWeight(85);
+
+worker.setCompany('Google');
+worker.setSalary(12000);
+
+console.log('-------');
+console.log('Рабочий:');
+console.log('Имя - ' + worker.getName());
+console.log('Возраст - ' + worker.getAge());
+console.log('Пол - ' + worker.getSex());
+console.log('Рост - ' + worker.getHeight() + 'см');
+console.log('Вес - ' + worker.getWeight(85)+ 'кг');
+
+console.log('Место работы - ' + worker.getCompany());
+console.log('Размер оклада - ' + worker.getSalary() + 'грн');

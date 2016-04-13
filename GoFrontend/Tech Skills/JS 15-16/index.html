@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Задание 15-16</title>
+	<link rel="stylesheet" href="css/_reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="js/template.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="search-wrapper">
+			<form action="" class="search-form">
+				<a href="//www.google.com.ua" class="logo"></a>
+				<div class="search-input-wrapper">
+					<input class="search-input" type="text" placeholder="Введите поисковый запрос" autofocus>
+					<button class="search-button" type="submit" value=" "></button>
+				</div>
+			</form>
+			<div class="result-wrapper"></div>
+		</div>
+	</div>
+<div class="google">
+	
+</div>
+
+<script type="text/html" id="search-article-template">
+	<article class="search-article">
+		<a class="title-result" href="<%= url %>"><%= title %></a><br>
+		<p class="visibleUrl"><%= visibleUrl %></p>
+		<p class="shotr-view"><%= content %></p>
+	</article>
+</script>
+</body>
+</html>

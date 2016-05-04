@@ -4,4 +4,9 @@ node_modules/
 *.min.js
 *.min.css
 
-build/
+temp/
+
+svg.min/
+*_BAK/
+
+Career Service/

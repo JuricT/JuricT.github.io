@@ -1,0 +1,31 @@
+doctype
+head
+  title Lesson 21-22
+  meta(charset='utf-8')
+  link(rel="stylesheet", href="css/style.css")
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js")
+  script(src="js/script.js")
+body
+  .wrapper
+    .test-form-wrapper.clearfix
+      h1.test-form__title=title
+      form.test-form
+        - if ((questions)&&(questions.length))
+          ol
+            - each question in questions
+              li
+                p.test-form__header-question=question.question
+                  - each answer in question.answers
+                    label.header-question.checkbox
+                      input(type="checkbox" correct=answer.correct)
+                      span.header-question__answer-text=answer.answer
+          input.test-form__bnt-check-res(type="submit" value=submit)
+          
+  .modal-bg
+    .modal-body
+      header
+        span.header-close.close x
+        h4.modal-heder Результат тестирования
+      p.modal-content Вы дали Х правильных ответов, из У возможных.
+      footer.modal-footer
+        button.btn-close.close Закрыть

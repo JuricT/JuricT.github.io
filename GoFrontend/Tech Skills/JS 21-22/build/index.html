@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+  <title>Lesson 21-22</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="test-form-wrapper clearfix">
+      <h1 class="test-form__title">Тест по программированию</h1>
+      <form class="test-form">
+        <ol>
+          <li>
+            <p class="test-form__header-question">Вопрос №1
+              <label class="header-question checkbox">
+                <input type="checkbox" correct="true"><span class="header-question__answer-text">Правильный вариант ответа</span>
+              </label>
+              <label class="header-question checkbox">
+                <input type="checkbox" correct="false"><span class="header-question__answer-text">Неправильный вариант ответа</span>
+              </label>
+              <label class="header-question checkbox">
+                <input type="checkbox" correct="true"><span class="header-question__answer-text">Правильный вариант ответа</span>
+              </label></p>
+          </li>
+          <li>
+            <p class="test-form__header-question">Вопрос №2
+              <label class="header-question checkbox">
+                <input type="checkbox" correct="true"><span class="header-question__answer-text">Правильный вариант ответа</span>
+              </label>
+              <label class="header-question checkbox">
+                <input type="checkbox" correct="false"><span class="header-question__answer-text">Неправильный вариант ответа</span>
+              </label>
+              <label class="header-question checkbox">
+                <input type="checkbox" correct="false"><span class="header-question__answer-text">Неправильный вариант ответа</span>
+              </label></p>
+          </li>
+          <li>
+            <p class="test-form__header-question">Вопрос №3
+              <label class="header-question checkbox">
+                <input type="checkbox" correct="true"><span class="header-question__answer-text">Правильный вариант ответа</span>
+              </label>
+              <label class="header-question checkbox">
+                <input type="checkbox" correct="true"><span class="header-question__answer-text">Правильный вариант ответа</span>
+              </label>
+              <label class="header-question checkbox">
+                <input type="checkbox" correct="false"><span class="header-question__answer-text">Неправильный вариант ответа</span>
+              </label></p>
+          </li>
+        </ol>
+        <input type="submit" value="Проверить мои результаты" class="test-form__bnt-check-res">
+      </form>
+    </div>
+  </div>
+  <div class="modal-bg">
+    <div class="modal-body">
+      <header><span class="header-close close">x</span>
+        <h4 class="modal-heder">Результат тестирования</h4>
+      </header>
+      <p class="modal-content">Вы дали Х правильных ответов, из У возможных.</p>
+      <footer class="modal-footer">
+        <button class="btn-close close">Закрыть</button>
+      </footer>
+    </div>
+  </div>
+</body>

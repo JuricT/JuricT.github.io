@@ -46,6 +46,7 @@ var gulp        = require('gulp'),
     concat      = require('gulp-concat'),
     data        = require('gulp-data'),
     fs   = require('fs'),
+    babel = require('gulp-babel'),
     uglify      = require('gulp-uglify');
 
 //===================================
@@ -69,10 +70,25 @@ gulp.task('jade', function(){
 gulp.task('script', function() {
   return gulp.src([jsDir + '**/*.js'])
   .pipe(concat('script.js', {newLine: ';'}))
+  .pipe(babel({
+    presets: ['es2015']
+  }))
   .pipe(uglify())
   .pipe(gulp.dest(jsBuildPath))
   .pipe(connect.reload());
 });
+
+// gulp.task('babel', function() {
+//   return gulp.src(jsDir + '**/*.js')
+//     .pipe(concat('script.js', {newLine: ';'}))
+//     .pipe(babel({
+//       presets: ['es2015']
+//     }))
+//     .pipe(uglify())
+//     .pipe(gulp.dest(jsBuildPath))
+//     .pipe(connect.reload());
+// });
+
 
 gulp.task('sass', function () {
   gulp.src(sassDir + '/**/*.scss')

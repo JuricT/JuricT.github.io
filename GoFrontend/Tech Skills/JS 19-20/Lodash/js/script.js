@@ -291,7 +291,7 @@ $(function() {
       }
     });
   });
-  skills = _.sortBy(skills);
+  skills = _.sortBy(skills, function (k) { return k.toLowerCase(); });
   console.log(skills);
 
 // 2. Массив имен (поле name) людей, отсортированных в зависимости от количества их

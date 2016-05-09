@@ -73,22 +73,10 @@ gulp.task('script', function() {
   .pipe(babel({
     presets: ['es2015']
   }))
-  .pipe(uglify())
+  // .pipe(uglify())
   .pipe(gulp.dest(jsBuildPath))
   .pipe(connect.reload());
 });
-
-// gulp.task('babel', function() {
-//   return gulp.src(jsDir + '**/*.js')
-//     .pipe(concat('script.js', {newLine: ';'}))
-//     .pipe(babel({
-//       presets: ['es2015']
-//     }))
-//     .pipe(uglify())
-//     .pipe(gulp.dest(jsBuildPath))
-//     .pipe(connect.reload());
-// });
-
 
 gulp.task('sass', function () {
   gulp.src(sassDir + '/**/*.scss')

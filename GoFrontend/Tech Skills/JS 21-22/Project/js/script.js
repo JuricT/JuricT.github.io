@@ -1,5 +1,4 @@
-$(function(){
-  'use strict';
+(($, undefined) => { $(() => {
 
 //==============================================
 //                CHECK ANSWERS
@@ -7,14 +6,18 @@ $(function(){
 
   $('.test-form').on('submit', function(e){
     e.preventDefault();
+
+    let correctAnswerSet = 0;
+    let correct = 0;
+    let uncorrect = 0;
+    let $checkboxs = $(this).find('input:checkbox');
+
     $('.modal-bg').css('display','flex');
-    var correctAnswerSet = 0;
-    var correct = 0;
-    var uncorrect = 0;
-    var $checkboxs = $(this).find('input:checkbox');
+
     $checkboxs.each(function(index, domElement){
-      var check = $(this).prop('checked');
-      var correctSet = ($(this).attr('correct') === 'true') ? true : false;
+      let $this = $(this);
+      let check = $this.prop('checked');
+      let correctSet = ($this.attr('correct') === 'true') ? true : false;
       if ((check)&&(check === correctSet)) correct++;
       if ((check)&&(check !== correctSet)) uncorrect++;
       if (correctSet) correctAnswerSet++;
@@ -24,8 +27,7 @@ $(function(){
 //              PRINT TEST RESULT
 //==============================================
 
-    $('.modal-content').html('Вы дали ' + correct + ' правильных ответов, из ' +
-                              correctAnswerSet + ' возможных.');
+    $('.modal-content').html(`Вы дали ${correct} правильных ответов, из ${correctAnswerSet} возможных.`);
   });
 
 
@@ -40,4 +42,8 @@ $(function(){
     });
   }
 
-});
+//==============================================
+//                    THE END
+//==============================================
+  });
+})(jQuery);

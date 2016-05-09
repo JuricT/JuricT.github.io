@@ -16,6 +16,10 @@ $(function() {
       $($points).append(svg);
     }
 
+    var pointsLeft = ($slider.width() - $points.width()) / 2;
+    $($points).css('left', pointsLeft + 'px');
+
+
     $slidePoint = $points.find('.slide-point');
 
     $points.on('click', clickPoint);
@@ -39,11 +43,6 @@ $(function() {
       console.log($slidList[activeN]);
       $($slidList[activeN]).addClass(activeClass);
     }
-
-
-
-
-
 
   });
 });

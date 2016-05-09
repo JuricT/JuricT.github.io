@@ -1,8 +1,8 @@
 .slider {
   padding-top: 40px;
+  position: relative;
 
   .slid{
-    position: relative;
     display: none;
   }
   .active {
@@ -11,7 +11,7 @@
 
   .points {
     position: absolute;
-    top: 90%;
+    bottom: 10%;
     left: 50%;
     .slide-point {
       display: inline-block;

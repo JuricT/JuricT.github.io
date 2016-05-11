@@ -48,6 +48,7 @@ var gulp        = require('gulp'),
     fs   = require('fs'),
     babel = require('gulp-babel'),
     uglify      = require('gulp-uglify');
+var Server = require('karma').Server;
 
 //===================================
 //               TASKS
@@ -80,7 +81,9 @@ gulp.task('script', function() {
 
 gulp.task('sass', function () {
   gulp.src(sassDir + '/**/*.scss')
-  .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+  .pipe(sass(
+    // {outputStyle: 'compressed'}
+  ).on('error', sass.logError))
   .pipe(gulp.dest(cssBuildPath))
   .pipe(connect.reload());
 });
@@ -107,6 +110,16 @@ gulp.task('watch', function(){
 gulp.task('build-clean', function(){
   return gulp.src(build, {read: false})
     .pipe(clean());
+});
+
+//===================================
+//           TEST TASK
+//===================================
+gulp.task('test', function (done) {
+  return new Server({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done).start();
 });
 
 //===================================

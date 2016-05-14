@@ -1,0 +1,44 @@
+.todolist{
+  padding-top: 1px * $factor;
+  margin-top: 20px * $factor;
+  background: $todolist_background--color;
+  border: 1px solid darken($todolist_background--color, 25%);
+  box-shadow: 5px 9px 60px -10px rgba(107,107,107,0.67);
+  @include font-ubuntu;
+}
+
+.todolist__title{
+  font-size: 30px * $factor;
+  font-weight: 500;
+  text-align: center;
+  margin: (30px  * $factor);
+  color: $todolist_text--color;
+  text-shadow: (1px * $factor) (1px * $factor) (1px * $factor) rgba(255, 255, 255, 1);
+}
+
+.todolist__list{
+  @include todo-list;
+  margin-top: 0;
+  color: $todolist_text--color;
+  // text-indent: 10px;
+}
+
+.todolist__item{
+  margin: (5px * $factor) 0;
+  line-height: (23px  * $factor);
+  @include border-item;
+  position: relative;
+}
+
+.item_text {
+  @include reset-input-text;
+}
+
+.delete-item {
+  position: absolute;
+  top: (1px  * $factor);
+  right: (1px * $factor);
+  @include reset-input-text;
+  width: auto;
+  cursor: pointer;
+}

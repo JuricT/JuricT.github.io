@@ -1,0 +1,13 @@
+.controls {
+  @include todo-list;
+  margin-bottom: 0;
+  @include border-item;
+}
+
+.input-item {
+  @include reset-input-text;
+  $col1:$todolist_text--color;
+  $col: desaturate(lighten($todolist_text--color, 50%), 80%);
+  @include placeholder-color($col);
+  @include placeholder-text-overflow(ellipsis);
+}

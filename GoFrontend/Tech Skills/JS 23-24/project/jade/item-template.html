@@ -1,0 +1,8 @@
+<script type="text/template" id="item-template">
+  <% for (var i = 0; i < data.length; i++) { %>
+  <li class="todolist__item" data-index="<%= i %>">
+    <input type="text" class="item_text" value="<%= data[i].text %>">
+    <button class="delete-item">x</button>
+  </li>
+  <% }; %>
+</script>

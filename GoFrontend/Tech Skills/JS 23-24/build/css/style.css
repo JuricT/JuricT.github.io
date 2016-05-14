@@ -1,0 +1,133 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300);
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: "Ubuntu Condensed";
+  src: url("../font/ubuntu-c-webfont.eot");
+  src: url("../font/ubuntu-c-webfont.eot?#iefix") format("embedded-opentype"), url("../font/ubuntu-c-webfont.woff2") format("woff2"), url("../font/ubuntu-c-webfont.woff") format("woff"), url("../font/ubuntu-c-webfont.ttf") format("truetype"), url("../font/ubuntu-c-webfont.svg#ubuntu_condensedregular") format("svg");
+  font-weight: 500;
+  font-style: normal; }
+
+body {
+  background: #FFFDE8; }
+
+.wrapper {
+  width: 800px;
+  display: block;
+  margin: 0 auto; }
+
+.todolist {
+  padding-top: 2px;
+  margin-top: 40px;
+  background: #fffbc4;
+  border: 1px solid #fff245;
+  box-shadow: 5px 9px 60px -10px rgba(107, 107, 107, 0.67);
+  font-family: "Ubuntu", Arial, "Nimbus Sans L", Helvetica, sans-serif; }
+
+.todolist__title {
+  font-size: 60px;
+  font-weight: 500;
+  text-align: center;
+  margin: 60px;
+  color: #454000;
+  text-shadow: 2px 2px 2px white; }
+
+.todolist__list {
+  margin: 60px 80px;
+  text-indent: 20px;
+  margin-top: 0;
+  color: #454000; }
+
+.todolist__item {
+  margin: 10px 0;
+  line-height: 46px;
+  border-bottom: 2px solid #454000;
+  position: relative; }
+
+.item_text {
+  background: none;
+  border: none;
+  display: inline-block;
+  outline: none;
+  width: 100%;
+  font-size: 200%; }
+
+.delete-item {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: none;
+  border: none;
+  display: inline-block;
+  outline: none;
+  width: 100%;
+  font-size: 200%;
+  width: auto;
+  cursor: pointer; }
+
+.controls {
+  margin: 60px 80px;
+  text-indent: 20px;
+  margin-bottom: 0;
+  border-bottom: 2px solid #454000; }
+
+.input-item {
+  background: none;
+  border: none;
+  display: inline-block;
+  outline: none;
+  width: 100%;
+  font-size: 200%;
+  /* Firefox 19+ */
+  /* Firefox 18- */ }
+  .input-item::-webkit-input-placeholder {
+    color: #b4b28f; }
+  .input-item::-moz-placeholder {
+    color: #b4b28f; }
+  .input-item:-moz-placeholder {
+    color: #b4b28f; }
+  .input-item:-ms-input-placeholder {
+    color: #b4b28f; }
+  .input-item[placeholder] {
+    text-overflow: ellipsis; }
+  .input-item::-moz-placeholder {
+    text-overflow: ellipsis; }
+  .input-item:-moz-placeholder {
+    text-overflow: ellipsis; }
+  .input-item:-ms-input-placeholder {
+    text-overflow: ellipsis; }

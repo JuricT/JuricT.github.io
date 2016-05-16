@@ -1,10 +1,10 @@
 .todolist{
-  padding-top: 1px * $factor;
   margin-top: 20px * $factor;
   background: $todolist_background--color;
   border: 1px solid darken($todolist_background--color, 25%);
   box-shadow: 5px 9px 60px -10px rgba(107,107,107,0.67);
   @include font-ubuntu;
+  position: relative;
 }
 
 .todolist__title{

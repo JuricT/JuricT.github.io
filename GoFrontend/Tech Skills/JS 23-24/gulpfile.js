@@ -47,8 +47,9 @@ var gulp        = require('gulp'),
     data        = require('gulp-data'),
     fs   = require('fs'),
     babel = require('gulp-babel'),
-    uglify      = require('gulp-uglify');
-var Server = require('karma').Server;
+    uglify      = require('gulp-uglify'),
+    Server = require('karma').Server,
+    rjs = require('gulp-requirejs');
 
 //===================================
 //               TASKS
@@ -110,6 +111,22 @@ gulp.task('watch', function(){
 gulp.task('build-clean', function(){
   return gulp.src(build, {read: false})
     .pipe(clean());
+});
+
+gulp.task('requirejsBuild', function() {
+    rjs({
+        baseUrl: build + 'js/app/main.js',
+        out: 'requirejsBuild.js',
+        shim: {
+          'tmpl': {
+            exports: 'tmpl'
+          },
+        paths: {
+          'tmpl': '../../lib/template'
+        }
+        }
+    })
+        .pipe(gulp.dest('./delpoy/')); // pipe it to the output DIR
 });
 
 //===================================

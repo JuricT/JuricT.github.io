@@ -2,7 +2,7 @@
 //          BUILD CONSTANTS
 //===================================
 
-var BUILD           = './BUILD/';//Место хранения сборки проекта
+var BUILD           = './build/';//Место хранения сборки проекта
 
 var IMAGES_BUILD_PATH = BUILD + 'img/';
 var CSS_BUILD_PATH    = BUILD + 'css/';
@@ -13,7 +13,7 @@ var FONT_BUILD_PATH     = BUILD + 'font/';
 //         RESOURCE CONCTANTS
 //===================================
 
-var PROJECT_DIR  = './Project/';
+var PROJECT_DIR  = './project/';
 
 var JS_DIR       = PROJECT_DIR + 'js/';
 
@@ -63,8 +63,8 @@ gulp.task('jade', function(){
   .pipe(jade({
       pretty: true
     }))
-  .pipe(gulp.dest(BUILD))
-  .pipe(connect.reload());
+  .pipe(gulp.dest(BUILD));
+  // .pipe(connect.reload());
 });
 
 gulp.task('script', function() {
@@ -74,8 +74,8 @@ gulp.task('script', function() {
     // presets: ['es2015']
   }))
   // .pipe(uglify())
-  .pipe(gulp.dest(JS_BUILD_PATH))
-  .pipe(connect.reload());
+  .pipe(gulp.dest(JS_BUILD_PATH));
+  // .pipe(connect.reload());
 });
 
 gulp.task('sass', function () {
@@ -83,18 +83,8 @@ gulp.task('sass', function () {
   .pipe(sass(
     // {outputStyle: 'compressed'}
   ).on('error', sass.logError))
-  .pipe(gulp.dest(CSS_BUILD_PATH))
-  .pipe(connect.reload());
-});
-
-//=== CONNECT ===
-
-gulp.task('connect', function(){
-  connect.server({
-    port: 1337,
-    root: BUILD,
-    livereload: true
-  });
+  .pipe(gulp.dest(CSS_BUILD_PATH));
+  // .pipe(connect.reload());
 });
 
 //===   FILES   ===
@@ -107,41 +97,10 @@ gulp.task('watch', function(){
   gulp.watch(JS_DIR + '**/*.js', function(){gulp.run('script');});
 });
 
-gulp.task('BUILD-clean', function(){
-  return gulp.src(BUILD, {read: false})
-    .pipe(clean());
-});
-
-gulp.task('requirejsBUILD', function() {
-    rjs({
-        baseUrl: BUILD + 'js/app/main.js',
-        out: 'requirejsBUILD.js',
-        shim: {
-          'tmpl': {
-            exports: 'tmpl'
-          },
-        paths: {
-          'tmpl': '../../lib/template'
-        }
-        }
-    })
-        .pipe(gulp.dest('./delpoy/')); // pipe it to the output DIR
-});
-
-//===================================
-//           TEST TASK
-//===================================
-gulp.task('test', function (done) {
-  return new Server({
-    configFile: __dirname + '/karma.conf.js',
-    singleRun: true
-  }, done).start();
-});
-
 //===================================
 //           DEFAULT TASK
 //===================================
 // gulp.task('default', ['BUILD-clean'], function(){
 gulp.task('default', function(){
-  gulp.run('jade', 'script', 'sass', 'connect', 'watch');
+  gulp.run('jade', 'script', 'sass', 'watch');
 });

@@ -1,0 +1,74 @@
+.partners {
+  text-align: center;
+  line-height: normal;
+  // background: #ffa
+}
+
+.partners__title {
+  margin: 23px 8px 13px 0;
+}
+
+.partner__details {
+  width: 75%;
+  @include Roboto;
+  font-weight: 200;
+  font-size: 14px;
+  color: $blac2;
+}
+.partner-photo__wrapper{
+  display: inline-block;
+  position: relative;
+
+  &::after {
+    $icon-dimensions: 32px;
+    position: absolute;
+    display: block;
+    content: ' ';
+    bottom: 0px;
+    right: -3px;
+    width: $icon-dimensions;
+    height: $icon-dimensions;
+    border: 3px solid $white;
+    border-radius: 100%;
+  }
+}
+.partner-photo__wrapper--tv::after {
+  background: url(../img/ico_tv.svg) no-repeat center 7px, $red;
+  background-size: 17px, auto;
+}
+.partner-photo__wrapper--chim::after {
+  background: url(../img/ico_chim.svg) no-repeat center, $yellow;
+  background-size: 13px, auto;
+}
+.partner-photo__wrapper--coffe::after {
+  background: url(../img/ico_coffe.svg) no-repeat center, $green;
+  background-size: 16px, auto;
+}
+.partner-photo__wrapper--plane::after {
+  background: url(../img/ico_plane.svg) no-repeat 7px center, $blue;
+  background-size: 16px, auto;
+}
+
+.partner-photo {
+  border-radius: 100%;
+  position: relative;
+  width: 120px;
+
+}
+
+.partner__name {
+  margin: 13px auto 0 auto;
+}
+
+.partner__details {
+  display: inline-block;
+  margin: 13px 2px 27px auto;
+  letter-spacing: 0.3px;
+}
+
+.other-partners-link {
+  @include breakpoint(mobile) {
+    padding: 8px 72px;
+    margin-right: 4px;
+  }
+}

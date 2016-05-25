@@ -1,0 +1,35 @@
+.search-partners {
+  text-align: center;
+  line-height: normal;
+}
+
+.search-partners__text {
+  @include Roboto;
+  @include font-style(200, 18px, $blac);
+  margin-top: 11px;
+  letter-spacing: 0.2px;
+}
+
+.search-partners__title {
+  margin-top: 27px;
+}
+
+.search-partners__search-form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;;
+}
+
+.search-partners__input {
+  @include reset-input-text;
+  @include placeholder-text-overflow(ellipsis);
+  margin: 16px 10px 0 10px;
+  line-height: 35px;
+  text-indent: 13px;
+}
+
+.search-partners__search-button {
+  border: none;
+  width: 100%;
+  margin: 12px 10px 38px 10px;
+}

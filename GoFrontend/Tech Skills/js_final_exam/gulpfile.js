@@ -37,7 +37,7 @@ var FONT_DIR     = PROJECT_DIR + 'fonts/';
 
 var gulp        = require('gulp');
 var jade        = require('gulp-jade');
-// var connect     = require('gulp-connect');
+var connect     = require('gulp-connect');
 // var svgmin      = require('gulp-svgmin');
 // var  imageop     = require('gulp-image-optimization'),
 var sass        = require('gulp-sass');
@@ -63,16 +63,16 @@ gulp.task('jade', function(){
   .pipe(jade({
       pretty: true
     }))
-  .pipe(gulp.dest(BUILD));
-  // .pipe(connect.reload());
+  .pipe(gulp.dest(BUILD))
+  .pipe(connect.reload());
 });
 
 gulp.task('script', function() {
   return gulp.src([JS_DIR + '**/*.js'])
   // .pipe(concat('script.js', {newLine: ';'}))
-  .pipe(babel({
+  // .pipe(babel({
     // presets: ['es2015']
-  }))
+  // }))
   // .pipe(uglify())
   .pipe(gulp.dest(JS_BUILD_PATH));
   // .pipe(connect.reload());
@@ -83,8 +83,18 @@ gulp.task('sass', function () {
   .pipe(sass(
     // {outputStyle: 'compressed'}
   ).on('error', sass.logError))
-  .pipe(gulp.dest(CSS_BUILD_PATH));
-  // .pipe(connect.reload());
+  .pipe(gulp.dest(CSS_BUILD_PATH))
+  .pipe(connect.reload());
+});
+
+//=== CONNECT ===
+
+gulp.task('connect', function(){
+  connect.server({
+    port: 1337,
+    root: BUILD,
+    livereload: true
+  });
 });
 
 //===   FILES   ===
@@ -100,7 +110,6 @@ gulp.task('watch', function(){
 //===================================
 //           DEFAULT TASK
 //===================================
-// gulp.task('default', ['BUILD-clean'], function(){
 gulp.task('default', function(){
-  gulp.run('jade', 'script', 'sass', 'watch');
+  gulp.run('jade', 'sass', 'script', 'connect', 'watch');
 });

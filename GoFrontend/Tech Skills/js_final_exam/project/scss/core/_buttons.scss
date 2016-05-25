@@ -1,0 +1,17 @@
+.button--type1 {
+  display: inline-block;
+  @include Montserrat;
+  font-weight: bold;
+  font-size: 14px;
+  color: $white;
+  background: $red;
+  padding: 12px 50px;
+  border-radius: 100px;
+}
+
+.button--type2 {
+  @extend .button--type1;
+  color: $red;
+  background: $white;
+  border: 2px solid $red;
+}

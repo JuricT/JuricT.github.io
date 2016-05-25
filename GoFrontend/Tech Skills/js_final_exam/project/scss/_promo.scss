@@ -1,0 +1,37 @@
+$promo--color: $white;
+
+.header__wrapper {
+  height: $heder-height - 2px;
+  padding-top: 1px;
+}
+
+  .promo {
+    text-align: center;
+    @include Montserrat;
+    color: $promo--color;
+    margin-top: 220px;
+    line-height: normal;
+  }
+
+  .promo__title {
+    margin: 20px auto auto auto;
+
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+  }
+
+  .promo__text {
+    margin: 8px auto auto auto;
+    letter-spacing: 0.2px;
+    line-height: normal;
+    @include Roboto;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: normal;
+    width: 75%;
+  }
+
+  .promo__find-link {
+    margin-top: 13px;
+  }

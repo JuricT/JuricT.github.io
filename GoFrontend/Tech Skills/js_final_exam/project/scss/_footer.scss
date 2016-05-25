@@ -1,0 +1,48 @@
+.footer {
+  text-align: center;
+  position: relative;
+  @include Montserrat;
+
+  &::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0px;
+    height: 4px;
+    left: -4998px;
+    right: -4998px;
+    background: $red;
+  }
+}
+
+.logo--footer {
+  margin-top: 21px;
+  letter-spacing: 0.6px;
+  display: inline-block;
+  @include font-style(bold, 16px, $red);
+
+}
+.nav--footer{
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  @include Montserrat;
+  @include font-style(bold, 14px, $blac);
+}
+
+
+.nav__item {
+  display: inline-block;
+  margin-top: 6px;
+}
+
+.nav__link {
+  @include Roboto;
+  @include font-style(200, 14px, $blac2);
+  margin: 6px;
+}
+
+.footer__designer {
+  @include Roboto;
+  @include font-style(200, 14px, $blac2);
+}

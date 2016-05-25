@@ -5,11 +5,16 @@ head
   title URLAUBSGLÜCK | Share your holiday dreams
   link(rel="stylesheet", href="css/style.css")
 body
-  include header.jade
-  main
-    include promo.jade
-    include how_it_works.jade
-    include partners.jade
-    include ideas.jade
-    include search_partners.jade
-  include footer.jade
+  .wrapper.clearfix
+    .header__wrapper
+      include header.jade
+      include promo.jade
+    main
+      include how_it_works.jade
+      include partners.jade
+      include ideas.jade
+      include search_partners.jade
+    include footer.jade
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
+  script(src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js")
+  script(src="js/script.js")

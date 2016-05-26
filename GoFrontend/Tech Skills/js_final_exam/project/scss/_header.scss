@@ -17,6 +17,17 @@ $header__logo--color: $white;
       margin-top: 126px;
     }
   }
+  @include breakpoint(tablet) {
+    .Header__authorisation {
+      margin: 46px 47px auto auto;
+    }
+
+    .header__logo {
+      margin: 47px auto auto 46px;
+
+    }
+    
+  }
 }
 
 .Header__authorisation {

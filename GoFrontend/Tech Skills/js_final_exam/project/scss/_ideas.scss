@@ -1,15 +1,36 @@
 $height-masonry: 120px;
 $idea-border-radius: 5px;
 
-.idea__img {
-  margin: auto;
-  height: 100%;
-  width: 100%;
+@include breakpoint (tablet) {
+  .ideas {
+    height: 1030px;
+  }
 }
+
 
 .ideas__title {
   margin: 40px auto 17px auto;
   text-align: center;
+  
+  @include breakpoint (tablet) {
+    margin-top: 99px;
+  }
+}
+
+.ideas__content {
+  margin: 0 auto;
+  width: 100%;
+  
+  @include breakpoint (tablet) {
+    margin-top: 36px;
+  }
+}
+
+.idea__img {
+  margin: auto;
+//  height: 100%;
+  width: 100%;
+  border-radius: $idea-border-radius;
 }
 
 .idea_title {
@@ -27,20 +48,17 @@ $idea-border-radius: 5px;
   z-index: 100;
 }
 
-.ideas__content {
-  margin: 0 auto;
-  width: 100%;
-}
 
-.idea__img {
-  border-radius: $idea-border-radius;
-}
 
 /* clearfix */
 .ideas__content:after {
   content: '';
   display: block;
   clear: both;
+  @include breakpoint (tablet) {
+//    width: 100%;
+  }
+  
 }
 
 /* ---- grid-item ---- */
@@ -51,6 +69,13 @@ $idea-border-radius: 5px;
   margin-bottom: 10px;
   height: $height-masonry;
   float: left;
+  overflow: hidden;
+  border-radius: $idea-border-radius;
+  
+  @include breakpoint (tablet) {
+    float: none;
+    flex-flow: row wrap;
+  }
 
   font-size: 50px;
   font-weight: 900;
@@ -69,9 +94,13 @@ $idea-border-radius: 5px;
   }
 }
 
-
 .grid-sizer,
 .idea {
   // margin: 5px auto;
   width: 100%;
+  
+  @include breakpoint (tablet) {
+    width: 30%;
+  }
+  
 }

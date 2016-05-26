@@ -2,6 +2,7 @@
   text-align: center;
   position: relative;
   @include Montserrat;
+  
 
   &::before {
     display: block;
@@ -43,6 +44,44 @@
 }
 
 .footer__designer {
-  @include Roboto;
-  @include font-style(200, 14px, $blac2);
+  display: block;
+  margin-top: 15px;
+}
+
+.designer__title {
+  display: block;
+  letter-spacing: 1px;
+  @include font-style(bold, 10px, #ccc);
+}
+
+#areto {
+  display: block;
+  margin: 0 auto;
+  width: 122px;
+}
+
+@include breakpoint (tablet) {
+  .footer {
+    width: $tablet-point;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    justify-content: space-around;
+  }
+  
+  .footer__item {
+    margin-top: 42px;
+    width: 133px;
+//    background: blue;
+    background: yellow;
+  }
+  
+  .nav--footer {
+    text-align: left;
+    
+  }
+  
+  .nav__item {
+    display: block;
+  }
 }

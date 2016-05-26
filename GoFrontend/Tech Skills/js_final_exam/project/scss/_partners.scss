@@ -1,11 +1,14 @@
 .partners {
   text-align: center;
   line-height: normal;
-  // background: #ffa
 }
 
 .partners__title {
-  margin: 23px 8px 13px 0;
+  margin: 23px 8px 0 0;
+  
+  @include breakpoint (tablet) {
+    margin-top: 79px;
+  }
 }
 
 .partner__details {
@@ -63,7 +66,7 @@
 .partner__details {
   display: inline-block;
   margin: 13px 2px 27px auto;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.3px;  
 }
 
 .other-partners-link {
@@ -71,4 +74,35 @@
     padding: 8px 72px;
     margin-right: 4px;
   }
+  
+  @include breakpoint(tablet){
+    margin-top: 8px;
+  }
+}
+
+@include breakpoint (tablet) {
+  .partners-list {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    justify-content: center;
+    
+    width: 600px;
+    margin: 0 auto;
+  }
+  
+  .partner-profile {
+    margin: 0 10px;
+    margin-top: 31px;
+    width: 234px;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .partner__details {
+    width: 100%;
+  }
+  
+
+  
 }

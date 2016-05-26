@@ -19,6 +19,14 @@ $promo--color: $white;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 30px;
+    
+    @include breakpoint(tablet) {
+      width: 77%;
+      margin: -7px auto auto auto;
+      padding-right: 6px;
+      letter-spacing: 1px;
+      font-size: 50px;
+    }
   }
 
   .promo__text {
@@ -26,12 +34,21 @@ $promo--color: $white;
     letter-spacing: 0.2px;
     line-height: normal;
     @include Roboto;
-    font-weight: 200;
+    font-weight: 300;
     font-size: 18px;
     line-height: normal;
     width: 75%;
+    @include breakpoint(tablet) {
+      margin-top: 27px;
+      font: 300 24px Roboto;
+    }
   }
 
   .promo__find-link {
     margin-top: 13px;
+    @include breakpoint(tablet) {
+      margin-top: 33px;
+      width: 226px;
+      padding: 11px 0;
+    }
   }

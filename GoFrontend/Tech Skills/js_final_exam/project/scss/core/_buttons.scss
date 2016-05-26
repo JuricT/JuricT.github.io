@@ -1,11 +1,9 @@
 .button--type1 {
   display: inline-block;
   @include Montserrat;
-  font-weight: bold;
-  font-size: 14px;
-  color: $white;
-  background: $red;
+  @include font-style(bold, 14px, $white);
   padding: 12px 50px;
+  background: $red;
   border-radius: 100px;
 }
 
@@ -14,4 +12,5 @@
   color: $red;
   background: $white;
   border: 2px solid $red;
+  padding: 9px 26px;
 }

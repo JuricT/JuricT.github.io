@@ -2,18 +2,19 @@
     "sass.enabled": false,
     "sass.compiler": "libsass",
     "path": {
-        "scss/app.scss": {
+        "project/scss/style.scss": {
             "sass.enabled": true,
             "sass.options": {
                 "includePaths": [
                     "../bower_components/bourbon/app/assets/stylesheets/"
                 ],
-                "outputDir": "../css/",
+                "outputDir": "../../build/css/",
                 "imagePath": null,
                 "sourceComments": false,
                 "outputStyle": "nested"
             },
-            "linting.collapsed": false
+            "linting.collapsed": false,
+            "useTabChar": false
         }
     }
 }

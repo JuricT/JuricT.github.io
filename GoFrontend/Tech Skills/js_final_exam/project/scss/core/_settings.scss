@@ -14,17 +14,32 @@ $white: #fff;
 $blac: #333;
 $blac2: #666;
 $red: #ff4e50;
-$green: #1cd7ad;
 $yellow: #ffa507;
+$green: #1cd7ad;
 $blue: #4e73db;
 
 body {
-  background: url(../img/promo_bg_mobile.jpg) no-repeat center 0px;
-  background-size: auto $heder-height + 1px;
   min-width: $mobile-point;
-  @include breakpoint(desktop) {
-    overflow-x: hidden;
+  margin-right: 18px;
+//  overflow: hidden;
+  overflow-x: hidden;
+  
+   @include breakpoint(mobile) {
+    background: url(../img/promo_bg_mobile.jpg) no-repeat center 0px;
+    background-size: auto $heder-height + 1px;
   }
+  
+  @include breakpoint(tablet) {
+    background: url(../img/promo_bg_desktop.jpg) no-repeat center 0px;
+  }
+  
+  @include breakpoint(desktop) {
+    background: url(../img/promo_bg_desktop.jpg) no-repeat center 0px;
+  }
+  
+}
+body{
+  @media screen and (max-width: 320) { overflow-x: scroll;}
 }
 
 h3 {
@@ -39,14 +54,12 @@ h4 {
   font-size: 14px;
 }
 .wrapper{
-  width: $mobile-point - $indent-width * 2;
+  width: calc(100% - 1px);
+  min-width: $mobile-point;
+  overflow-x: hidden;
   margin: auto;
-  // background: #ccc;
   padding: 1px $indent-width;
-  // overflow-x: hidden;
-  // @include breakpoint(tablet) {
-  //   overflow-x: hidden;
-  // }
+
 }
 
 .clearfix:after {
@@ -56,3 +69,4 @@ h4 {
   clear: both;
   visibility: hidden;
 }
+

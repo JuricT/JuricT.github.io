@@ -104,12 +104,12 @@ gulp.task('watch', function(){
   // gulp.watch(JADE_DIR + '**/*.html', function(){gulp.run('jade');});
   // gulp.watch(JSON_DIR + '**/*.json', function(){gulp.run('jade');});
 //  gulp.watch(SASS_DIR + '**/*.scss', function(){gulp.run('sass');});
-//  gulp.watch(JS_DIR + '**/*.js', function(){gulp.run('script');});
+  gulp.watch(JS_DIR + '**/*.js', function(){gulp.run('script');});
 });
 
 //===================================
 //           DEFAULT TASK
 //===================================
 gulp.task('default', function(){
-  gulp.run('jade', 'sass', 'script');
+  gulp.run('jade', 'sass', 'script', 'watch');
 });

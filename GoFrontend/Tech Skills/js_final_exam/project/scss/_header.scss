@@ -6,23 +6,26 @@ $header__logo--color: $white;
 .header {
   text-align: center;
   @include Montserrat;
-  @include breakpoint(mobile) {
-    .Header__authorisation {
-      width: 100%;
-      margin: 29px 10px auto auto;
-    }
+  
 
-    .header__logo {
-      width: 100%;
-      margin-top: 126px;
-    }
+  .Header__authorisation {
+    width: 100%;
+    margin: 29px 10px auto auto;
   }
+
+  .header__logo {
+    width: 100%;
+    margin-top: 126px;
+  }
+
   @include breakpoint(tablet) {
     .Header__authorisation {
+      width: auto;
       margin: 46px 47px auto auto;
     }
 
     .header__logo {
+      width: auto;
       margin: 47px auto auto 46px;
 
     }

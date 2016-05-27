@@ -21,25 +21,24 @@ $blue: #4e73db;
 body {
   min-width: $mobile-point;
   margin-right: 18px;
-//  overflow: hidden;
-  overflow-x: hidden;
+  overflow-x: auto;
+  background: url(../img/promo_bg_mobile.jpg) no-repeat center 0px;
+  background-size: auto $heder-height + 1px;
   
-   @include breakpoint(mobile) {
-    background: url(../img/promo_bg_mobile.jpg) no-repeat center 0px;
-    background-size: auto $heder-height + 1px;
+  @include breakpoint(mobile) {
+     overflow-x: hidden;
   }
   
   @include breakpoint(tablet) {
     background: url(../img/promo_bg_desktop.jpg) no-repeat center 0px;
+    overflow-x: hidden;
   }
   
   @include breakpoint(desktop) {
     background: url(../img/promo_bg_desktop.jpg) no-repeat center 0px;
+    overflow-x: hidden;
   }
   
-}
-body{
-  @media screen and (max-width: 320) { overflow-x: scroll;}
 }
 
 h3 {

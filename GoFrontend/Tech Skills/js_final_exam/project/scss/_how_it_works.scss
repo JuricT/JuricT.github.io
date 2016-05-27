@@ -1,13 +1,14 @@
 $slider-gap: 20px;
+
 .how-it-works {
   padding: 1px;
   text-align: center;
 }
+
 .how-it-works__title {
   margin: 36px auto 16px auto;
-  @include breakpoint(tablet) {
-    margin-top: 256px;
-  }
+  
+  @include breakpoint(tablet) { margin-top: 256px; }
 }
 
 .slide {
@@ -19,9 +20,7 @@ $slider-gap: 20px;
   position: relative;
   text-align: center;
   
-  @include breakpoint (tablet) {
-    height: 400px;    
-  }
+  @include breakpoint (tablet) { height: 400px; }
 }
 .slide--1 { 
   background: url(../img/slide_1.jpg) no-repeat center;
@@ -79,20 +78,19 @@ $slider-gap: 20px;
 }
 
 .sliders-content {
-  display: none;
-  @include breakpoint (mobile) {
-    display: block;
-  }
+  display: block;
+  
+  @include breakpoint (tablet) { display: none; }
+  @include breakpoint (desktop) { display: none; }
 }
 
 .how-it-works__slider {
-  display: inline-block;
+    display: none;
   margin: 8px 1%;
   
   width: 30.5%;
-  @include breakpoint (mobile) {
-    display: none;
-  }
+  @include breakpoint (tablet) { display: inline-block; }
+  @include breakpoint (desktop) { display: inline-block; }
 }
 
 

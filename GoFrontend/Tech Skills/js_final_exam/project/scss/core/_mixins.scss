@@ -10,7 +10,7 @@
     @media screen and (max-width: $desktop-point - 1px) and (min-width: $tablet-point) { @content ; }
   }
   @else if $point == mobile {
-    @media screen and (max-width: $tablet-point - 1px) { @content ; }
+    @media screen and (max-width: $tablet-point - 1px) and (min-width: $mobile-point) { @content ; }
   }
 
 }

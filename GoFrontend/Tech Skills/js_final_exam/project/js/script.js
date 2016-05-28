@@ -1,9 +1,7 @@
-// Variation init
-var masonryContainer = $('.ideas__content')[0];
 var masonryElement = $('.idea');
 var settingMasonry = {
   percentPosition: true,
-  columnWidth: '.grid-sizer',
+  columnWidth: '.idea',
   itemSelector: '.idea'
 };
 
@@ -12,16 +10,11 @@ var TABLE_BREAKPOINT   = 768;
 var DESKTOP_BREAKPOINT = 960;
 var sizeFlag;
 
-var msnry;
-
-//masonryInit(msnry);
 resizeWindow();
-
 
 $( window ).resize(resizeWindow);
 
 function resizeWindow() {
-  'use strict';
   var width = window.innerWidth;
   
   if (width < TABLE_BREAKPOINT) mobile()
@@ -34,7 +27,7 @@ function resizeWindow() {
 
       settingMasonry.gutter = 0;
       
-      masonryInit(msnry);
+      masonryInit();
     }
   }
 
@@ -43,9 +36,8 @@ function resizeWindow() {
       sizeFlag = 'tablet';
       
       settingMasonry.gutter = masonryGetGutter();
-      settingMasonry.gutter = 10;
-      
-      masonryInit(msnry);
+
+      masonryInit();      
     };
 
   }
@@ -54,9 +46,9 @@ function resizeWindow() {
     if (sizeFlag !== 'desktop') {
       sizeFlag = 'desktop';
       
-      settingMasonry.gutter = 20 ;
+      settingMasonry.gutter = masonryGetGutter();
       
-      masonryInit(msnry);
+      masonryInit();
     }
   }
 
@@ -68,8 +60,8 @@ function masonryGetGutter() {
 }
 
 
-function masonryInit(msnry) {
-  msnry = new Masonry(masonryContainer, settingMasonry);
+function masonryInit() {
+  $('.ideas__content').masonry(settingMasonry);
   titlePositionCenter();
 }
 

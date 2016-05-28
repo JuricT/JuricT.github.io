@@ -43,7 +43,7 @@ function resizeWindow() {
       sizeFlag = 'tablet';
       
       settingMasonry.gutter = masonryGetGutter();
-      settingMasonry.gutter = 20;
+      settingMasonry.gutter = 10;
       
       masonryInit(msnry);
     };

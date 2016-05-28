@@ -16,17 +16,16 @@ var msnry;
 
 //masonryInit(msnry);
 resizeWindow();
-titlePositionCenter ();
 
-$( window ).resize(function(){resizeWindow()});
+
+$( window ).resize(resizeWindow);
 
 function resizeWindow() {
   'use strict';
-  
   var width = window.innerWidth;
   
-  if (width <= MOBILE_BREAKPOINT) mobile()
-  else if (width <= DESKTOP_BREAKPOINT) tablet()
+  if (width < TABLE_BREAKPOINT) mobile()
+  else if (width < DESKTOP_BREAKPOINT) tablet()
   else desktop();
 
   function mobile(){
@@ -44,6 +43,7 @@ function resizeWindow() {
       sizeFlag = 'tablet';
       
       settingMasonry.gutter = masonryGetGutter();
+      settingMasonry.gutter = 20;
       
       masonryInit(msnry);
     };
@@ -54,7 +54,7 @@ function resizeWindow() {
     if (sizeFlag !== 'desktop') {
       sizeFlag = 'desktop';
       
-      settingMasonry.gutter = masonryGetGutter();
+      settingMasonry.gutter = 20 ;
       
       masonryInit(msnry);
     }
@@ -70,9 +70,10 @@ function masonryGetGutter() {
 
 function masonryInit(msnry) {
   msnry = new Masonry(masonryContainer, settingMasonry);
+  titlePositionCenter();
 }
 
-function titlePositionCenter () {
+function titlePositionCenter() {
   var ideaHeight = masonryElement.height();
 
   $('.idea_title').each(function () {

@@ -9,6 +9,10 @@
   @include breakpoint (tablet) {
     margin-top: 79px;
   }
+  
+  @include breakpoint (desktop) {
+    margin-top: 79px;
+  }
 }
 
 .partner__details {
@@ -70,16 +74,19 @@
 }
 
 .other-partners-link {
-  @include breakpoint(mobile) {
-    padding: 8px 72px;
-    margin-right: 4px;
-  }
+  padding: 8px 72px;
+  margin-right: 4px;
   
   @include breakpoint(tablet){
     margin-top: 8px;
   }
+  @include breakpoint(desktop){
+    margin-top: 10px;
+    padding: 8px 31px;
+  }
 }
 
+// TABLET
 @include breakpoint (tablet) {
   .partners-list {
     display: flex;
@@ -101,8 +108,30 @@
   
   .partner__details {
     width: 100%;
+  }  
+}//end TABLET
+
+// DESKTOP
+@include breakpoint (desktop) {
+  .partners-list {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    justify-content: left;
+    
+    width: 960px;
+    margin: 0 auto;
   }
   
-
+  .partner-profile {
+    margin-top: 31px;
+    margin-right: 30px;
+    width: 209px;
+    overflow: hidden;
+    display: inline-block;
+  }
   
-}
+  .partner__details {
+    width: 100%;
+  }  
+}//end DESKTOP

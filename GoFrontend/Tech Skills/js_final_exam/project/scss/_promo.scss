@@ -27,6 +27,14 @@ $promo--color: $white;
       letter-spacing: 1px;
       font-size: 50px;
     }
+    
+    @include breakpoint(desktop) {
+      width: 64%;
+      margin: -7px auto auto auto;
+      padding-right: 6px;
+      letter-spacing: 1px;
+      font-size: 50px;
+    }
   }
 
   .promo__text {
@@ -38,7 +46,13 @@ $promo--color: $white;
     font-size: 18px;
     line-height: normal;
     width: 75%;
+    
     @include breakpoint(tablet) {
+      margin-top: 27px;
+      font: 300 24px Roboto;
+    }
+    
+    @include breakpoint(desktop) {
       margin-top: 27px;
       font: 300 24px Roboto;
     }
@@ -47,6 +61,12 @@ $promo--color: $white;
   .promo__find-link {
     margin-top: 13px;
     @include breakpoint(tablet) {
+      margin-top: 33px;
+      width: 226px;
+      padding: 11px 0;
+    }
+    
+    @include breakpoint(desktop) {
       margin-top: 33px;
       width: 226px;
       padding: 11px 0;

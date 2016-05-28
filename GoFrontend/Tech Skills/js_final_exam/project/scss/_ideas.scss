@@ -1,19 +1,29 @@
 $width-masonry-mobile:  100%;
 $height-masonry-mobile:  120px;
 
-$width-masonry-tablet:  32.4%;
+$width-masonry-tablet:  32.3%;
 $height-masonry-tablet: 311px;
 
-$width-masonry-desktop:  0px;
-$height-masonry-desktop: 0px;
+$width-masonry-desktop:  309px;
+$height-masonry-desktop: 311px;
 
 $idea-border-radius: 5px;
 
 $masonry-margin-bottom: 10px;
+$masonry-margin-bottom--desktop: 20px;
 
 @include breakpoint (tablet) {
   .ideas {
     height: 1030px;
+  }
+}
+
+
+@include breakpoint (desktop) {
+  .ideas {
+    height: 1030px;
+    width: 960px;
+    background: yellow;
   }
 }
 
@@ -24,6 +34,10 @@ $masonry-margin-bottom: 10px;
   @include breakpoint (tablet) {
     margin-top: 99px;
   }
+  
+   @include breakpoint (desktop) {
+    margin-top: 99px;
+  }
 }
 
 .ideas__content {
@@ -31,6 +45,10 @@ $masonry-margin-bottom: 10px;
   width: 100%;
   
   @include breakpoint (tablet) {
+    margin-top: 36px;
+  }
+  
+   @include breakpoint (desktop) {
     margin-top: 36px;
   }
 }
@@ -62,11 +80,7 @@ $masonry-margin-bottom: 10px;
 .ideas__content:after {
   content: '';
   display: block;
-  clear: both;
-  @include breakpoint (tablet) {
-//    width: 100%;
-  }
-  
+  clear: both;  
 }
 
 /* ---- grid-item ---- */
@@ -82,6 +96,14 @@ $masonry-margin-bottom: 10px;
   
   @include breakpoint (tablet) {
     height: $height-masonry-tablet;
+    
+    float: none;
+    flex-flow: row wrap;
+  }
+  
+  @include breakpoint (desktop) {
+    height: $height-masonry-desktop;
+    margin-bottom: $masonry-margin-bottom--desktop;
     
     float: none;
     flex-flow: row wrap;
@@ -120,8 +142,17 @@ $masonry-margin-bottom: 10px;
   }
 
   .idea--width-2x {
-//    width: $width-masonry-tablet * 2;
     width: calc(#{$width-masonry-tablet * 2} + #{$masonry-margin-bottom});
-//    width: calc(#{$width-masonry-tablet * 2} + #{$masonry-margin-bottom});
+  }
+}
+
+@include breakpoint (desktop) {
+  .grid-sizer,
+  .idea {
+    width: $width-masonry-desktop;
+  }
+
+  .idea--width-2x {
+    width: calc(#{$width-masonry-desktop * 2} + #{$masonry-margin-bottom--desktop});
   }
 }

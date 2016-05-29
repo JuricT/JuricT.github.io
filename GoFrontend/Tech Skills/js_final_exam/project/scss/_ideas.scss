@@ -4,7 +4,7 @@ $height-masonry-mobile:  120px;
 $width-masonry-tablet:  32.3%;
 $height-masonry-tablet: 311px;
 
-$width-masonry-desktop:  33.3%;
+$width-masonry-desktop:  31.9%;
 $height-masonry-desktop: 311px;
 
 $idea-border-radius: 5px;
@@ -12,20 +12,16 @@ $idea-border-radius: 5px;
 $masonry-margin-bottom: 10px;
 $masonry-margin-bottom--desktop: 20px;
 
-@include breakpoint (tablet) {
-  .ideas {
+.ideas {
+  @include breakpoint (tablet) {
+    height: 1030px;
+  }
+  @include breakpoint (desktop) {
     height: 1030px;
   }
 }
 
 
-@include breakpoint (desktop) {
-  .ideas {
-    height: 1030px;
-    width: 960px;
-    background: yellow;
-  }
-}
 
 .ideas__title {
   margin: 40px auto 17px auto;

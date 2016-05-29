@@ -10,6 +10,10 @@
   @include breakpoint (tablet) {
     margin-top: 92px;
   }
+  
+  @include breakpoint (desktop) {
+    margin-top: 94px;
+  }
 }
 
 .search-partners__text {
@@ -22,13 +26,23 @@
     margin-top: 31px;
   }
   
+  @include breakpoint (desktop) {
+    margin-top: 33px;
+  }
+  
 }
+
 .search-partners__search-form {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   
   @include breakpoint (tablet) {
+    margin-top: 23px;
+    margin-right: 3px;
+  }
+  
+  @include breakpoint (desktop) {
     margin-top: 23px;
     margin-right: 3px;
   }
@@ -50,6 +64,13 @@
     margin-right: 0px;
   }
   
+  @include breakpoint (desktop) {
+    width: 238px;
+    display: block;
+    height: 36px;
+    margin-right: 0px;
+  }
+  
 }
 
 .search-partners__search-button {
@@ -58,6 +79,13 @@
   margin: 12px 10px 38px 10px;
   
   @include breakpoint (tablet) {
+    width: 159px;
+    display: block;
+    padding: 12px 24px;
+    margin-bottom: 100px;
+  }
+  
+  @include breakpoint (desktop) {
     width: 159px;
     display: block;
     padding: 12px 24px;

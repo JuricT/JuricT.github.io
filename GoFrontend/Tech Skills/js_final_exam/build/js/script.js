@@ -61,8 +61,12 @@ function masonryGetGutter() {
 
 
 function masonryInit() {
-  $('.ideas__content').masonry(settingMasonry);
-  titlePositionCenter();
+  var $masonryConteiner = $('.ideas__content');
+  $masonryConteiner.imagesLoaded(function(){
+    $masonryConteiner.masonry(settingMasonry);    
+    titlePositionCenter();
+  });
+  $('.idea').imagefill();
 }
 
 function titlePositionCenter() {

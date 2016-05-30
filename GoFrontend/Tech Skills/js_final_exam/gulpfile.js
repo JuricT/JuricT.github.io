@@ -74,8 +74,8 @@ gulp.task('script', function() {
     // presets: ['es2015']
   // }))
   // .pipe(uglify())
-  .pipe(gulp.dest(JS_BUILD_PATH));
-  // .pipe(connect.reload());
+  .pipe(gulp.dest(JS_BUILD_PATH))
+  .pipe(connect.reload());
 });
 
 gulp.task('sass', function () {
@@ -111,5 +111,5 @@ gulp.task('watch', function(){
 //           DEFAULT TASK
 //===================================
 gulp.task('default', function(){
-  gulp.run('jade', 'sass', 'script', 'watch');
+  gulp.run('jade', 'sass', 'script', 'watch', 'connect');
 });

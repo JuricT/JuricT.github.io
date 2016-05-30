@@ -40,7 +40,7 @@ table {
 a {
   text-decoration: none; }
 
-/*********************
+/********************* 
       BREAKPOINTS
 *********************/
 /*********************
@@ -94,13 +94,24 @@ h4 {
   color: #fff;
   padding: 12px 50px;
   background: #ff4e50;
-  border-radius: 100px; }
+  border-radius: 100px;
+  outline: none;
+  cursor: pointer; }
+  .button--type1:hover, .button--type2:hover {
+    color: #d9d9d9;
+    background: #ff0204; }
 
 .button--type2 {
   color: #ff4e50;
   background: #fff;
   border: 2px solid #ff4e50;
-  padding: 9px 26px; }
+  padding: 9px 26px;
+  outline: none;
+  cursor: pointer; }
+  .button--type2:hover {
+    color: #ff0204;
+    background: #d9d9d9;
+    border-color: #ff0204; }
 
 .header {
   text-align: center;
@@ -688,7 +699,8 @@ h4 {
     justify-content: space-around; }
   .footer__item {
     margin-top: 42px;
-    width: 133px; }
+    width: 133px;
+    margin-bottom: 38px; }
   .nav--footer {
     text-align: left; }
   .nav__item {
@@ -702,9 +714,8 @@ h4 {
     width: 20%;
     float: left;
     margin-top: 42px;
-    text-align: left; }
-  .nav__item {
-    display: block; }
+    text-align: left;
+    margin-bottom: 38px; }
   .logo--footer {
     margin-left: -10px; }
   .nav--footer {
@@ -715,6 +726,7 @@ h4 {
     margin: 0;
     padding: 0; }
   .nav__item {
+    display: block;
     margin-top: 11px; }
   .footer__designer {
     float: right;

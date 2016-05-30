@@ -5,6 +5,13 @@
   padding: 12px 50px;
   background: $red;
   border-radius: 100px;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    color: darken($white, 15%);
+    background: darken($red, 15%);
+  }
 }
 
 .button--type2 {
@@ -13,4 +20,12 @@
   background: $white;
   border: 2px solid $red;
   padding: 9px 26px;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    color: darken($red, 15%);
+    background: darken($white, 15%);
+    border-color: darken($red, 15%);
+  }
 }

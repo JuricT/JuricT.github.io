@@ -13,7 +13,7 @@ $slider-gap: 20px;
   @include breakpoint(desktop) { margin-top: 256px; }
 }
 
-.slide {
+.slide { 
   margin: 10px 0;
   width: 100%;
   height: 240px;

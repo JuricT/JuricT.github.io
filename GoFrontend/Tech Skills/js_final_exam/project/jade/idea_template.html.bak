@@ -1,0 +1,31 @@
+<script type="text/template" id="idea-template">
+  <div class="grid-sizer"></div>
+  <figure class="idea">
+    <img src="<%= data[1].webformatURL %>" alt="" class="idea__img"/>
+    <figcaption class="idea_title">Sport and Activity</figcaption>
+  </figure>
+  <figure class="idea">
+    <img src="<%= data[2].webformatURL %>" alt="" class="idea__img"/>
+    <figcaption class="idea_title">Wellnes and Health</figcaption>
+  </figure>
+  <figure class="idea">
+    <img src="<%= data[3].webformatURL %>" alt="" class="idea__img"/>
+    <figcaption class="idea_title">Extreme Sports and Expeditions</figcaption>
+  </figure>
+  <figure class="idea">
+    <img src="<%= data[4].webformatURL %>" alt="" class="idea__img"/>
+    <figcaption class="idea_title">Games</figcaption>
+  </figure>
+  <figure class="idea ">
+    <img src="<%= data[5].webformatURL %>" alt="" class="idea__img"/>
+    <figcaption class="idea_title">Culture and Education</figcaption>
+  </figure>
+  <figure class="idea idea--width-2x">
+    <img src="<%= data[6].webformatURL %>" alt="" class="idea__img"/>
+    <figcaption class="idea_title">Relaxation</figcaption>
+  </figure>
+  <figure class="idea">
+    <img src="<%= data[7].webformatURL %>" alt="" class="idea__img"/>
+    <figcaption class="idea_title">Travelling</figcaption>
+  </figure>
+</script>

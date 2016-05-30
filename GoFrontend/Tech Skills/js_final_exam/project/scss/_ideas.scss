@@ -12,7 +12,7 @@ $idea-border-radius: 5px;
 $masonry-margin-bottom: 10px;
 $masonry-margin-bottom--desktop: 20px;
 
-.ideas {
+.ideas { 
   @include breakpoint (tablet) {
     height: 1030px;
   }

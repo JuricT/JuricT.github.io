@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 html(lang="en-DE")
-head
-  meta(charset="UTF-8")
-  title URLAUBSGLÜCK | Share your holiday dreams
-  link(rel="stylesheet", href="css/style.css")
-body
-  .wrapper.clearfix
-    .header__wrapper
-      include header.jade
-      include promo.jade
-    main
-      include how_it_works.jade
-      include partners.jade
-      include ideas.jade
-      include search_partners.jade
-    include footer.jade
-  script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
-  script(src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js")
-  script(src="js/jquery-imagefill.js")
-  script(src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js")
-  script(src="js/script.js")
+  head
+    meta(charset="UTF-8")
+    title URLAUBSGLÜCK | Share your holiday dreams
+    
+    link(rel="stylesheet", href="css/jquery.bxslider.css")
+    link(rel="stylesheet", href="css/style.css")
+    
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.2.0/imagesloaded.pkgd.min.js")
+    script(src="js/jquery-imagefill.js")
+    script(src="js/masonry.pkgd.min.js")
+    script(src="https://cdn.jsdelivr.net/lodash/4.11.2/lodash.min.js")
+    script(src="js/template.js")
+    script(src="js/jquery.bxslider.js")
+    script(src="js/script.js")
+  body
+    .wrapper.clearfix
+      .header__wrapper
+        include header.jade
+        include promo.jade
+      main
+        include how_it_works.jade
+        include partners.jade
+        include ideas.jade
+        include search_partners.jade
+      include footer.jade
+    include idea_template.html

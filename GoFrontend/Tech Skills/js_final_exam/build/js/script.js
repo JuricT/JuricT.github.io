@@ -27,8 +27,11 @@ $(function() {
   function resizeWindow() {
     var width = window.innerWidth;
 
-         if (width < TABLE_BREAKPOINT)   mobile()
-    else if (width < DESKTOP_BREAKPOINT) tablet()
+    if (width < TABLE_BREAKPOINT) {
+      mobile();
+    } else if (width < DESKTOP_BREAKPOINT) {
+      tablet();
+    }
     else desktop();
 
     function mobile(){
@@ -83,7 +86,6 @@ $(function() {
     var ideaHeight = $('.idea').height();
 
     $('.idea_title').each(function () {
-      'use strict';
       var ideaTitleHeight = $(this).height();
       var ideaTitleTop = (ideaHeight - ideaTitleHeight) / 2;
       $(this).css('top', ideaTitleTop + 'px');

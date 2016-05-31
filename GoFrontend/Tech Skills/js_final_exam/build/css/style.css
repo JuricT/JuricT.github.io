@@ -67,6 +67,7 @@ body {
   width: calc(100% - 1px);
   min-width: 320px;
   max-width: 960px;
+  overflow-x: hidden;
   margin: auto;
   padding: 1px 10px; }
 

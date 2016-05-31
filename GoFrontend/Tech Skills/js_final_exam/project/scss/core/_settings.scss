@@ -8,7 +8,7 @@ $heder-height: 540px;
 
 //=============================
 //           Colors
-//============================= 
+//=============================
 
 $white: #fff;
 $blac: #333;
@@ -23,27 +23,28 @@ body {
   overflow-x: auto;
   background: url(../img/promo_bg_mobile.jpg) no-repeat center 0px;
   background-size: auto $heder-height + 1px;
-  
+
   @include breakpoint(mobile) {
     overflow-x: hidden;
   }
-  
+
   @include breakpoint(tablet) {
     background: url(../img/promo_bg_desktop.jpg) no-repeat center 0px;
     overflow-x: hidden;
   }
-  
+
   @include breakpoint(desktop) {
     background: url(../img/promo_bg_desktop.jpg) no-repeat center 0px;
     overflow-x: hidden;
   }
-  
+
 }
 
 .wrapper{
   width: calc(100% - 1px);
   min-width: $mobile-point;
   max-width: $desktop-point;
+  overflow-x: hidden;
 
   margin: auto;
   padding: 1px $indent-width;
@@ -68,4 +69,3 @@ h4 {
   clear: both;
   visibility: hidden;
 }
-

@@ -68,9 +68,12 @@ body {
   width: calc(100% - 1px);
   min-width: 320px;
   max-width: 960px;
-  overflow-x: hidden;
   margin: auto;
   padding: 1px 10px; }
+
+@media screen and (max-width: 320px) {
+  .wrapper {
+    overflow-x: hidden; } }
 
 h3, h4 {
   font-family: 'Montserrat',Helvetica,Arial,sans-serif;

@@ -45,10 +45,15 @@ body {
   width: calc(100% - 1px);
   min-width: $mobile-point;
   max-width: $desktop-point;
-  overflow-x: hidden;
 
   margin: auto;
   padding: 1px $indent-width;
+}
+
+@media screen and (max-width: $mobile-point) {
+  .wrapper{
+    overflow-x: hidden;
+  }
 }
 
 h3 {

@@ -41,6 +41,7 @@ body {
 }
 
 .wrapper{
+  width: 100%;
   width: calc(100% - 1px);
   min-width: $mobile-point;
   max-width: $desktop-point;

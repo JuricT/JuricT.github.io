@@ -64,6 +64,7 @@ body {
       overflow-x: hidden; } }
 
 .wrapper {
+  width: 100%;
   width: calc(100% - 1px);
   min-width: 320px;
   max-width: 960px;
@@ -268,9 +269,12 @@ h4 {
 
 .slide__content {
   position: absolute;
+  display: -ms-flexbox;
   display: flex;
   padding: 16px 19px;
+  -ms-flex-flow: column wrap;
   flex-flow: column wrap;
+  -ms-flex-pack: end;
   justify-content: flex-end;
   text-align: left;
   line-height: normal;
@@ -405,9 +409,13 @@ h4 {
 
 @media screen and (max-width: 959px) and (min-width: 768px) {
   .partners-list {
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-flow: row wrap;
     flex-flow: row wrap;
+    -ms-flex-align: baseline;
     align-items: baseline;
+    -ms-flex-pack: center;
     justify-content: center;
     width: 600px;
     margin: 0 auto; }
@@ -422,9 +430,13 @@ h4 {
 
 @media screen and (min-width: 960px) {
   .partners-list {
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-flow: row wrap;
     flex-flow: row wrap;
+    -ms-flex-align: baseline;
     align-items: baseline;
+    -ms-flex-pack: left;
     justify-content: left;
     width: 960px;
     margin: 0 auto; }
@@ -493,6 +505,8 @@ h4 {
 
 /* ---- grid-item ---- */
 .idea {
+  display: block;
+  display: -ms-flexbox;
   display: flex;
   margin-bottom: 10px;
   float: left;
@@ -506,12 +520,14 @@ h4 {
     .idea {
       height: 311px;
       float: none;
+      -ms-flex-flow: row wrap;
       flex-flow: row wrap; } }
   @media screen and (min-width: 960px) {
     .idea {
       height: 311px;
       margin-bottom: 20px;
       float: none;
+      -ms-flex-flow: row wrap;
       flex-flow: row wrap; } }
   .idea::after {
     display: block;
@@ -573,8 +589,11 @@ h4 {
       margin-top: 33px; } }
 
 .search-partners__search-form {
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
+  -ms-flex-pack: center;
   justify-content: center; }
   @media screen and (max-width: 959px) and (min-width: 768px) {
     .search-partners__search-form {
@@ -695,9 +714,13 @@ h4 {
 @media screen and (max-width: 959px) and (min-width: 768px) {
   .footer {
     width: 768px;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-flow: row wrap;
     flex-flow: row wrap;
+    -ms-flex-align: baseline;
     align-items: baseline;
+    -ms-flex-pack: distribute;
     justify-content: space-around; }
   .footer__item {
     margin-top: 42px;

@@ -2,7 +2,7 @@ $(function() {
 
   var settingMasonry = {
     percentPosition: true,
-    columnWidth: '.idea',
+    columnWidth: '.grid-sizer',
     itemSelector: '.idea'
   };
 
@@ -14,11 +14,11 @@ $(function() {
 
   var sizeFlag;
 
-  $('.bxslider').bxSlider();
-
   getImage('');
 
   resizeWindow();
+
+  $('.bxslider').bxSlider();
 
 
   $( window ).resize(resizeWindow);

@@ -41,6 +41,7 @@ var connect     = require('gulp-connect');
 // var svgmin      = require('gulp-svgmin');
 // var  imageop     = require('gulp-image-optimization'),
 var sass        = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 // var clean       = require('gulp-clean');
 // var  cleanCSS = require('gulp-clean-css');
 // var concat      = require('gulp-concat');
@@ -83,6 +84,10 @@ gulp.task('sass', function () {
   .pipe(sass(
     // {outputStyle: 'compressed'}
   ).on('error', sass.logError))
+  .pipe(autoprefixer({
+			browsers: ['ie >= 8, last 2 versions'],
+			cascade: false
+		}))
   .pipe(gulp.dest(CSS_BUILD_PATH))
   .pipe(connect.reload());
 });

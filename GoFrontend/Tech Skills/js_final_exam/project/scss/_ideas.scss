@@ -12,7 +12,7 @@ $idea-border-radius: 5px;
 $masonry-margin-bottom: 10px;
 $masonry-margin-bottom--desktop: 20px;
 
-.ideas { 
+.ideas {
   @include breakpoint (tablet) {
     height: 1030px;
   }
@@ -26,11 +26,11 @@ $masonry-margin-bottom--desktop: 20px;
 .ideas__title {
   margin: 40px auto 17px auto;
   text-align: center;
-  
+
   @include breakpoint (tablet) {
     margin-top: 99px;
   }
-  
+
    @include breakpoint (desktop) {
     margin-top: 99px;
   }
@@ -39,11 +39,11 @@ $masonry-margin-bottom--desktop: 20px;
 .ideas__content {
   margin: 0 auto;
   width: 100%;
-  
+
   @include breakpoint (tablet) {
     margin-top: 36px;
   }
-  
+
    @include breakpoint (desktop) {
     margin-top: 36px;
   }
@@ -76,31 +76,32 @@ $masonry-margin-bottom--desktop: 20px;
 .ideas__content:after {
   content: '';
   display: block;
-  clear: both;  
+  clear: both;
 }
 
 /* ---- grid-item ---- */
 
 .idea {
+  display: block;
   display: flex;
   margin-bottom: $masonry-margin-bottom;
   float: left;
   overflow: hidden;
   border-radius: $idea-border-radius;
-  
+
   height: $height-masonry-mobile;
-  
+
   @include breakpoint (tablet) {
     height: $height-masonry-tablet;
-    
+
     float: none;
     flex-flow: row wrap;
   }
-  
+
   @include breakpoint (desktop) {
     height: $height-masonry-desktop;
     margin-bottom: $masonry-margin-bottom--desktop;
-    
+
     float: none;
     flex-flow: row wrap;
   }

@@ -3,18 +3,10 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000000,endColorstr=#99000000);
   zoom: 1; }
 
-@media screen and (max-width: 959px) and (min-width: 768px) {
-  .partner-profile {
-    width: 234px; }
-  .idea--width-2x {
-    width: 64%; } }
-
 @media screen and (min-width: 960px) {
   .partner-profile {
     width: 200px;
-    display: inline-table; }
-  .idea--width-2x {
-    width: 63%; } }
+    display: inline-table; } }
 
 @media screen and (min-width: 768px) {
   .slide__step {

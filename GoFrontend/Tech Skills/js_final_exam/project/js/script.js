@@ -116,7 +116,7 @@ $(function() {
           $(this).attr('src', data.hits[i].webformatURL);
         });
         $('.idea_title').each(function(i) {
-          $(this).text(_.startCase(data.hits[i].tags));
+          $(this).text(data.hits[i].tags);
         });
         $('.idea').each(function(i) {
           $(this).attr('href', data.hits[i].webformatURL);

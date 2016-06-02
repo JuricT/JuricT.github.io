@@ -42,6 +42,7 @@ var connect     = require('gulp-connect');
 // var  imageop     = require('gulp-image-optimization'),
 var sass        = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
+var plumber = require('gulp-plumber');
 // var clean       = require('gulp-clean');
 // var  cleanCSS = require('gulp-clean-css');
 // var concat      = require('gulp-concat');
@@ -58,6 +59,7 @@ var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('jade', function(){
   gulp.src(JADE_DIR +'index.jade')
+  .pipe(plumber())
   // .pipe(data(function(file) {
   //     return JSON.parse(fs.readFileSync(JSON_DIR + 'test-form.json'));
   //   }))
@@ -70,6 +72,7 @@ gulp.task('jade', function(){
 
 gulp.task('script', function() {
   return gulp.src([JS_DIR + '**/*.js'])
+  .pipe(plumber())
   // .pipe(concat('script.js', {newLine: ';'}))
   // .pipe(babel({
     // presets: ['es2015']

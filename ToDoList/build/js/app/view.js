@@ -4,7 +4,6 @@ define('view', ['model', '../lib/jquery', 'tmpl'], function () {
       this.elements = {
         input: $('.input-item'),
         itemText: $('.item_text'),
-        // addBtn: $('.add-item'),
         listContainer: $('.todolist__list')
       };
 

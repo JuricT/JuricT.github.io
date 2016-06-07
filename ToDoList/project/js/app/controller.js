@@ -17,36 +17,43 @@ define(
           that.removeItem(this, model, view);
         });
 
-        view.elements.listContainer.on('keyup', '.item_text', changeItem);
+        view.elements.listContainer.change( function(e) {
+          var $target = $(e.target);
 
-        view.elements.listContainer.on('blur', '.item_text', changeItem);
+          if (($target.hasClass('item_text')) || ($target.hasClass('toggle'))) {
+            that.changeItem(e, $target, model, view);
+          }
+        });
 
-        function changeItem (e) {
-          that.changeItem(e, this, model, view);
-        }
       }// constructor
 
       addItem(model, view) {
         var newItem = view.elements.input.val();
+
         model.addItem(newItem);
+
         view.renderList(model.data);
         view.elements.input.val('');
       }
 
-      changeItem(e, elem, model, view) {
-        if ((e.keyCode === 13)||(e.type === 'focusout')){
-          var positionIndex = $(elem).parent('li').data().index;
-          var newText = $(elem).val();
-          var oldText = model.data[positionIndex].text;
-          if (oldText !== newText){
-            model.changeItem(positionIndex, newText);
-            view.renderList(model.data);
-          }
-        }
+      positionIndex($elem) {
+        return $elem.parent('li').data().index;
+      }
+
+      changeItem(e, $elem, model, view) {
+        var positionIndex = this.positionIndex($elem);
+        var tempObj = model.data[positionIndex];
+
+        if ($elem.hasClass('item_text')) tempObj.text = $elem.val();
+        if ($elem.hasClass('toggle')) tempObj.status = $elem.prop('checked') ? false : true;
+
+        model.changeItem(positionIndex, tempObj);
+        view.renderList(model.data);
       }
 
       removeItem(elem, model, view) {
-        var positionIndex = $(elem).parent('li').data().index;
+        var positionIndex = this.positionIndex($(elem));
+
         model.removeItem(positionIndex);
         view.renderList(model.data);
       }

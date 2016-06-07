@@ -7,8 +7,7 @@ define(
         this.elements = {
           input: $('.input-item'),
           itemText: $('.item_text'),
-          // addBtn: $('.add-item'),
-          listContainer: $('.todolist__list')
+          listContainer: $('.todolist__list'),
         };
 
         this.renderList(model.data);

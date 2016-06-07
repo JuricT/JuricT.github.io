@@ -1,0 +1,290 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300);
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: "Ubuntu Condensed";
+  src: url("../font/ubuntu-c-webfont.eot");
+  src: url("../font/ubuntu-c-webfont.eot?#iefix") format("embedded-opentype"), url("../font/ubuntu-c-webfont.woff2") format("woff2"), url("../font/ubuntu-c-webfont.woff") format("woff"), url("../font/ubuntu-c-webfont.ttf") format("truetype"), url("../font/ubuntu-c-webfont.svg#ubuntu_condensedregular") format("svg");
+  font-weight: 500;
+  font-style: normal; }
+
+body {
+  background: #FFFDE8; }
+
+.wrapper {
+  width: 400px;
+  display: block;
+  margin: 0 auto; }
+  @media screen and (max-width: 767px) and (min-width: 320px) {
+    .wrapper {
+      width: 400px; } }
+  @media screen and (max-width: 959px) and (min-width: 768px) {
+    .wrapper {
+      width: 600px; } }
+  @media screen and (min-width: 960px) {
+    .wrapper {
+      width: 800px; } }
+
+.todolist {
+  margin-top: 20px;
+  background: #fffbc4;
+  border: 1px solid #fff245;
+  box-shadow: 5px 9px 60px -10px rgba(107, 107, 107, 0.67);
+  font-family: "Ubuntu", Arial, "Nimbus Sans L", Helvetica, sans-serif;
+  position: relative; }
+
+.title {
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  margin: 30px;
+  color: #454000;
+  text-shadow: 1px 1px 1px white; }
+
+.todolist__list {
+  overflow: hidden;
+  margin: 0 40px;
+  text-indent: 0px;
+  color: #454000;
+  margin-bottom: 40px; }
+  @media screen and (max-width: 767px) and (min-width: 320px) {
+    .todolist__list {
+      margin: 0 40px;
+      text-indent: 0px; } }
+  @media screen and (max-width: 959px) and (min-width: 768px) {
+    .todolist__list {
+      margin: 0 60px;
+      text-indent: 0px; } }
+  @media screen and (min-width: 960px) {
+    .todolist__list {
+      margin: 0 80px;
+      text-indent: 0px; } }
+  @media screen and (max-width: 767px) and (min-width: 320px) {
+    .todolist__list {
+      margin-bottom: 40px; } }
+  @media screen and (max-width: 959px) and (min-width: 768px) {
+    .todolist__list {
+      margin-bottom: 60px; } }
+  @media screen and (min-width: 960px) {
+    .todolist__list {
+      margin-bottom: 80px; } }
+
+.todolist__item {
+  margin: 5px 0;
+  line-height: 23px;
+  border-bottom: 1px solid #454000;
+  position: relative; }
+  @media screen and (max-width: 767px) and (min-width: 320px) {
+    .todolist__item {
+      border-bottom: 1px solid #454000; } }
+  @media screen and (max-width: 959px) and (min-width: 768px) {
+    .todolist__item {
+      border-bottom: 1.5px solid #454000; } }
+  @media screen and (min-width: 960px) {
+    .todolist__item {
+      border-bottom: 2px solid #454000; } }
+
+.item_text {
+  background: none;
+  border: none;
+  display: inline-block;
+  outline: none;
+  width: 100%;
+  font-size: 100%;
+  transition: color 0.4s;
+  text-indent: 25px; }
+  @media screen and (max-width: 767px) and (min-width: 320px) {
+    .item_text {
+      font-size: 100%; } }
+  @media screen and (max-width: 959px) and (min-width: 768px) {
+    .item_text {
+      font-size: 150%; } }
+  @media screen and (min-width: 960px) {
+    .item_text {
+      font-size: 200%; } }
+  @media screen and (max-width: 767px) and (min-width: 320px) {
+    .item_text {
+      text-indent: 25px; } }
+  @media screen and (max-width: 959px) and (min-width: 768px) {
+    .item_text {
+      text-indent: 37.5px; } }
+  @media screen and (min-width: 960px) {
+    .item_text {
+      text-indent: 50px; } }
+
+.delete-item {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  background: none;
+  border: none;
+  display: inline-block;
+  outline: none;
+  width: 100%;
+  font-size: 100%;
+  width: auto;
+  cursor: pointer;
+  color: #cc9a9a;
+  transition: color 0.2s ease-out; }
+  @media screen and (max-width: 767px) and (min-width: 320px) {
+    .delete-item {
+      font-size: 100%; } }
+  @media screen and (max-width: 959px) and (min-width: 768px) {
+    .delete-item {
+      font-size: 150%; } }
+  @media screen and (min-width: 960px) {
+    .delete-item {
+      font-size: 200%; } }
+  .delete-item:hover {
+    color: #af5b5e; }
+
+.toggle__label {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 23px;
+  height: 23px;
+  background: url("../img/unch.svg") no-repeat center;
+  background-size: cover; }
+
+.toggle {
+  position: absolute;
+  left: -9999px;
+  top: -9999px; }
+
+.toggle:checked ~ .item_text {
+  color: #b4b28f;
+  text-decoration: line-through; }
+
+.toggle:checked ~ .toggle__label {
+  background: url("../img/ch.svg") no-repeat center;
+  background-size: cover; }
+
+@media screen and (max-width: 959px) and (min-width: 768px) {
+  .todolist {
+    margin-top: 30px; }
+  .title {
+    font-size: 45px;
+    margin: 45px;
+    text-shadow: 1.5px 1.5px 1.5px white; }
+  .todolist__item {
+    margin: 7.5px 0;
+    line-height: 34.5px; }
+  .delete-item {
+    top: 1.5px;
+    right: 1.5px; }
+  .toggle__label {
+    width: 34.5px;
+    height: 34.5px; } }
+
+@media screen and (min-width: 960px) {
+  .title {
+    font-size: 60px;
+    margin: 60px;
+    text-shadow: 2px 2px 2px white; }
+  .todolist__item {
+    margin: 10px 0;
+    line-height: 46px; }
+  .delete-item {
+    top: 2px;
+    right: 2px; }
+  .toggle__label {
+    width: 46px;
+    height: 46px; } }
+
+.controls {
+  margin: 0 40px;
+  text-indent: 0px;
+  margin-bottom: 0;
+  border-bottom: 1px solid #454000; }
+  @media screen and (max-width: 767px) and (min-width: 320px) {
+    .controls {
+      margin: 0 40px;
+      text-indent: 0px; } }
+  @media screen and (max-width: 959px) and (min-width: 768px) {
+    .controls {
+      margin: 0 60px;
+      text-indent: 0px; } }
+  @media screen and (min-width: 960px) {
+    .controls {
+      margin: 0 80px;
+      text-indent: 0px; } }
+  @media screen and (max-width: 767px) and (min-width: 320px) {
+    .controls {
+      border-bottom: 1px solid #454000; } }
+  @media screen and (max-width: 959px) and (min-width: 768px) {
+    .controls {
+      border-bottom: 1.5px solid #454000; } }
+  @media screen and (min-width: 960px) {
+    .controls {
+      border-bottom: 2px solid #454000; } }
+
+.input-item {
+  background: none;
+  border: none;
+  display: inline-block;
+  outline: none;
+  width: 100%;
+  font-size: 100%;
+  /* Firefox 19+ */
+  /* Firefox 18- */ }
+  @media screen and (max-width: 767px) and (min-width: 320px) {
+    .input-item {
+      font-size: 100%; } }
+  @media screen and (max-width: 959px) and (min-width: 768px) {
+    .input-item {
+      font-size: 150%; } }
+  @media screen and (min-width: 960px) {
+    .input-item {
+      font-size: 200%; } }
+  .input-item::-webkit-input-placeholder {
+    color: #b4b28f; }
+  .input-item::-moz-placeholder {
+    color: #b4b28f; }
+  .input-item:-moz-placeholder {
+    color: #b4b28f; }
+  .input-item:-ms-input-placeholder {
+    color: #b4b28f; }
+  .input-item[placeholder] {
+    text-overflow: ellipsis; }
+  .input-item::-moz-placeholder {
+    text-overflow: ellipsis; }
+  .input-item:-moz-placeholder {
+    text-overflow: ellipsis; }
+  .input-item:-ms-input-placeholder {
+    text-overflow: ellipsis; }

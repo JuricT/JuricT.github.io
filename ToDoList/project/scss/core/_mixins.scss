@@ -1,0 +1,99 @@
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media screen and (min-width: $desktop-point) { @content ; }
+  }
+  @else if $point == tablet {
+    @media screen and (max-width: $desktop-point - 1px) and (min-width: $tablet-point) { @content ; }
+  }
+  @else if $point == mobile {
+    @media screen and (max-width: $tablet-point - 1px) and (min-width: $mobile-point) { @content ; }
+  }
+
+}
+
+@mixin todo-list {
+  margin: 0 (40px * $factor);
+  text-indent: (0px * $factor);
+
+  @include breakpoint(mobile) {
+    margin: 0 (40px * $factor1);
+    text-indent: (0px * $factor1);
+  }
+
+  @include breakpoint(tablet) {
+    margin: 0 (40px * $factor2);
+    text-indent: 0px * $factor2;
+  }
+
+  @include breakpoint(desktop) {
+    margin: 0 (40px * $factor3);
+    text-indent: 0px * $factor3;
+  }
+}
+
+@mixin border-item {
+  border-bottom: (1px * $factor) solid $todolist_text--color;
+
+  @include breakpoint(mobile) {
+    border-bottom: (1px * $factor1) solid $todolist_text--color;
+  }
+
+  @include breakpoint(tablet) {
+    border-bottom: (1px * $factor2) solid $todolist_text--color;
+  }
+
+  @include breakpoint(desktop) {
+    border-bottom: (1px * $factor3) solid $todolist_text--color;
+  }
+}
+
+@mixin placeholder-color ($color) {
+  &::-webkit-input-placeholder {color:$color;}
+  &::-moz-placeholder          {color:$color;}/* Firefox 19+ */
+  &:-moz-placeholder           {color:$color;}/* Firefox 18- */
+  &:-ms-input-placeholder      {color:$color;}
+}
+
+@mixin placeholder-text-overflow($overflow) {
+  &[placeholder]          {text-overflow:$overflow;}
+  &::-moz-placeholder     {text-overflow:$overflow;}
+  &:-moz-placeholder      {text-overflow:$overflow;}
+  &:-ms-input-placeholder {text-overflow:$overflow;}
+}
+
+@mixin placeholder-hide {
+  &:focus::-webkit-input-placeholder {color: transparent}
+  &:focus::-moz-placeholder          {color: transparent}
+  &:focus:-moz-placeholder           {color: transparent}
+  &:focus:-ms-input-placeholder      {color: transparent}
+
+  &::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+  &::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+  &:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+  &:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+  &:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+  &:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+  &:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+  &:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+}
+
+@mixin reset-input-text {
+  background: none;
+  border: none;
+  display: inline-block;
+  outline: none;
+  width: 100%;
+  font-size: 100% * $factor;
+
+  @include breakpoint(mobile) {
+    font-size: 100% * $factor1;
+  }
+
+  @include breakpoint(tablet) {
+    font-size: 100% * $factor2;
+  }
+
+  @include breakpoint(desktop) {
+    font-size: 100% * $factor3;
+  }
+}

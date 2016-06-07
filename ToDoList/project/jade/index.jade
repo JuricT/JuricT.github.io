@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  title ToDoList
+  link(rel="stylesheet", href="css/style.css")
+  script(data-main="js/app" src="js/require.js")
+body
+  .wrapper
+    .todolist
+      heder.header
+        h1.title Yor ToDoList
+      .controls
+        input.input-item(type="text" placeholder="Write and press enter")
+      ul.todolist__list
+  include item-template.html

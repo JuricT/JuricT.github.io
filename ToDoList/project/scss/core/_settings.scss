@@ -1,0 +1,27 @@
+//===================================
+//              SIZE
+//===================================
+$desktop-point: 960px;
+$tablet-point: 768px;
+$mobile-point: 320px;
+
+$factor : 1;
+$factor1: 1;
+$factor2: 1.5;
+$factor3: 2;
+
+$wrapper-width: 400px;
+
+//===================================
+//              COLOR
+//===================================
+
+$body_background-color: #FFFDE8;
+
+$todolist_background--color: #fffbc4;
+$todolist_text--color: darken($todolist_background--color, 75%);
+
+$delete-item--color: #cc9a9a;
+$delete-item__hover--color: #af5b5e;
+
+$disable-text-color: desaturate(lighten($todolist_text--color, 50%), 80%);

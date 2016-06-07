@@ -1,0 +1,12 @@
+<script type="text/template" id="item-template">
+  <% for (var i = 0; i < data.length; i++) { %>
+  <li class="todolist__item" data-index="<%= i %>">
+    <input type="checkbox" class="toggle" id="item<%= i %>">
+    <input type="text" class="item_text" value="<%= data[i].text %>">
+    <label for="item<%= i %>" class="toggle__label" >
+      
+    </label>
+    <button class="delete-item">×</button>
+  </li>
+  <% }; %>
+</script>

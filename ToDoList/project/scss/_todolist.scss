@@ -1,0 +1,145 @@
+.todolist{
+  margin-top: 20px * $factor;
+  background: $todolist_background--color;
+  border: 1px solid darken($todolist_background--color, 25%);
+  box-shadow: 5px 9px 60px -10px rgba(107,107,107,0.67);
+  @include font-ubuntu;
+  position: relative;
+}
+
+.title{
+  font-size: 30px * $factor;
+  font-weight: 500;
+  text-align: center;
+  margin: (30px  * $factor);
+  color: $todolist_text--color;
+  text-shadow: (1px * $factor) (1px * $factor) (1px * $factor) rgba(255, 255, 255, 1);
+}
+
+.todolist__list{
+  overflow: hidden;
+  @include todo-list;
+  color: $todolist_text--color;
+  margin-bottom: 40px * $factor;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 40px * $factor1;
+  }
+
+  @include breakpoint(tablet) {
+    margin-bottom: 40px * $factor2;
+  }
+
+  @include breakpoint(desktop) {
+    margin-bottom: 40px * $factor3;
+  }
+}
+
+.todolist__item{
+  margin: (5px * $factor) 0;
+  line-height: (23px  * $factor);
+  @include border-item;
+  position: relative;
+}
+
+.item_text {
+  @include reset-input-text;
+  transition: color 0.4s;
+  text-indent: 25px * $factor;
+
+  @include breakpoint(mobile) { text-indent: 25px * $factor1; }
+  @include breakpoint(tablet) { text-indent: 25px * $factor2; }
+  @include breakpoint(desktop) { text-indent: 25px * $factor3; }
+}
+
+.delete-item {
+  position: absolute;
+  top: (1px  * $factor);
+  right: (1px * $factor);
+  @include reset-input-text;
+  width: auto;
+  cursor: pointer;
+  color: $delete-item--color;
+  transition: color 0.2s ease-out;
+
+  &:hover {
+    color: $delete-item__hover--color;
+  }
+}
+
+.toggle__label {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: (23px  * $factor);
+  height: (23px  * $factor);
+  background: url('../img/unch.svg') no-repeat center;
+  background-size: cover;
+
+}
+
+.toggle {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
+
+.toggle:checked ~ .item_text {
+  color: $disable-text-color;
+  text-decoration: line-through;
+}
+
+.toggle:checked ~ .toggle__label {
+  background: url('../img/ch.svg') no-repeat center;
+  background-size: cover;
+}
+
+@include breakpoint(tablet) {
+
+  .todolist{
+    margin-top: 20px * $factor2;
+  }
+
+  .title{
+    font-size: 30px * $factor2;
+    margin: (30px  * $factor2);
+    text-shadow: (1px * $factor2) (1px * $factor2) (1px * $factor2) rgba(255, 255, 255, 1);
+  }
+
+  .todolist__item{
+    margin: (5px * $factor2) 0;
+    line-height: (23px  * $factor2);
+  }
+
+  .delete-item {
+    top: (1px  * $factor2);
+    right: (1px * $factor2);
+  }
+
+  .toggle__label {
+    width: (23px  * $factor2);
+    height: (23px  * $factor2);
+  }
+}
+@include breakpoint(desktop) {
+  .title{
+    font-size: 30px * $factor3;
+    margin: (30px  * $factor3);
+    text-shadow: (1px * $factor3) (1px * $factor3) (1px * $factor3) rgba(255, 255, 255, 1);
+  }
+
+  .todolist__item{
+    margin: (5px * $factor3) 0;
+    line-height: (23px  * $factor3);
+  }
+
+  .delete-item {
+    top: (1px  * $factor3);
+    right: (1px * $factor3);
+  }
+
+  .toggle__label {
+    width: (23px  * $factor3);
+    height: (23px  * $factor3);
+  }
+}

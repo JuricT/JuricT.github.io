@@ -1,0 +1,20 @@
+body {
+  background: $body_background-color;
+}
+.wrapper {
+  width: $wrapper-width;
+  display: block;
+  margin: 0 auto;
+
+  @include breakpoint(mobile) {
+    width: $wrapper-width * $factor;
+  }
+
+  @include breakpoint(tablet) {
+    width: $wrapper-width * $factor2;
+  }
+
+  @include breakpoint(desktop) {
+    width: $wrapper-width * $factor3;
+  }
+}

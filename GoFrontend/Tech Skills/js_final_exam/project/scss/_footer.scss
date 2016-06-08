@@ -2,7 +2,7 @@
   text-align: center;
   position: relative;
   @include Montserrat;
-  
+
 
   &::before {
     display: block;
@@ -46,6 +46,7 @@
 .footer__designer {
   display: block;
   margin-top: 15px;
+  text-decoration: none;
 }
 
 .designer__title {
@@ -68,18 +69,18 @@
     align-items: baseline;
     justify-content: space-around;
   }
-  
+
   .footer__item {
     margin-top: 42px;
     width: 133px;
     margin-bottom: 38px;
   }
-  
+
   .nav--footer {
     text-align: left;
-    
+
   }
-  
+
   .nav__item {
     display: block;
   }
@@ -89,7 +90,7 @@
   .footer {
     width: $desktop-point;
   }
-  
+
   .footer__item {
     display: block;
     width: 20%;
@@ -98,34 +99,34 @@
     text-align: left;
     margin-bottom: 38px;
   }
-  
+
   .logo--footer {
     margin-left: -10px;
   }
-  
+
   .nav--footer {
     margin-left: 50px;
     width: 110px;
   }
-  
+
   .nav__item,
   .nav__link {
     margin: 0;
     padding: 0;
   }
-  
+
   .nav__item {
     display: block;
     margin-top: 11px;
   }
-  
-  
+
+
   .footer__designer {
     float: right;
     text-align: center;
     margin-right: -12px;
   }
-  
+
   .designer__title {
     margin-left: 32px;
   }

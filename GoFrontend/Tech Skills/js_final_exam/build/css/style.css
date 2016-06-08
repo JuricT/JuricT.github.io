@@ -700,7 +700,8 @@ h4 {
 
 .footer__designer {
   display: block;
-  margin-top: 15px; }
+  margin-top: 15px;
+  text-decoration: none; }
 
 .designer__title {
   display: block;

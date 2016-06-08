@@ -26,9 +26,20 @@
 }
 
 @media screen and (min-width: 768px) {
+  .slide--1 {
+    background: url(../img/slide_1--ie8.jpg) no-repeat center;
+  }
+  .slide--2 {
+    background: url(../img/slide_2--ie8.jpg) no-repeat center;
+  }
+  .slide--3 {
+    background: url(../img/slide_3--ie8.jpg) no-repeat center;
+  }
+
   .slide__step {
     margin-top: 200px;
   }
+
   .search-partners__input,
   .search-partners__search-button {
     display: inline-block;

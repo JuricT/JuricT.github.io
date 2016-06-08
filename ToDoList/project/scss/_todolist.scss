@@ -73,7 +73,7 @@
   left: -5px;
   width: (23px  * $factor);
   height: (23px  * $factor);
-  background: url('../img/unch.svg') no-repeat center;
+  background: url("../img/sprite.svg") 100% 0 no-repeat;
   background-size: cover;
 
 }
@@ -90,7 +90,7 @@
 }
 
 .toggle:checked ~ .toggle__label {
-  background: url('../img/ch.svg') no-repeat center;
+  background: url("../img/sprite.svg") 0 0 no-repeat;
   background-size: cover;
 }
 

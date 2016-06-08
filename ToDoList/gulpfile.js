@@ -49,6 +49,7 @@ var gulp        = require('gulp'),
     babel = require('gulp-babel'),
     uglify      = require('gulp-uglify'),
     Server = require('karma').Server,
+    svgSprite  = require('gulp-svg-sprite'),
     rjs = require('gulp-requirejs');
 
 //===================================
@@ -127,6 +128,20 @@ gulp.task('requirejsBuild', function() {
         }
     })
         .pipe(gulp.dest('./delpoy/')); // pipe it to the output DIR
+});
+
+gulp.task('svg', function() {
+  gulp.src('*.svg', {cwd: svgDir})
+    .pipe(svgSprite({
+        mode: {
+            css: {     // Activate the «css» mode
+                render: {
+                    css: true  // Activate CSS output (with default options)
+                }
+            }
+        }
+    }))
+    .pipe(gulp.dest(imagesBuildPath));
 });
 
 //===================================

@@ -36,21 +36,15 @@ var fontDir     = projectDir + 'fonts/';
 //===================================
 
 var gulp        = require('gulp'),
+    babel       = require('gulp-babel'),
     connect     = require('gulp-connect'),
+    del         = require('del'),
+    fs          = require('fs'),
     jade        = require('gulp-jade'),
-    // svgmin      = require('gulp-svgmin'),
-    // imageop     = require('gulp-image-optimization'),
     sass        = require('gulp-sass'),
-    clean       = require('gulp-clean'),
-    // cleanCSS = require('gulp-clean-css'),
-    concat      = require('gulp-concat'),
-    data        = require('gulp-data'),
-    fs   = require('fs'),
-    babel = require('gulp-babel'),
-    uglify      = require('gulp-uglify'),
-    Server = require('karma').Server,
-    svgSprite  = require('gulp-svg-sprite'),
-    rjs = require('gulp-requirejs');
+    Server      = require('karma').Server,
+    svgSprite   = require('gulp-svg-sprite'),
+    rjs         = require('gulp-requirejs');
 
 //===================================
 //               TASKS
@@ -59,9 +53,6 @@ var gulp        = require('gulp'),
 gulp.task('jade', function(){
 
   gulp.src(jadeDir +'index.jade')
-  // .pipe(data(function(file) {
-  //     return JSON.parse(fs.readFileSync(jsonDir + 'test-form.json'));
-  //   }))
   .pipe(jade({
       pretty: true
     }))
@@ -71,20 +62,14 @@ gulp.task('jade', function(){
 
 gulp.task('script', function() {
   return gulp.src([jsDir + '**/*.js'])
-  // .pipe(concat('script.js', {newLine: ';'}))
-  .pipe(babel({
-    // presets: ['es2015']
-  }))
-  // .pipe(uglify())
+  .pipe(babel())
   .pipe(gulp.dest(jsBuildPath))
   .pipe(connect.reload());
 });
 
 gulp.task('sass', function () {
   gulp.src(sassDir + '/**/*.scss')
-  .pipe(sass(
-    // {outputStyle: 'compressed'}
-  ).on('error', sass.logError))
+  .pipe(sass().on('error', sass.logError))
   .pipe(gulp.dest(cssBuildPath))
   .pipe(connect.reload());
 });
@@ -99,19 +84,12 @@ gulp.task('connect', function(){
   });
 });
 
-//===   FILES   ===
-
 gulp.task('watch', function(){
   gulp.watch(jadeDir + '**/*.jade', function(){gulp.run('jade');});
   gulp.watch(jsonDir + '**/*.json', function(){gulp.run('jade');});
   gulp.watch(jsonDir + '**/*.html', function(){gulp.run('jade');});
   gulp.watch(sassDir + '**/*.scss', function(){gulp.run('sass');});
-  gulp.watch(jsDir + '**/*.js', function(){gulp.run('script');});
-});
-
-gulp.task('build-clean', function(){
-  return gulp.src(build, {read: false})
-    .pipe(clean());
+  gulp.watch(jsDir   + '**/*.js'  , function(){gulp.run('script');});
 });
 
 gulp.task('requirejsBuild', function() {
@@ -131,7 +109,7 @@ gulp.task('requirejsBuild', function() {
 });
 
 gulp.task('svg', function() {
-  gulp.src('*.svg', {cwd: svgDir})
+    var stream = gulp.src('*.svg', {cwd: svgDir})
     .pipe(svgSprite({
         mode: {
             css: {     // Activate the «css» mode
@@ -139,9 +117,19 @@ gulp.task('svg', function() {
                     css: true  // Activate CSS output (with default options)
                 }
             }
-        }
+        },
+
     }))
     .pipe(gulp.dest(imagesBuildPath));
+
+  gulp.src(imagesBuildPath + 'css/svg/*.svg')
+    .pipe(gulp.dest(imagesBuildPath));
+
+  return stream;
+});
+
+gulp.task('del', ['svg'], function () {
+  del([imagesBuildPath + 'css']);
 });
 
 //===================================
@@ -157,7 +145,6 @@ gulp.task('test', function (done) {
 //===================================
 //           DEFAULT TASK
 //===================================
-// gulp.task('default', ['build-clean'], function(){
 gulp.task('default', function(){
   gulp.run('jade', 'script', 'sass', 'connect', 'watch');
 });

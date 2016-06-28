@@ -1,15 +1,15 @@
 # ToDoList
-Учебный проект по созданию страницы со списком задачь [(ToDoList)](http://jurict.github.io/GoFrontend/Tech%20Skills/JS%2023-24/build/index.html), цель которого научиться применять принцыпы [MVC](http://designformasters.info/posts/mvc-javascript/) при написании кода, научиться применять модульный загрузчик `Require.js` для решения зависимостей между модулями и не засорения глобальной области.
+The project to create a page with a list of tasks [(ToDoList)](http://jurict.github.io/GoFrontend/Tech%20Skills/JS%2023-24/build/index.html), which aims to learn how to apply the principles of `MVC` when writing code to learn how to use the module loader `Require.js` to address dependencies between modules and not clogging the global scope.
 
-Описание проекта
-Сборка проекта осуществляется при помощи `Gulp`. Для создания HTML разметки применяется HTML шаблонищатор `Jade`, для стилизации препроцессор `SASS`. Скрипты написаны на ES6 с последующей конвертацией к `ES5` при поммощи `Babel`. Применен MVC паттерн при разработки логики работы приложения. JavaScript файлы загружаются при помощи `Require.js`. Для оптимизации количества запросов на сервер применяются SVG спрайты.
+Project description
+Build the project is carried out with the help of `Gulp`. To create an HTML markup used HTML template `Jade`, to style preprocessor `SASS`. Scripts are written in ES6 with subsequent conversion to `ES5` using `Babel`. Apply the MVC pattern in the development of the logic of the application. JavaScript files are loaded using the `Require.js`. To optimize the number of queries to the server used SVG sprites.
 
-Используемые техналогии
+Used technologies
 
-1. Паттерн разработки [MVC](https://ru.wikipedia.org/wiki/Model-View-Controller)
-2. Соборка JS модулей с помощью [require.js](http://requirejs.org/)
-3. HTML шаблонизатор [JADE](http://jade-lang.com/)
-4. [SASS](http://sass-lang.com/) препроцессор
-4. ES6 с конвертацией в ES5 с помощью [Babel](https://babeljs.io/)
-5. Модульный подход проектирования
-6. SVG спрайт.
+1. The pattern of development 'MVC'
+2. Build JS modules using 'require.js'
+3. HTML template 'JADE'
+4. 'SASS' preprocessor
+4. 'ES6' with conversion in ES5 using' Babel'
+5. The modular design approach
+6. 'SVG' sprite.

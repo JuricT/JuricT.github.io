@@ -1,0 +1,28 @@
+.button--type1 {
+  display: inline-block;
+  @include Montserrat;
+  @include font-style(bold, 14px, $white);
+  padding: 12px 50px;
+  background: $red;
+  border-radius: 100px;
+  outline: none;
+  cursor: pointer;
+  transition: background .4s;
+
+  &:hover {
+    background: $green;
+  }
+}
+
+.button--type2 {
+  @extend .button--type1;
+  color: $red;
+  background: $white;
+  border: 2px solid $red;
+  padding: 9px 26px;
+
+  &:hover {
+    color: $white;
+    background: $red;
+  }
+}

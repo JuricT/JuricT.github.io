@@ -1,0 +1,77 @@
+$authorisation__button--font-size: 14px;
+$authorisation__button--color: $white;
+$authorisation__button--border: 2px;
+$header__logo--color: $white;
+
+.header {
+  text-align: center;
+  @include Montserrat;
+  
+
+  .Header__authorisation {
+    width: 100%;
+    margin: 29px 10px auto auto;
+  }
+
+  .header__logo {
+    width: 100%;
+    margin-top: 126px;
+  }
+
+  @include breakpoint(tablet) {
+    .Header__authorisation {
+      width: auto;
+      margin: 46px 47px auto auto;
+    }
+
+    .header__logo {
+      width: auto;
+      margin: 47px auto auto 46px;
+
+    }
+    
+  }
+  
+  @include breakpoint(desktop) {
+    .Header__authorisation {
+      width: auto;
+      margin: 46px -10px auto auto;
+    }
+
+    .header__logo {
+      width: auto;
+      margin: 47px auto auto -8px;
+
+    }
+    
+  }
+} 
+
+.Header__authorisation {
+  float: right;
+}
+
+.header__logo {
+  float: left;
+}
+
+.logo {
+  color: $header__logo--color;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.authorisation_button {
+  margin: 0 5px 0 0;
+  padding: 8px 15px 8px 17px;
+  font-size: $authorisation__button--font-size;
+  font-weight: bold;
+  color: $authorisation__button--color;
+  border: $authorisation__button--border solid transparent;
+  border-radius: 100px;
+
+  &:hover {
+    border: 2px solid $authorisation__button--color;
+  }
+}

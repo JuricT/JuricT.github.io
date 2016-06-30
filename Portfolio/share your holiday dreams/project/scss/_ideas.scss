@@ -1,0 +1,155 @@
+$width-masonry-mobile:  100%;
+$height-masonry-mobile:  120px;
+
+$width-masonry-tablet:  32.3%;
+$height-masonry-tablet: 311px;
+
+$width-masonry-desktop:  31.9%;
+$height-masonry-desktop: 311px;
+
+$idea-border-radius: 5px;
+
+$masonry-margin-bottom: 10px;
+$masonry-margin-bottom--desktop: 20px;
+
+.ideas {
+  @include breakpoint (tablet) {
+    height: 1030px;
+  }
+  @include breakpoint (desktop) {
+    height: 1030px;
+  }
+}
+
+
+
+.ideas__title {
+  margin: 40px auto 17px auto;
+  text-align: center;
+
+  @include breakpoint (tablet) {
+    margin-top: 99px;
+  }
+
+   @include breakpoint (desktop) {
+    margin-top: 99px;
+  }
+}
+
+.ideas__content {
+  margin: 0 auto;
+  width: 100%;
+
+  @include breakpoint (tablet) {
+    margin-top: 36px;
+  }
+
+   @include breakpoint (desktop) {
+    margin-top: 36px;
+  }
+}
+
+.idea__img {
+  margin: auto;
+  width: 100%;
+  border-radius: $idea-border-radius;
+}
+
+.idea_title {
+  $padding: 0px;
+  display: block;
+  position: absolute;
+  margin: auto;
+  top: 5px;
+  left: $padding;
+  right: $padding;
+  bottom: auto;
+  text-align: center;
+  @include Montserrat;
+  @include font-style(bold, 22px, $white);
+  z-index: 100;
+}
+
+
+
+/* clearfix */
+.ideas__content:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.idea {
+  display: block;
+  display: flex;
+  margin-bottom: $masonry-margin-bottom;
+  float: left;
+  overflow: hidden;
+  border-radius: $idea-border-radius;
+
+  height: $height-masonry-mobile;
+
+  @include breakpoint (tablet) {
+    height: $height-masonry-tablet;
+
+    float: none;
+    flex-flow: row wrap;
+  }
+
+  @include breakpoint (desktop) {
+    height: $height-masonry-desktop;
+    margin-bottom: $masonry-margin-bottom--desktop;
+
+    float: none;
+    flex-flow: row wrap;
+  }
+
+  font-size: 50px;
+  font-weight: 900;
+  color: #eec;
+
+  &::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,.4);
+    border-radius: $idea-border-radius;
+  }
+}
+
+.grid-sizer,
+.idea {
+  width: $width-masonry-mobile;
+}
+
+.idea--width-2x {
+  width: $width-masonry-mobile;
+}
+
+@include breakpoint (tablet) {
+  .grid-sizer,
+  .idea {
+    width: $width-masonry-tablet;
+  }
+
+  .idea--width-2x {
+    width: calc(#{$width-masonry-tablet * 2} + #{$masonry-margin-bottom});
+  }
+}
+
+@include breakpoint (desktop) {
+  .grid-sizer,
+  .idea {
+    width: $width-masonry-desktop;
+  }
+
+  .idea--width-2x {
+    width: calc(#{$width-masonry-desktop * 2} + #{$masonry-margin-bottom--desktop});
+  }
+}

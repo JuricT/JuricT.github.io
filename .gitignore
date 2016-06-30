@@ -1,5 +1,6 @@
 # ignore Grunt
 node_modules/
+bower_components/
 
 *.min.js
 *.min.css

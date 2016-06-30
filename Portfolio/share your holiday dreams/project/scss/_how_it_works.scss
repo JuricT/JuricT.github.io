@@ -1,0 +1,97 @@
+$slider-gap: 20px;
+
+.how-it-works {
+  padding: 1px;
+  text-align: center;
+  @include breakpoint(desktop) { margin: auto -28px; }
+}
+
+.how-it-works__title {
+  margin: 36px auto 16px auto;
+
+  @include breakpoint(tablet) { margin-top: 256px; }
+  @include breakpoint(desktop) { margin-top: 256px; }
+}
+
+.slide {
+  margin: 10px 0;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  border-radius: 5px;
+  position: relative;
+  text-align: center;
+
+  @include breakpoint (tablet) { height: 400px; }
+  @include breakpoint (desktop) { height: 400px; }
+}
+.slide--1 {
+  background: url(../img/slide_1.jpg) no-repeat center;
+  background-size: cover;
+}
+.slide--2 {
+  background: url(../img/slide_2.jpg) no-repeat center;
+  background-size: cover;
+}
+.slide--3 {
+  background: url(../img/slide_3.jpg) no-repeat center;
+  background-size: cover;
+}
+
+.slide__content {
+  position: absolute;
+  display: flex;
+  padding: 16px 19px;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+  text-align: left;
+  line-height: normal;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  @include Montserrat;
+  color: $white;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+}
+
+.slide__step {
+  display: inline-block;
+  margin: auto auto 16px 1px;
+  @include font-style(300, 10px, $white);
+  background: $red;
+  padding: 3px 12px 2px 15px;
+  letter-spacing: 1.4px;
+  border-radius: 100px;
+}
+
+.slide__title {
+  display: block;
+  @include font-style(bold, 24px, $white);
+  margin: 0 auto 11px 0;
+}
+
+.slide__text {
+  display: block;
+  @include Roboto;
+  @include font-style(200, 14px, #ccc);
+  line-height: normal;
+  letter-spacing: 0.15px;
+}
+
+.sliders-content {
+  display: block;
+
+  @include breakpoint (tablet) { display: none; }
+  @include breakpoint (desktop) { display: none; }
+}
+
+.how-it-works__slider {
+    display: none;
+  margin: 8px 1%;
+
+  width: 30.5%;
+  @include breakpoint (tablet) { display: inline-block; }
+  @include breakpoint (desktop) { display: inline-block; }
+}

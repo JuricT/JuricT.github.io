@@ -1,0 +1,140 @@
+.footer {
+  text-align: center;
+  position: relative;
+  @include Montserrat;
+
+
+  &::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0px;
+    height: 4px;
+    left: -4998px;
+    right: -4998px;
+    background: $red;
+  }
+}
+
+.logo--footer {
+  margin-top: 21px;
+  letter-spacing: 0.6px;
+  display: inline-block;
+  @include font-style(bold, 16px, $red);
+
+}
+.nav--footer{
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  @include Montserrat;
+  @include font-style(bold, 14px, $blac);
+}
+
+
+.nav__item {
+  display: inline-block;
+  margin-top: 6px;
+}
+
+.nav__link {
+  @include Roboto;
+  @include font-style(200, 14px, $blac2);
+  margin: 6px;
+}
+
+.footer__designer {
+  display: block;
+  margin-top: 15px;
+  text-decoration: none;
+}
+
+.designer__title {
+  display: block;
+  letter-spacing: 1px;
+  @include font-style(bold, 10px, #ccc);
+}
+
+#areto {
+  display: block;
+  margin: 0 auto;
+  width: 122px;
+}
+
+@include breakpoint (tablet) {
+  .footer {
+    width: $tablet-point;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    justify-content: space-around;
+  }
+
+  .footer__item {
+    margin-top: 42px;
+    width: 133px;
+    margin-bottom: 38px;
+  }
+
+  .nav--footer {
+    text-align: left;
+
+  }
+
+  .nav__item {
+    display: block;
+  }
+}
+
+@include breakpoint (desktop) {
+  .footer {
+    width: $desktop-point;
+  }
+
+  .footer__item {
+    display: block;
+    width: 20%;
+    float: left;
+    margin-top: 42px;
+    text-align: left;
+    margin-bottom: 38px;
+  }
+
+  .logo--footer {
+    margin-left: -10px;
+  }
+
+  .nav--footer {
+    margin-left: 50px;
+    width: 110px;
+  }
+
+  .nav__item,
+  .nav__link {
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav__item {
+    display: block;
+    margin-top: 11px;
+  }
+
+
+  .footer__designer {
+    float: right;
+    text-align: center;
+    margin-right: -12px;
+  }
+
+  .designer__title {
+    margin-left: 32px;
+  }
+}
+
+.areto {
+  @include sprite(areto);
+  width: 100%;
+  background-size: (map-get(map-get($icons, sprite), width)/map-get(map-get($icons, areto), width) * 100%);
+  background-repeat: no-repeat;
+}

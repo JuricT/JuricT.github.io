@@ -1,3 +1,12 @@
+@import 'svg/sprite';
+@import 'svg/mq';
+
+$ieSprite: '.lt-ie9' !default;
+$sprite: map-get($icons, sprite) !default;
+$baseFontSize: 16px !default;
+
+@import 'svg/mixins';
+
 @import "core/reset";
 @import "core/fonts";
 @import "core/settings";

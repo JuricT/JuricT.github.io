@@ -1,8 +1,16 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300);
+.toggle__label, .toggle:checked ~ .toggle__label {
+  display: inline-block;
+  background-image: url("../img/sprite.svg");
+  background-size: 6.25em 6.25em; }
+
+.lt-ie9 .toggle__label, .lt-ie9 .toggle:checked ~ .toggle__label {
+  background-image: url("../img/sprite.png"); }
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300);
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -179,8 +187,13 @@ body {
   left: -5px;
   width: 23px;
   height: 23px;
-  background: url("../img/sprite.svg") 100% 0 no-repeat;
-  background-size: cover; }
+  width: 2.5625em;
+  height: 2.5625em;
+  background-position: -3.4375em -3.4375em; }
+  .lt-ie9 .toggle__label {
+    width: 40px;
+    height: 40px;
+    background-position: -55px -55px; }
 
 .toggle {
   position: absolute;
@@ -192,8 +205,13 @@ body {
   text-decoration: line-through; }
 
 .toggle:checked ~ .toggle__label {
-  background: url("../img/sprite.svg") 0 0 no-repeat;
-  background-size: cover; }
+  width: 2.5625em;
+  height: 2.5625em;
+  background-position: -0.3125em -0.3125em; }
+  .lt-ie9 .toggle:checked ~ .toggle__label {
+    width: 40px;
+    height: 40px;
+    background-position: -5px -5px; }
 
 @media screen and (max-width: 959px) and (min-width: 768px) {
   .todolist {

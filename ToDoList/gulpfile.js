@@ -2,7 +2,7 @@
 //          BUILD CONSTANTS
 //===================================
 
-var build           = './build/';//Место хранения сборки проекта
+var build           = './build/';
 
 var imagesBuildPath = build + 'img/',
     cssBuildPath    = build + 'css/',
@@ -111,14 +111,28 @@ gulp.task('requirejsBuild', function() {
 gulp.task('svg', function() {
     var stream = gulp.src('*.svg', {cwd: svgDir})
     .pipe(svgSprite({
-        mode: {
-            css: {     // Activate the «css» mode
-                render: {
-                    css: true  // Activate CSS output (with default options)
-                }
+      shape: {
+        spacing: {
+          padding: 5
+        }
+      },
+      mode: {
+        css: {
+          dest: "./",
+          layout: "diagonal",
+          sprite: 'sprite.svg',
+          bust: false,
+          render: {
+            scss: {
+              dest: '../../' + sassDir + '/svg/_sprite.scss',
+              template: sassDir + '/svg/_sprite-template.scss'
             }
-        },
-
+          }
+        }
+      },
+      variables: {
+        mapname: "icons"
+      }
     }))
     .pipe(gulp.dest(imagesBuildPath));
 
@@ -126,10 +140,6 @@ gulp.task('svg', function() {
     .pipe(gulp.dest(imagesBuildPath));
 
   return stream;
-});
-
-gulp.task('del', ['svg'], function () {
-  del([imagesBuildPath + 'css']);
 });
 
 //===================================
@@ -147,4 +157,11 @@ gulp.task('test', function (done) {
 //===================================
 gulp.task('default', function(){
   gulp.run('jade', 'script', 'sass', 'connect', 'watch');
+});
+
+//===================================
+//           BUILD TASK
+//===================================
+gulp.task('build', ['svg'], function(){
+  gulp.run('jade', 'script', 'sass');
 });

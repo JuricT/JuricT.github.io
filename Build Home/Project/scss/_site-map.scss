@@ -1,0 +1,39 @@
+$site-map-title-color: #fff;
+$site-map-item-color: #828385;
+$site-map-item-hover-color: #248cec;
+$site-map-bg: #2a2d32;
+
+.site-map {
+  margin: 94px -30px 0 -15px;
+  position: relative;
+
+  .site-map-title {
+    margin: 57px 0 0 0;
+    @include font-ubuntu;
+    font-size: 16px;
+    font-weight: 500;
+    color: $site-map-title-color;
+    text-transform: uppercase;
+  }
+
+  .link-list {
+    margin: 32px 10px 71px 0;
+
+    li {
+      border-bottom: 1px solid $site-map-item-color;
+    }
+  }
+
+  a {
+    @include font-arial;
+    color: $site-map-item-color;
+    font-size: 13px;
+    line-height: 35px;
+
+    &:hover {
+      color: $site-map-item-hover-color;
+    }
+  }
+
+  @include wide-bg($site-map-bg);
+}

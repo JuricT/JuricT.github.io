@@ -1,0 +1,9 @@
+<svg data-name="rss" id="rss-svg" class="ico-soc-menu" viewBox="0 0 15.06 15.01" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<!-- <style>.rss{fill:#ccc;}</style> -->
+	</defs>
+	<title>rss</title>
+	<path class="rss" d="M2,11a2,2,0,1,0,2,2A2,2,0,0,0,2,11Z"/>
+	<path class="rss" d="M0.17,5.06H0.06V7.86H0.17a7,7,0,0,1,7,7c0,0.06,0,.12,0,0.17H10c0-.06,0-0.12,0-0.17A9.8,9.8,0,0,0,.17,5.06Z"/>
+	<path class="rss" d="M0.17,0H0.06V2.79H0.17a12.07,12.07,0,0,1,12.08,12c0,0.06,0,.12,0,0.17h2.8c0-.06,0-0.12,0-0.17A14.87,14.87,0,0,0,.17,0Z"/>
+</svg>

@@ -1,0 +1,6 @@
+<svg data-name="phone" id="phone-svg" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<style>.phone-path{fill:#5d6163;fill-rule:evenodd;}</style>
+	</defs>
+	<path class="phone-path" d="M9,0H1A1,1,0,0,0,0,1V15a1,1,0,0,0,1,1H9a1,1,0,0,0,1-1V1A1,1,0,0,0,9,0ZM5,15a0.89,0.89,0,0,1-1-.5A0.89,0.89,0,0,1,5,14a0.89,0.89,0,0,1,1,.5A0.89,0.89,0,0,1,5,15Zm4-2H1V2H9V13Z" transform="translate(0 0)"/>
+</svg>

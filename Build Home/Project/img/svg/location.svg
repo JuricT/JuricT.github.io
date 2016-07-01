@@ -1,0 +1,6 @@
+<svg data-name="location" id="location-svg" viewBox="0 0 12 16" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<style>.location-path{fill:#5d6163;fill-rule:evenodd;}</style>
+	</defs>
+	<path class="location-path" d="M6,0A6,6,0,0,0,0,6C0,9.31,6,16,6,16s6-6.69,6-10A6,6,0,0,0,6,0ZM6,9A3,3,0,1,1,9,6,3,3,0,0,1,6,9Z" transform="translate(0 0)"/>
+</svg>

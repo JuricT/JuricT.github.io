@@ -1,0 +1,9 @@
+<svg data-name="Слой 1" id="search" viewBox="0 0 13.97 13.97" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<style>.cls-1{fill:#5d6163;fill-rule:evenodd;}</style>
+	</defs>
+	<title>search</title>
+	<path class="cls-1" d="M9.29,9.58l0.3-.3a0.42,0.42,0,0,1,.59,0l1.48,1.48a0.42,0.42,0,0,1,0,.59l-0.3.3a0.42,0.42,0,0,1-.59,0L9.29,10.18A0.42,0.42,0,0,1,9.29,9.58Z" transform="translate(0 0)"/>
+	<path class="cls-1" d="M10.17,11.17l1-1a0.47,0.47,0,0,1,.67,0l2,2a0.47,0.47,0,0,1,0,.67l-1,1a0.47,0.47,0,0,1-.67,0l-2-2A0.47,0.47,0,0,1,10.17,11.17Z" transform="translate(0 0)"/>
+	<path class="cls-1" d="M5.68,0a5.68,5.68,0,1,0,5.68,5.68A5.68,5.68,0,0,0,5.68,0Zm0,9.17A3.49,3.49,0,1,1,9.17,5.68,3.49,3.49,0,0,1,5.68,9.17Z" transform="translate(0 0)"/>
+</svg>

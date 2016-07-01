@@ -1,0 +1,144 @@
+
+body {
+  background: #fff;
+  font-family: 'Open Sans', sans-serif, arial;
+
+}
+
+#wraper {
+  margin: 0 auto;
+  width: 1060px;
+  box-shadow:         0px 0px 5px 0px rgba(0,0,0,0.3);
+}
+
+#img-logo {
+  margin-top: 50px;
+  margin-left: 45px;  
+}
+
+#topMenu {
+  margin-top: 40px;
+  margin-left: 46px;
+  height: 40px;
+  width: 966px;
+  background: linear-gradient(#5e5e5e,#444343);
+}
+
+#topMenu ul li{
+  display: inline-block;
+}
+
+#topMenu ul li a {
+  display: block;
+  height: 40px;
+  width: 138px;
+  color: #fff;
+  font-size: 15px;
+  text-shadow: 1px 1px 0 rgba(0,0,0,.5);
+  line-height: 40px;
+  text-align: center;
+}
+
+#topMenu ul li a:first-letter {
+  text-transform: capitalize;
+}
+
+#topMenu ul li a:hover {
+  margin-left: -1px;
+  background: #911;
+  background: linear-gradient(#2e2e2e,#4a4a4a);
+  border-left: 1px solid #838383;
+  border-right: 1px solid #838383;
+  
+}
+
+#aside-menu {
+  display: block;
+  float: left;
+  margin-top: 40px;
+  margin-left: 46px;
+  width: 240px;
+}
+
+#aside-menu ul li a {
+  display: block;
+  height: 40px;
+  border: 1px solid #c8c8c8;
+  margin-top: -1px;
+  padding-left: 20px;
+  
+  font-size: 13px;
+  
+  color: #656363;
+  line-height: 40px;
+}
+
+#aside-menu ul li a:first-letter {
+  text-transform: capitalize;
+}
+
+#aside-menu ul li a:hover {
+  color: #000;
+  padding-left: 40px;
+  background: #f9f9f9;
+}
+.content {
+  margin: 40px 48px 60px 334px;
+}
+.content .image {
+  height: 400px;
+  border: 1px solid #c8c8c8;
+  background-image: url(../img/bicycle.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.content figcaption {
+  margin: 35px 20px 1px 20px;
+  font-size: 13px;
+  line-height: 21px;
+}
+
+footer {
+  height: 100px;  
+  color: #2c2c2c;
+}
+
+#footerMenu {
+  margin-top: 40px;
+  margin-left: 46px;
+  height: 40px;
+  width: 966px;
+  background: #e1e1e1;
+
+}
+
+#footerMenu ul li{
+  display: inline-block;
+}
+
+#footerMenu ul li a {
+  display: block;
+  height: 40px;
+  width: 138px;
+    
+  font-size: 15px;
+  color: #2c2c2c;
+  
+  line-height: 40px;
+  text-align: center;
+}
+
+#footerMenu ul li a:first-letter {
+  text-transform: capitalize;
+}
+
+#footerMenu ul li a:hover {
+ text-decoration: underline;
+}
+
+#footerMenu small {
+  display: inline-block;
+  float: right;
+  margin-top: -28px;
+  margin-right: 20px;
+}

@@ -1,0 +1,895 @@
+body {
+	margin: 0px auto;
+	width: 910px;
+	position: relative;
+	font-family: "Lucida Sans Unicode";
+}
+
+/*Номера телефонов phone nombers*/
+.phone {
+	display: inline-block;
+	margin-top: 24px;
+	margin-left: 0px;
+	font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+	font-size: 18px;
+	letter-spacing: 0.46px;
+	color: #5e696d;
+}
+.phone:first-child{
+	margin-left: 32px;
+}
+.phone:first-child::before{
+	content: '';
+	position: absolute;
+	display: block;
+	height: 21px;
+	width: 22px;
+	top: 22px;
+	left: 7px;
+	background: url(../img/phone.png) center no-repeat;	
+}
+
+/*Меню регистрации login menu*/
+#login-form {
+	display: block;
+	position: absolute;
+	width: 494px;
+	height: 26px;
+	top: 18px;
+	left: 314px;
+	border-radius: 4px;
+	background: linear-gradient(to bottom, #206988 0%, #114165 59%, #0c3256 100%);
+	box-shadow: 3px 3px 3px 0px rgba(150,150,150,1), 0px 0px 3px 0px rgba(150,150,150,1);
+}
+
+#login-form input[name="name"],
+#login-form input[name="password"]{
+	display: inline-block;
+	margin-top: 4px;
+	padding: 0;
+	width: 110px;
+	height: 12px;
+	font-size: 10.81px;
+	color: #97a2ab;
+}
+
+#login-form input[name="name"]{
+	margin-left: 25px;
+	margin-right: 2px;
+}
+#login-form:before {
+	content: '';
+	position: absolute;
+	display: block;
+	height: 18px;
+	width: 14px;
+	top: 4px;
+	left: 7px;
+	background: url(../img/signin.png) center no-repeat;
+}
+
+#login-form input[type="submit"]{
+	border: 0;
+	padding: 0;
+	margin-right: 0;
+	margin-left: 3px;
+	background: rgba(0,0,0,0);
+	font-size: 10.91px;
+	color: #fff;
+	letter-spacing: 0.5px;
+}
+
+.signup {
+	font-size: 11.91px;
+	color: #fff;
+	text-decoration: none;	
+	letter-spacing: -.8px;
+}
+.signup:before {
+	content: "|";
+	margin-left: -2px;
+	padding: 0;
+	margin-right: 3px;
+}
+
+.forget-password {
+	font-size: 10.91px;
+	color: #bfbfbf;
+	margin-left: 17px;
+	letter-spacing: 0.6px;
+}
+
+.nav-mini {
+	display: block;
+	position: absolute;
+	height: 33px;
+	width: 85px;
+	top: 14px;
+	right: 3px;
+	background: url(../img/nav-mini-background.png) center no-repeat;
+}
+.home {
+	display: inline-block;
+	width: 12px;
+	height: 11px;
+	margin-top: 8px;
+	margin-left: 13px;
+	background: url(../img/home.png);
+}
+.sitemap {
+	display: inline-block;
+	width: 14px;
+	height: 10px;
+	margin-left: 3px;
+	background: url(../img/sitemap.png);
+}
+.email {
+	display: inline-block;
+	width: 12px;
+	height: 9px;
+	margin-left: 4px;
+	background: url(../img/mail.png);
+}
+
+#header-img {
+	margin-top: 12px;
+	display: block;
+}
+.header-menu {
+	margin-top: 6px;
+	box-shadow: 2px 3px 5px -1px rgba(0,0,0,.75);
+	background: linear-gradient(to top, #000 0%, #2b3034 85%, #576068 97%);
+	border-radius: 4px;
+	border: 1px solid #2c345a;
+	height: 33px;
+	position: relative;
+}
+.nav-main {
+	display: inline-block;
+	line-height: 33px;
+	margin-top: -1px;
+	margin-left: 130px;
+	letter-spacing: -0.5px;
+}
+.nav-main a{
+	display: inline-block;
+	margin: 2px 0;
+	padding: 0 13px;
+	font-size: 14px;
+	line-height: 25px;
+	color: #b1bcc0;
+	text-decoration: none;
+}
+.nav-main a:hover{
+	color: #fff;
+	border-radius: 15px;
+	background: linear-gradient(to top, #0d3458, #25617b)
+}
+	
+
+.koshuk-text1{
+	position: absolute;
+	top: -2px;
+	left: 81px;
+	font-size: 11px;
+	color: #929b9f;
+}
+.koshuk-num1 {
+	position: absolute;
+	top: 10px;
+	right: 142px;
+	font-size: 12px;
+	color: #0d5a8f;
+}
+.koshuk-text2{
+	position: absolute;
+	top: 10px;
+	right: 74px;
+	font-size: 11px;
+	color: #929b9f;
+}
+.koshuk-num2 {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 12px;
+	letter-spacing: -0.1px;
+	color: #0d5a8f;
+}
+
+#first-span {
+	position: relative;
+	text-decoration: none;
+}
+#first-span:before{
+	content: "";
+	display: block;
+	position: absolute;
+	width: 21px;
+	height: 17px;
+	top: 0px;
+	left: -27px;
+	background: url(../img/basket.png) center no-repeat;
+}
+
+/******  FOOTER  *******/
+/*     Brand menu      */
+.brandlogo {
+	display: block;
+	height: 64px;
+	position: relative;
+}
+.brandlogo a {
+	display: block;
+	position: absolute;
+}
+#brandlogo1 {
+	top: 16px;
+	left: 117px;
+	width: 83px;
+	height: 21px;
+	background: url(../img/brandlogo/brandlogo1.png);
+}
+#brandlogo1:hover {
+	background: url(../img/brandlogo/brandlogo1_hover.png);
+}
+#brandlogo2 {
+	top: 16px;
+	left: 212px;
+	width: 97px;
+	height: 14px;
+	background: url(../img/brandlogo/brandlogo2.png);
+}
+#brandlogo2:hover {
+	background: url(../img/brandlogo/brandlogo2_hover.png);
+}
+#brandlogo3 {
+	top: 12px;
+	left: 575px;
+	width: 57px;
+	height: 27px;
+	background: url(../img/brandlogo/brandlogo3.png);
+}
+#brandlogo3:hover {
+	background: url(../img/brandlogo/brandlogo3_hover.png);
+}
+#brandlogo4 {
+	top: 17px;
+	left: 485px;
+	width: 77px;
+	height: 13px;
+	background: url(../img/brandlogo/brandlogo4.png);
+}
+#brandlogo4:hover {
+	background: url(../img/brandlogo/brandlogo4_hover.png);
+}
+#brandlogo5 {
+	top: 15px;
+	left: 414px;
+	width: 59px;
+	height: 21px;
+	background: url(../img/brandlogo/brandlogo5.png);
+}
+#brandlogo5:hover {
+	background: url(../img/brandlogo/brandlogo5_hover.png);
+}
+#brandlogo6 {
+	top: 17px;
+	left: 645px;
+	width: 61px;
+	height: 14px;
+	background: url(../img/brandlogo/brandlogo6.png);
+}
+#brandlogo6:hover {
+	background: url(../img/brandlogo/brandlogo6_hover.png);
+}
+#brandlogo7 {
+	top: 16px;
+	left: 322px;
+	width: 77px;
+	height: 21px;
+	background: url(../img/brandlogo/brandlogo7.png);
+}
+#brandlogo7:hover {
+	background: url(../img/brandlogo/brandlogo7_hover.png);
+}
+#brandlogo8 {
+	top: 17px;
+	left: 721px;
+	width: 72px;
+	height: 13px;
+	background: url(../img/brandlogo/brandlogo8.png);
+}
+#brandlogo8:hover {
+	background: url(../img/brandlogo/brandlogo8_hover.png);
+}
+
+/*     futer menu      */
+footer *{
+	text-decoration: none;
+	font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+}
+footer {
+	margin-top: 27px;
+}
+.footem-menu {
+	display: block;
+	height: 35px;
+	background: #213a4d;
+}
+
+.footem-menu a:first-child {
+	margin-left: 308px;
+}
+.footem-menu a {
+	margin-left: 6px;
+	color: #bec6c9;
+	line-height: 35px;
+	font-size: 13.2px;
+}
+.footem-menu a:not(:last-child):after {
+	content: "|";
+	margin-left: 10px;
+	color: #bec6c9; 
+}
+
+.footem-menu a:hover {
+	color: #52abcb;
+}
+
+address {
+	background: #213a4d;
+	text-align: center;
+	padding-bottom: 49px;
+}
+footer address * {
+	color: #7f4740;
+	font-size: 10px;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+/*MAIN HEADER*/
+main header form {
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 16px;
+	height: 133px;
+	border: 1px solid #9c9c9d;
+	border-radius: 20px;
+	box-shadow: 3px 4px 5px 0px rgba(150,150,150,0.75);
+}
+main header form h2,
+main header form h3{
+	position: absolute;
+	font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+	font-weight: 900;
+	font-size: 12px;
+	color: #114165;
+}
+main header form h3 {
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: -0.3px;
+}
+
+main header form p {
+	position: absolute;
+	font-size: 10px;
+
+	/*top: 500px;*/
+}
+main header form span {
+	position: absolute;
+	font-size: 9px;
+	color: #77858b;
+}
+main header form select {
+	position: absolute;
+	font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+	font-size: 11px;
+	color: black;
+}
+main header form input[type="submit"] {
+	position: absolute;
+	font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+	font-size: 14px;
+	letter-spacing: 0.2px;
+	color: #154467;
+	font-style: italic;
+	text-decoration: underline;
+	border: none;
+	background: rgba(255,255,255,0);
+}
+main header form label {
+	position: absolute;
+	font-size: 12px;
+}
+main header form input[type="checkbox"] {
+	position: absolute;
+	top: -2px;
+	left: -16px;
+	height: 12px;
+}
+
+/*форма поиска по автомобилю*/
+.search-automobile {
+	display: block;
+	float: left;
+	width: 413px;
+	margin-left: 5px;
+}
+.search-automobile h2 {
+	top: 1px;
+	left: 124px;
+	letter-spacing: 0.3px;
+}
+.diski h3 {
+	top: 5px;
+	left: 18px;
+}
+.diski .brend-auto {
+	top: 27px;
+	left: 16px;
+}
+.diski .brend-auto span {
+	top: 1px;
+	left: 34px;
+}
+.diski .model-auto {
+	top: 43px;
+	left: 16px;
+}
+.diski .model-auto span {
+	top: 8.5px;
+	left: 0.5px;
+}
+.diski .year {
+	top: 65px;
+	left: 16px;
+}
+.diski .year span {
+	top: 8.5px;
+	left: 0.5px;
+}
+.diski .kompl {
+	top: 91px;
+	left: 16px;
+}
+
+.tire h3 {
+	top: 3px;
+	left: 352px;
+}
+
+.tire .brend-auto {
+	top: 25px;
+	left: 221px;
+}
+.tire .brend-auto span {
+	top: 1px;
+	left: 34px;
+}
+.tire .model-auto {
+	top: 41px;
+	left: 221px;
+}
+.tire .model-auto span {
+	top: 8.5px;
+	left: 0.5px;
+}
+.tire .year {
+	top: 63px;
+	left: 221px;
+}
+.tire .year span {
+	top: 8.5px;
+	left: 0.5px;
+}
+.tire .kompl {
+	top: 89px;
+	left: 221px;
+}
+.search-automobile select {
+	width: 100px;
+}
+
+.search-automobile select[name="marka-disks"] {
+	top: 21px;
+	left: 93px;
+}
+.search-automobile select[name="model-disks"] {
+	top: 43px;
+	left: 93px;
+}
+.search-automobile select[name="year-disks"] {
+	top: 65px;
+	left: 93px;
+	width: 57px;
+}
+.search-automobile select[name="accessories-disks"] {
+	top: 87px;
+	left: 93px;
+}
+
+.search-automobile select[name="marka-tire"] {
+	top: 19px;
+	left: 298px;
+}
+.search-automobile select[name="model-tire"] {
+	top: 41px;
+	left: 298px;
+}
+.search-automobile select[name="year-tire"] {
+	top: 63px;
+	left: 298px;
+	width: 57px;
+}
+.search-automobile select[name="accessories-tire"] {
+	top: 85px;
+	left: 298px;
+}
+.search-automobile input[type="submit"]{
+	top: 107px;
+	right: 15px;
+}
+
+/*Форма поиска шин*/
+.find-tires {
+	display: block;
+	float: left;
+	width: 192px;
+	margin-left: 13px;
+}
+
+.find-tires h3 {
+	top: 4px;
+	left: 10px;
+	font-size: 10px;
+	letter-spacing: 0.2px;
+}
+
+#size {
+	top: 30px;
+	left: 14px;
+}
+#r {
+	top: 52px;
+	left: 47px;
+}
+#season {
+	top: 70px;
+	left: 15px;
+}
+#drob {
+	top: 28px;
+	left: 115px;
+}
+
+.find-tires select{
+	width: 50px;
+}
+.find-tires select[name="size-tire1"] {
+	top: 23px;
+	left: 60px;
+}
+.find-tires select[name="size-tire2"] {
+	top: 23px;
+	left: 126px;
+}
+.find-tires select[name="size-tire3"] {
+	top: 47px;
+	left: 60px;
+	width: 45px;
+}
+
+.season-summer {
+	top: 71px;
+	left: 71px;
+}
+.season-winter {
+	top: 84px;
+	left: 71px;
+}
+.season-all {
+	top: 98px;
+	left: 71px;
+}
+
+.find-tires input[type="submit"]{
+	top: 107px;
+	right: 13px;
+}
+/*форма поиска дисков*/
+.find-disks {
+	display: block;
+	float: left;
+	width: 266px;
+	margin-left: 9px;
+}
+
+.find-disks h3 {
+	top: 4px;
+	left: 8px;
+	letter-spacing: 0.2px;
+}
+
+.find-disks .text1 {
+	top: 24px;
+	left: 15px;
+	letter-spacing: 0.7px;
+}
+.find-disks>.text1 span {
+	top: 1px;
+	left: 54px;
+}
+
+.find-disks>.text2 {
+	top: 40px;
+	left: 15px;
+	letter-spacing: 0.7px;
+}
+
+.find-disks>.text3 {
+	top: 70px;
+	left: 15px;
+	letter-spacing: 0.7px;
+}
+.find-disks>.text3 span {
+	line-height: 112%;
+}
+
+.find-disks select[name="size-disk"] {
+	top: 20px;
+	left: 106px;
+	width: 57px;
+}
+
+.find-disks select[name="number-holes"] {
+	top: 51px;
+	left: 106px;
+	width: 50px;
+}
+.find-disks select[name="diameter-holes"] {
+	top: 83px;
+	left: 106px;
+	width: 58px;
+}
+
+#DCO {
+	position: absolute;
+	height: 106px;
+	width: 90px;
+	top: 3px;
+	left: 175px;
+	border-left: 1px solid #bdc6ca;
+}
+
+#DCO select[name="dco"] {
+	top: 39px;
+	left: 11px;
+	width: 58px;
+}
+
+#DCO select[name="et"] {
+	top: 84px;
+	left: 11px;
+	width: 58px;
+}
+
+#DCO .text1 {
+	top: 2px;
+	left: 9px;
+}
+#DCO .text1 span {
+	width: 80px;
+	line-height: 90%;
+}
+
+#DCO .text2 {
+	top: 63px;
+	left: 10px;
+}
+#DCO .text2 span {
+	top: 9px;
+	width: 80px;
+}
+
+.find-disks input[type="submit"]{
+	top: 107px;
+	right: 13px;
+}
+
+/* ASIDE LAFT */
+.aside-laft {
+	display: block;
+	float: left;
+	width: 192px;
+}
+.aside-laft h1 {
+	display: block;
+	margin-top: 3px;
+	height: 26px;
+	width: 180px;
+
+	font-size: 13px;
+	color: #114165;
+	text-indent: 26px;
+	line-height: 26px;
+	letter-spacing: -0.2px;
+
+	border: 1px solid #79878d;
+	border-radius: 13px;
+	box-shadow: 2px 2px 3px 0 rgba(150,150,150,.75);
+	background: url(../img/h1.png) left no-repeat;
+	background-position: 1px 1px;
+}
+
+.aside-laft>ul {
+	margin-top: 17px;
+}
+
+.aside-laft h2 {
+	margin-left: 1px;
+	margin-top: -4px;
+	width: 148px;
+	height: 26px;
+	border: 1px solid #79878d;
+	border-radius: 16px;
+	line-height: 26px;
+	color: #114165;
+	font-size: 15px;
+	text-indent: 28px;
+	background: url(../img/h2.png) left no-repeat;
+	background-position: 3px 1px;
+}
+
+.aside-laft a {
+	display: block;
+	line-height: 26px;
+	margin-left: 36px;
+	font-size: 13px;
+	text-indent: 10px;
+	text-decoration: none;
+	color: #465961;
+	background: url(../img/li.png) left no-repeat;
+}
+
+.aside-laft a:hover {
+	font-weight: bold;
+	text-decoration: underline;
+	color: #0c3256;
+	letter-spacing: 0.5px;
+	background: url(../img/li-hover.png) left no-repeat;
+}
+
+.content {
+	display: block;
+	float: left;
+	width: 515px;
+	text-align: left;
+	padding: 0px 5px;
+	padding-bottom: 23px;
+
+	background: linear-gradient(to bottom, #e4e6e7, #93a7b0);
+}
+.content figure {
+	display: inline-block;
+	text-align: center;
+	margin: 15px -5px 9px 0px;
+	width: 168px;
+
+}
+.content a {
+	text-decoration: none;
+}
+.content h2 {
+	font-size: 16px;
+	text-indent: 2px;
+	letter-spacing: -0.3px;
+	color: #206988;
+}
+.content a p {
+	margin-top: -2px;
+	margin-bottom: 2px;
+	text-indent: 7px;
+	font-size: 13px;
+	color: #1f2528;
+}
+.price {
+	margin-top: 4px;
+	font-size: 17px;
+	text-indent: 12px;
+	letter-spacing: -1.1px;
+	font-style: italic;
+	color: #114165;
+	font-weight: bold;
+	font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+}
+
+div.wrapper {
+	display: block;
+	height: 127px;
+	width: 136px;
+	margin-left: 16px;
+	margin-top: -2px;
+	background: #fff;
+	border: 1px solid #a7b1b4;
+	border-radius: 9px;
+}
+.wrapper img {
+	margin: 5px;
+}
+
+
+
+.aside-right {
+	display: block;
+	float: left;
+	width: 192px;
+}
+
+.aside-right h1 {
+	display: block;
+	margin-top: 1px;
+	margin-left: 10px;
+	height: 25px;
+	width: 180px;
+
+	font-size: 13px;
+	color: #114165;
+	text-indent: 30px;
+	line-height: 26px;
+	letter-spacing: 0.6px;
+
+	border: 1px solid #79878d;
+	border-radius: 13px;
+	box-shadow: 2px 2px 3px 0 rgba(150,150,150,.75);
+	background: url(../img/h1.png) left no-repeat;
+	background-position: 3px 1px;
+}
+
+.aside-right h2 {
+	margin-left: 24px;
+	margin-top: 14px;
+	margin-bottom: -3px;
+	width: 135px;
+	height: 26px;
+	border: 1px solid #79878d;
+	border-radius: 16px;
+	line-height: 26px;
+	color: #114165;
+	font-size: 15px;
+	text-indent: 28px;
+	background: url(../img/h2.png) left no-repeat;
+	background-position: 3px 1px;
+}
+.aside-right label {
+	font-size: 14px;
+	display: block;
+	margin-top: 6px;
+	margin-left: 31px;
+}
+.aside-right label input[type="checkbox"] {
+	margin-right: 9px;
+}
+
+.aside-right input[type="submit"]{
+	margin-left: 34px;
+	margin-top: 21px;
+	width: 81px;
+	height: 26px;
+	border: none;
+	border-radius: 14px;
+
+	font-size: 11px;
+	color: #e5e9ea;
+	box-shadow: 2px 3px 5px -1px rgba(188,188,188,.75);
+	background: linear-gradient(to top, #0c3357, #1f6787);
+}
+

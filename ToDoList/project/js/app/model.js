@@ -48,7 +48,7 @@ define(
 
       removeItem (index) {
         if (index < 0) return this.data;
-        
+
         this.data.splice(index, 1);
         this.saveList();
 
@@ -59,3 +59,5 @@ define(
     return Model;
   }//define function
 );// define
+
+export default Model;

@@ -58,3 +58,7 @@ define('model', [], function () {
   return Model;
 } //define function
 ); // define
+
+try {
+  module.exports = Model;
+} catch (e) {}

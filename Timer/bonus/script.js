@@ -57,7 +57,7 @@ function addSplits(label){
 
 }
 
-//Счетчик записей в списке засечек времени.
+//The counter records time listed serif.
 var counter = (function(){
 	var count = 1;
 	return function(num){

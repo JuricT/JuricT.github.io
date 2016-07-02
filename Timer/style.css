@@ -4,17 +4,19 @@
 
 #timer {
 	background: #222;
-	width: 240px;
+	width: 260px;
 	margin: 0 auto;
 	color: #aaa;
 	text-align: center;
 }
 .timer-clockface {
 	text-align: left;
+	margin-left: 9px;
 }
-.start-pause {
-	width: 103px;
+.btn {
+	width: 74px;
 }
-.clear {
-	width: 103px;
+.timer-list {
+	padding-top: 15px;
+	font-size: 24px;
 }

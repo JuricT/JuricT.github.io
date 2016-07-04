@@ -1,22 +1,27 @@
 #body {
-	background: #222;
+  background: #222;
 }
 
 #timer {
-	background: #222;
-	width: 260px;
-	margin: 0 auto;
-	color: #aaa;
-	text-align: center;
+  background: #2c2b27;
+  width: 260px;
+  margin: 0 auto;
+  margin-top: 20px;
+  color: #aaa;
+  text-align: center;
+  box-sizing: content-box;
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  box-shadow: 0px 0px 34px 0px rgba(252,255,214,.8); 
 }
 .timer-clockface {
-	text-align: left;
-	margin-left: 9px;
+  text-align: center;
 }
 .btn {
-	width: 74px;
+  width: 74px;
 }
 .timer-list {
-	padding-top: 15px;
-	font-size: 24px;
+  padding-top: 15px;
+  font-size: 24px;
 }
+ 

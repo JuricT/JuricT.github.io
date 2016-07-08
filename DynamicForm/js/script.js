@@ -7,7 +7,8 @@ $(document).ready(function(e) {
 		$.each(this, function( index, value ) {
 			var $that = $(this);
 
-			selectLang.push({'title' : $that.data('title'), 'url' : $that.attr('value')});
+			// selectLang.push({'title' : $that.data('title'), 'url' : $that.attr('value')});
+			selectLang.push({'title' : $that.data('title'), 'url' : $that.data('url')});
 			if ($that.attr('selected')) {
 				select = $that.data('title');
 			}
@@ -30,11 +31,13 @@ $(document).ready(function(e) {
 			selectLang.forEach(function (item, i, arr) {
 				if (item.title === title) { 
 					select = title;
-					var protocol = window.location.protocol,
-							hostname = window.location.hostname,
-							pathname = window.location.pathname;
+					window.location = item.url;
+					// var protocol = window.location.protocol,
+					// 		hostname = window.location.hostname,
+					// 		pathname = window.location.pathname;
 
-					window.location = protocol + '//' + item.url + '.' + hostname + pathname;
+					// window.location = protocol + '//' + item.url + '.' + hostname + pathname;
+
 				}
 			});
 		}

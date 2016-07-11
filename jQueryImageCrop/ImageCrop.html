@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<link rel="stylesheet" href="css/cropper.min.css">
+
+	<script src="js/cropper.min.js"></script>
+
+	<style>
+	body {
+		position: relative;
+	}
+	#crop {
+		position: absolute;
+		right: 15px;
+		top: 15px;
+		width: 200px;
+		height: 20px;
+		text-align: center;
+		color: yellow;
+		background-color: green;
+		z-index: 500;
+		cursor: pointer;
+	}
+
+	</style>
+	
+</head>
+<body>
+
+	<h2>STEP 2</h2>
+
+	<img id="b-img" src="" alt="">
+
+	<div id="crop">Crop Button wen done</div>
+
+	<script>
+		$('#b-img').attr('src', imgResult);
+		var $cropimg = $('#b-img').cropper({
+			aspectRatio: 6 / 3,
+			viewMode: 2
+		});
+		$('#crop').on('click', function () {
+			$preview.attr('src', $cropimg.cropper('getCroppedCanvas').toDataURL('image/jpeg'));
+
+			$preview.removeClass('hide');
+			$description.removeClass('hide');
+
+			$steps.text('STEP 3 Preview Cropped Image Ready For Uploading');
+
+			$.fancybox.close();
+		})
+	</script>
+	
+</body>
+</html>

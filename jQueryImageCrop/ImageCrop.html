@@ -38,10 +38,12 @@
 
 	<script>
 		$('#b-img').attr('src', imgResult);
+
 		var $cropimg = $('#b-img').cropper({
 			aspectRatio: 6 / 3,
-			viewMode: 2
+			viewMode: 1
 		});
+		
 		$('#crop').on('click', function () {
 			$preview.attr('src', $cropimg.cropper('getCroppedCanvas').toDataURL('image/jpeg'));
 

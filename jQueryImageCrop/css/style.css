@@ -12,3 +12,16 @@
 	display: none;
 }
 
+#crop {
+		position: absolute;
+		right: 15px;
+		top: 15px;
+		width: 200px;
+		height: 20px;
+		text-align: center;
+		color: yellow;
+		background-color: green;
+		z-index: 500;
+		cursor: pointer;
+	}
+

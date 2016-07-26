@@ -13,21 +13,16 @@
 		//Initialize defaults settings
 		this.defaults = {
 			localStorageDataKey: 'language',
-			defaultLanguage: 'English'
+			defaultLanguage: 'English',
+			defaultPage: 'index.html'
 		};//var defaults
 
 		//Overriding the default settings with the received parameters
 		this.settings = $.extend(this.defaults, options);
 
+		this.selected = function($that) {
 
-		this.getListLang = function() {
-			$.each(elem, function() {
-				var $that = $(this);
-				var selectLang = loadLang();
-
-				// selectLang.push({'title' : $that.data('title'), 'url' : $that.attr('value')});
-				langList.push({'title' : $that.data('title'), 'url' : $that.data('url')});
-
+			var selectLang = loadLang();
 				if (selectLang) {
 					if (selectLang === $that.data('title')) {
 						$that.attr('selected', 'selected');
@@ -37,8 +32,21 @@
 						$that.attr('selected', 'selected');
 					}
 				}
+		}
 
-			});
+
+		this.getListLang = function() {
+			$.each(elem, function() {
+				var $that = $(this);
+
+				// selectLang.push({'title' : $that.data('title'), 'url' : $that.attr('value')});
+				langList.push({'title' : $that.data('title'), 'url' : $that.data('url')});
+
+				selected($that);
+
+			});//$.each(elem, function()
+
+			console.log(window.location);
 
 			return langList;
 		}

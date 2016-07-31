@@ -25,11 +25,16 @@ $(function() {
     $points.on('click', clickPoint);
 
     function clickPoint(e) {
+      var $target = $(e.target);
+
+      if ($target.get(0) === $points.get(0)) return;
+
       $slidePoint.removeClass(activeClass);
-      if ($(e.target).hasClass('.slide-point')) {
-        $(e.target).addClass(activeClass);
+
+      if ($target.hasClass('.slide-point')) {
+        $target.addClass(activeClass);
       } else {
-        $(e.target).parent('.slide-point').addClass(activeClass);
+        $target.parent('.slide-point').addClass(activeClass);
       }
 
       for (var i = 0; i < $slidePoint.length; i++) {
@@ -38,9 +43,8 @@ $(function() {
           break;
         }
       }
-      console.log(activeN);
+
       $slidList.removeClass(activeClass);
-      console.log($slidList[activeN]);
       $($slidList[activeN]).addClass(activeClass);
     }
 

@@ -1,16 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300);
-.toggle__label, .toggle:checked ~ .toggle__label {
-  display: inline-block;
-  background-image: url("../img/sprite.svg");
-  background-size: 6.25em 6.25em; }
-
-.lt-ie9 .toggle__label, .lt-ie9 .toggle:checked ~ .toggle__label {
-  background-image: url("../img/sprite.png"); }
-
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300);
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -184,16 +176,58 @@ body {
 .toggle__label {
   position: absolute;
   top: -5px;
-  left: -5px;
   width: 23px;
   height: 23px;
-  width: 2.5625em;
-  height: 2.5625em;
-  background-position: -3.4375em -3.4375em; }
+  display: inline-block;
+  background-image: url("../img/sprite.svg");
+  background-size: 3.125em 3.125em;
+  width: 1.28125em;
+  height: 1.28125em;
+  background-position: -1.78125em -1.65625em; }
   .lt-ie9 .toggle__label {
+    background-image: url("../img/sprite.png");
     width: 40px;
     height: 40px;
     background-position: -55px -55px; }
+  @media screen and (max-width: 767px) and (min-width: 320px) {
+    .toggle__label {
+      display: inline-block;
+      background-image: url("../img/sprite.svg");
+      background-size: 3.125em 3.125em;
+      width: 1.28125em;
+      height: 1.28125em;
+      background-position: -1.78125em -1.65625em; }
+      .lt-ie9 .toggle__label {
+        background-image: url("../img/sprite.png");
+        width: 40px;
+        height: 40px;
+        background-position: -55px -55px; } }
+  @media screen and (max-width: 959px) and (min-width: 768px) {
+    .toggle__label {
+      display: inline-block;
+      background-image: url("../img/sprite.svg");
+      background-size: 4.6875em 4.6875em;
+      width: 1.92188em;
+      height: 1.92188em;
+      background-position: -2.67188em -2.48438em; }
+      .lt-ie9 .toggle__label {
+        background-image: url("../img/sprite.png");
+        width: 40px;
+        height: 40px;
+        background-position: -55px -55px; } }
+  @media screen and (min-width: 960px) {
+    .toggle__label {
+      display: inline-block;
+      background-image: url("../img/sprite.svg");
+      background-size: 6.25em 6.25em;
+      width: 2.5625em;
+      height: 2.5625em;
+      background-position: -3.5625em -3.3125em; }
+      .lt-ie9 .toggle__label {
+        background-image: url("../img/sprite.png");
+        width: 40px;
+        height: 40px;
+        background-position: -55px -55px; } }
 
 .toggle {
   position: absolute;
@@ -205,13 +239,56 @@ body {
   text-decoration: line-through; }
 
 .toggle:checked ~ .toggle__label {
-  width: 2.5625em;
-  height: 2.5625em;
-  background-position: -0.3125em -0.3125em; }
+  display: inline-block;
+  background-image: url("../img/sprite.svg");
+  background-size: 3.125em 3.125em;
+  width: 1.28125em;
+  height: 1.28125em;
+  background-position: -0.21875em -0.09375em; }
   .lt-ie9 .toggle:checked ~ .toggle__label {
+    background-image: url("../img/sprite.png");
     width: 40px;
     height: 40px;
     background-position: -5px -5px; }
+  @media screen and (max-width: 767px) and (min-width: 320px) {
+    .toggle:checked ~ .toggle__label {
+      display: inline-block;
+      background-image: url("../img/sprite.svg");
+      background-size: 3.125em 3.125em;
+      width: 1.28125em;
+      height: 1.28125em;
+      background-position: -0.21875em -0.09375em; }
+      .lt-ie9 .toggle:checked ~ .toggle__label {
+        background-image: url("../img/sprite.png");
+        width: 40px;
+        height: 40px;
+        background-position: -5px -5px; } }
+  @media screen and (max-width: 959px) and (min-width: 768px) {
+    .toggle:checked ~ .toggle__label {
+      display: inline-block;
+      background-image: url("../img/sprite.svg");
+      background-size: 4.6875em 4.6875em;
+      width: 1.92188em;
+      height: 1.92188em;
+      background-position: -0.32813em -0.14063em; }
+      .lt-ie9 .toggle:checked ~ .toggle__label {
+        background-image: url("../img/sprite.png");
+        width: 40px;
+        height: 40px;
+        background-position: -5px -5px; } }
+  @media screen and (min-width: 960px) {
+    .toggle:checked ~ .toggle__label {
+      display: inline-block;
+      background-image: url("../img/sprite.svg");
+      background-size: 6.25em 6.25em;
+      width: 2.5625em;
+      height: 2.5625em;
+      background-position: -0.4375em -0.1875em; }
+      .lt-ie9 .toggle:checked ~ .toggle__label {
+        background-image: url("../img/sprite.png");
+        width: 40px;
+        height: 40px;
+        background-position: -5px -5px; } }
 
 @media screen and (max-width: 959px) and (min-width: 768px) {
   .todolist {

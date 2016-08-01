@@ -70,13 +70,13 @@
 .toggle__label {
   position: absolute;
   top: -5px;
-  left: -5px;
+  // left: -5px;
   width: (23px  * $factor);
   height: (23px  * $factor);
-  @include sprite(undone);
-  // background: url("../img/sprite.svg") 100% 0 no-repeat;
-  // background-size: cover;
-
+  @include sprite(undone, $factor1/2);
+  @include breakpoint(mobile) { @include sprite(undone, $factor1/2); }
+  @include breakpoint(tablet) { @include sprite(undone, $factor2/2); }
+  @include breakpoint(desktop) { @include sprite(undone, $factor3/2); }
 }
 
 .toggle {
@@ -91,10 +91,10 @@
 }
 
 .toggle:checked ~ .toggle__label {
-  // background: url("../img/sprite.svg") 0 0 no-repeat;
-  // background-size: cover;
-  @include sprite(done);
-
+  @include sprite(done, $factor1/2);
+  @include breakpoint(mobile) { @include sprite(done, $factor1/2); }
+  @include breakpoint(tablet) { @include sprite(done, $factor2/2); }
+  @include breakpoint(desktop) { @include sprite(done, $factor3/2); }
 }
 
 @include breakpoint(tablet) {

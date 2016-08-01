@@ -15,13 +15,13 @@
 /// @requires $mq-base-font-size
 /// @returns {Number}
 @function mq-px2em($px, $base-font-size: $mq-base-font-size) {
-    @if unitless($px) {
-        @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels.";
-        @return mq-px2em($px + 0px); // That may fail.
-    } @else if unit($px) == em {
-        @return $px;
-    }
-    @return ($px / $base-font-size) * 1em;
+		@if unitless($px) {
+				@warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels.";
+				@return mq-px2em($px + 0px); // That may fail.
+		} @else if unit($px) == em {
+				@return $px;
+		}
+		@return ($px / $base-font-size) * 1em;
 }
 /// Add class for <IE9 sprite fallback
 /// @group sprite
@@ -112,7 +112,7 @@ $sprite: map-get($icons, sprite) !default;
 		#{$ieSprite} & {
 			@if $type == all {
 				// Shares the PNG background
-				@extend %ie-sprite;
+			 background-image: url(map-get($sprite, pngPath));
 			}
 			// Outputs dimensions of icon
 			@if $type == all or $type == size {
@@ -168,23 +168,25 @@ $sprite: map-get($icons, sprite) !default;
 /// .lt-ie9 .class:hover {
 /// 	background-position: -36px -36px;
 /// }
-@mixin sprite($icon, $type: all) {
+@mixin sprite($icon, $size: 1, $type: all) {
 	@if $type == all {
 		// Shares the backgrounds
-		@extend %sprite;
+		display: inline-block;
+		background-image: url(map-get($sprite, svgPath));
+		background-size: mq-px2em(map-get($sprite, width))*$size mq-px2em(map-get($sprite, height))*$size;
 	}
 
 	$iconMap: icon-attr($icon);
 
 	// Outputs dimensions in em
 	@if $type == all or $type == size {
-		width: mq-px2em(map-get($iconMap, width) + 1);
-		height: mq-px2em(map-get($iconMap, height) + 1);
+		width: mq-px2em((map-get($iconMap, width) + 1) * $size);
+		height: mq-px2em((map-get($iconMap, height) + 1) * $size);
 	}
 
 	// Outputs background position in em
 	@if $type == all or $type == bg {
-		background-position: mq-px2em(map-get($iconMap, x) - 5) mq-px2em(map-get($iconMap, y) - 5);
+		background-position: (mq-px2em(map-get($iconMap, x) - 7)*$size) (mq-px2em(map-get($iconMap, y) - 3)*$size);
 	}
 
 	// Add ie fallback
@@ -193,11 +195,11 @@ $sprite: map-get($icons, sprite) !default;
 }
 
 @mixin sprite-ico($icon, $x:0, $y:0, $color:#fff) {
-  $ico: map-get($icons, $icon);
-  $sprite: map-get($icons, sprite);
-  background-image: url(map-get($sprite, svgPath));
-  background-position: (map-get($ico, backgroundX) + $x) (map-get($ico, backgroundY) + $y);
-  background-color: $color;
-  $type:all;
-  @include ie-sprite($icon, $type);
+	$ico: map-get($icons, $icon);
+	$sprite: map-get($icons, sprite);
+	background-image: url(map-get($sprite, svgPath));
+	background-position: (map-get($ico, backgroundX) + $x) (map-get($ico, backgroundY) + $y);
+	background-color: $color;
+	$type:all;
+	@include ie-sprite($icon, $type);
 }

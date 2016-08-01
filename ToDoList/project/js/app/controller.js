@@ -12,7 +12,6 @@ define(
           }
         });
 
-
         view.elements.listContainer.on('click', '.delete-item', function() {
           that.removeItem(this, model, view);
         });
@@ -24,7 +23,6 @@ define(
             that.changeItem(e, $target, model, view);
           }
         });
-
       }// constructor
 
       addItem(model, view) {

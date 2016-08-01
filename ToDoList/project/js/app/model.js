@@ -5,59 +5,62 @@ define(
 
     const localStorageDataKey = 'TodoListData';
 
-  class Model {
+    class Model {
 
-      constructor() {
-        this.data = this.loadList();
-      }
+        constructor() {
+          this.data = this.loadList();
+        }
 
-      saveList () {
-        var dataJSON;
-        var lsKey = localStorageDataKey;
+        saveList () {
+          var dataJSON;
+          var lsKey = localStorageDataKey;
 
-        dataJSON = JSON.stringify(this.data);
-        localStorage[lsKey] = dataJSON;
-      }
+          dataJSON = JSON.stringify(this.data);
+          localStorage[lsKey] = dataJSON;
+        }
 
-      loadList() {
-        var lsKey = localStorageDataKey;
-        var dataJSON = localStorage[lsKey];
+        loadList() {
+          var lsKey = localStorageDataKey;
+          var dataJSON = localStorage[lsKey];
 
-        if (!dataJSON) { return [];}
+          if (!dataJSON) { return [];}
 
-        this.data = JSON.parse(dataJSON);
+          this.data = JSON.parse(dataJSON);
 
-        return this.data;
-      }
+          return this.data;
+        }
 
-      addItem (item) {
-        if (item.length === 0) return this.data;
+        addItem (item) {
+          if (item.length === 0) return this.data;
 
-        this.data.push({text:item, status: true});
-        this.saveList();
+          this.data.push({text:item, status: true});
+          this.saveList();
 
-        return this.data;
-      }
+          return this.data;
+        }
 
-      changeItem(index, obj) {
-        this.data[index] = obj;
-        this.saveList();
+        changeItem(index, obj) {
+          this.data[index] = obj;
+          this.saveList();
 
-        return this.data;
-      }
+          return this.data;
+        }
 
-      removeItem (index) {
-        if (index < 0) return this.data;
+        removeItem (index) {
+          if (index < 0) return this.data;
 
-        this.data.splice(index, 1);
-        this.saveList();
+          this.data.splice(index, 1);
+          this.saveList();
 
-        return this.data;
-      }
-    }// class Model
+          return this.data;
+        }
+      }// class Model
 
     return Model;
   }//define function
 );// define
 
-export default Model;
+
+try {
+  module.exports = Model;
+} catch (e) {}

@@ -1,9 +1,0 @@
-<svg data-name="linkedin" id="linkedin-svg" class="ico-soc-menu" viewBox="0 0 15.5 15.03" xmlns="http://www.w3.org/2000/svg">
-	<defs>
-		<!-- <style>.linkedin{fill:#ccc;}</style> -->
-	</defs>
-	<title>linkedin</title>
-	<path class="linkedin" d="M0.51,15h3V5h-3V15Z"/>
-	<path class="linkedin" d="M12.18,4.7A4.49,4.49,0,0,0,8.5,6.4V5h-3V15h3V9.61a2.38,2.38,0,0,1,2.36-2.26c1.31,0,1.64,1.12,1.64,2.23V15h3V9.36C15.5,5.42,13.64,4.7,12.18,4.7Z"/>
-	<path class="linkedin" d="M2,0A1.87,1.87,0,0,0,0,1.76,1.87,1.87,0,0,0,2,3.52a1.87,1.87,0,0,0,2-1.76A1.87,1.87,0,0,0,2,0Z"/>
-</svg>

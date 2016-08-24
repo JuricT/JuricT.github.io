@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">	
+  <meta charset="UTF-8">
 </head>
 <body>
 
-	<h2>STEP 2</h2>
+  <h2>STEP 2</h2>
 
-	<img id="b-img" src="" alt="">
+  <img id="b-img" src="" alt="">
 
-	<div id="crop">Crop Button wen done</div>
+  <div id="crop">Crop Button wen done</div>
 
-	<script>
-		$('#b-img').attr('src', imgResult);
+  <script>
+    $('#b-img').attr('src', imgResult);
 
-		var $cropimg = $('#b-img').cropper({
-			aspectRatio: 6 / 3,
-			viewMode: 1
-		});
-		
-		$('#crop').on('click', function () {
-			$preview.attr('src', $cropimg.cropper('getCroppedCanvas').toDataURL('image/jpeg'));
+    var $cropimg = $('#b-img').cropper({
+      aspectRatio: 6 / 3,
+      viewMode: 1
+    });
 
-			$preview.removeClass('hide');
-			$description.removeClass('hide');
+    $('#crop').on('click', function () {
+      $preview.attr('src', $cropimg.cropper('getCroppedCanvas').toDataURL('image/jpeg'));
 
-			$steps.text('STEP 3 Preview Cropped Image Ready For Uploading');
+      $preview.removeClass('hide');
+      $description.removeClass('hide');
 
-			$.fancybox.close();
-		})
-	</script>
-	
+      $steps.text('STEP 3 Preview Cropped Image Ready For Uploading');
+
+      $.fancybox.close();
+    })
+  </script>
+
 </body>
 </html>

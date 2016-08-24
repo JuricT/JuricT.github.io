@@ -1,4 +1,5 @@
 $(function() {
+  "use strict";
   $('.slider').each(function() {
     var $slider = $(this);
     var $slidList = $slider.find('.slid');

@@ -3,7 +3,7 @@
     left: -4999px;
     right: -4999px;
   }
-  
+
   @media only screen and (max-width: $main-width - 1px) {
     overflow-x: hidden;
     width: $main-width;

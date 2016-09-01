@@ -1,0 +1,316 @@
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: darkred;
+  text-decoration: none;
+}
+
+.image {
+  width: 100%;
+}
+
+nav ul{
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0 7px;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+body {
+  background-color: #ada6a0;
+  font-family: "RockwellRegular";
+  background-image: radial-gradient(300px at 50% -30px, #f8f7f6, transparent);
+  background-repeat: no-repeat;
+}
+
+.container {
+  max-width: 960px;
+}
+
+#logo  {
+  display: block;
+  margin-top: 5px;
+  text-align: center;
+  font-size: 90px;
+  color: rgba(84, 84, 84, .28);
+}
+
+header,
+section,
+footer,
+.article-preview {
+  background-color: #ffffff;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, .75);
+  color: #5b5b5b;
+  margin-top: 15px;
+  padding: 12px;
+  position: relative;
+}
+
+.header {
+  margin-top: -4px;
+}
+
+/*MENU*/
+
+.menu {
+  display: inline-block;
+}
+
+.menu__item {
+  font-size: 18px;
+  line-height: 30px;
+  padding: 0 30px;
+}
+
+.link_menu:hover {
+  color: inherit;
+  text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
+}
+
+/*SEARCH*/
+
+.search {
+  float: right;
+  height: 31px;
+  width: 261px;
+  font-size: 18px;
+  margin: 0 2px 0 0;
+  position: relative;
+  background-color: #fafafa;
+  border: 1px solid #ececec;
+}
+
+.search__input {
+  background-color: transparent;
+  width: 215px;
+  border: none;
+  outline: none;
+  float: left;
+  text-indent: 16px;
+  font-family: "RockwellBoldItalic";
+}
+
+#search__ico {
+  position: absolute;
+  width: 27.28px;
+  right: 12px;
+  top: 5px;
+}
+
+/*ARTICLE PREVIEW*/
+
+#articals {
+  display: flex;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+.article-preview {
+  width: 24%;
+  padding-bottom: 40px
+}
+
+.excerpt {
+  margin-top: 19px;
+  font-size: 12px;
+  text-indent: 36px;
+  letter-spacing: -.1px;
+  line-height: 14px;
+  text-align: justify;
+}
+
+.more {
+  position: absolute;
+  right: 13px;
+  bottom: 21px;
+  text-decoration: underline;
+  font-size: 12px;
+  text-indent: 36px;
+  line-height: 14px;
+  text-align: justify;
+}
+
+/*GREETING*/
+
+.greeting {
+  display: flex;
+}
+
+.article-box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  width: 220px;
+  margin-right: 12px;
+}
+
+.box-part {
+  width: 105px;
+  height: 80px;
+  margin-bottom: 6px;
+}
+
+.greeting__text {
+  padding-right: 12px;
+  flex-shrink: 50;
+}
+
+.title {
+  font-size: 18px;
+  margin: 1px 0 -3px 0;
+}
+
+.more_greeting {
+  bottom: 12px;
+}
+
+/*FOOTER*/
+
+.footer {
+  padding: 16px;
+}
+
+.footer__item {
+  margin-right: 12px;
+}
+
+.footer__text {
+  color: #545454;
+  font: 400 14px Calibri;
+}
+
+@media all and (max-width: 821px) {
+  .search {
+    display: none;
+  }
+
+  .menu {
+    width: 100%;
+  }
+
+  .menu ul {
+    display: flex;
+  }
+}
+
+@media all and (max-width: 821px) and (min-width: 541px){
+  .menu ul {
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 681px) and (min-width:541px){
+  .search {
+    display: none;
+  }
+
+  .menu {
+    width: 100%;
+  }
+
+  .menu ul {
+    justify-content: space-around;
+  }
+
+  #articals {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-between;
+  }
+
+  .article-preview {
+    margin-right: 0;
+    margin-left: 0;
+    max-width: 48%;
+  }
+}
+
+@media all and (max-width: 540px) and (min-width: 401px) {
+  .frontPagePost {
+    width: auto;
+    height: 100%;
+    margin-right: 12px;
+  }
+}
+
+@media all and (max-width: 540px) {
+  .menu ul {
+    flex-flow: column wrap;
+    align-items: center;
+  }
+
+  #articals {
+    flex-flow: column wrap;
+  }
+
+  .article-preview {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+  }
+
+  .greeting {
+    flex-flow: column wrap;
+    align-items: center;
+  }
+
+  .article-box {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .footer__item {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media all and (max-width: 492px) {
+  .article-box {
+    justify-content: space-between;
+  }
+
+  .box-part {
+    width: 100%;
+    height: auto;
+  }
+
+  .article-box__item {
+    width: 49%;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .article-preview {
+    display: block;
+  }
+
+  .frontPagePost__wrapper {
+    display: block;
+  }
+
+  .frontPagePost {
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+  }
+}

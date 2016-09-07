@@ -1,6 +1,6 @@
 ;(function(){
   'use strict';
-  
+
   var t1 = new Timer({
     elem: document.getElementById('timer'),
     clockface: document.getElementsByClassName('timer-clockface')[0],
@@ -9,7 +9,7 @@
     resetBtn: document.getElementsByClassName('timer-Reset')[0],
     splitList: document.getElementsByClassName('timer-list')[0]
   });
-  
+
   function Timer(options) {
 
     this.elements = {
@@ -20,59 +20,59 @@
       resetBtn: options.resetBtn,
       splitList: options.splitList
     };
-    
+
     var that = this;
-    
+
     this.model = {
       const:{
         h: 60 * 60 * 1000,
         m: 60 * 1000,
         s: 1000,
       },
-      
+
       timeReset: function() {
         this.start = this.pause = null;
       },
-      
-      initTime: function(){     
+
+      initTime: function(){
         this.start = Date.now();
         this.pause = this.pause || 0;
       },
-      
+
       frozen: function() {
         this.pause = Date.now() - this.start + this.pause;
       },
-      
+
       interval: function() {
         if (!('start' in this) || (!(this.start > 0))) return 0;
         this.pause = this.pause || 0;
-        
+
         return Date.now() - this.start + this.pause;
       },
-      
+
       getHour: function() {
         var interval = this.interval();
-        
+
         if (interval === 0) return 0;
-        
+
         interval = this.interval();
-        
+
         return (interval / this.const.h) >> 0;
       },
-      
+
       getMin: function() {
         var interval = this.interval();
-        
+
         if (interval === 0) return 0;
-        
+
         interval = interval % this.const.h;
 
         return (interval / this.const.m) >> 0; 
       },
-      
+
       getSec: function() {
         var interval = this.interval();
-        
+
         interval = interval % this.const.h;
         interval = interval % this.const.m;
 
@@ -81,26 +81,26 @@
       
       getMsec: function(interval) {
         var interval = this.interval();
-        
+
         if (interval === 0) return 0;
-        
+
         interval = interval % this.const.h;
         interval = interval % this.const.m;
         interval = interval % this.const.s;
 
         return interval; 
       },
-      
+
       getTime: function() {
         var time = this;
-        
+
         var hour = time.getHour();
         var min = time.getMin();
         var sec = time.getSec();
         var msec = time.getMsec();
-        
+
         var outString = '';
-	
+
         if (hour < 10) outString += '0' + hour
         else outString += hour + '';
         outString += ':';
@@ -120,12 +120,12 @@
         return outString;
       }
     };
-    
-    this.view = {      
+
+    this.view = {
       showTime: function() {
         that.elements.clockface.innerHTML = that.model.getTime();
       },
-      
+
       trigStartStopBtn: function() {
         if (that.elements.startStopBtn.innerHTML === 'Start') {
           that.elements.startStopBtn.innerHTML = 'Stop';
@@ -133,21 +133,50 @@
           that.elements.startStopBtn.innerHTML = 'Start';
         };
       },
-      
+
       clear: function() {
         that.elements.startStopBtn.innerHTML = 'Start';
         that.elements.clockface.innerHTML = '00:00:00.000';
         that.elements.splitList.innerHTML = '';
       },
-      
+
       addSplits: function(label) {
+
+        if (this.getLastSplit()[2] === that.elements.clockface.innerHTML) return;
+
         var p = document.createElement('p');
-        var str = 1 + ' ' + label + ': ' + that.elements.clockface.innerHTML;
-        p.innerHTML = str;
+
+        p.innerHTML = this.getSplitString(label);
+
         that.elements.splitList.appendChild(p);
+      },
+
+      getLastSplit: function() {
+        var splitList = that.elements.splitList.getElementsByTagName('p');
+
+        if (splitList.length) {
+          return splitList[splitList.length - 1].innerHTML.split(' ');
+        } else {
+          return []
+        }
+
+      },
+
+      getSplitString: function(label) {
+        var str, lastCount; 
+        var lastSplit = this.getLastSplit();
+
+        if (lastSplit.length) {
+          lastCount = +lastSplit[0];
+          str = (lastCount + 1) + ' ' + label + ': ' + that.elements.clockface.innerHTML;
+        } else {
+          str = 1 + ' ' + label + ': ' + that.elements.clockface.innerHTML;
+        }
+
+        return str;
       }
     };
-    
+
     this.controller = {
       init: function() {
         that.elements.startStopBtn.addEventListener('click', function(){
@@ -160,9 +189,9 @@
           that.controller.reset();
         });
       },
-      
+
       startPause: function() {
-        
+
         if (that.elements.startStopBtn.innerHTML === 'Start') {
           that.controller.start();
           that.view.trigStartStopBtn();
@@ -171,33 +200,34 @@
           that.view.trigStartStopBtn();
         }
       },
-      
+
       split: function() {
-        that.view.addSplits('qqq');
+        that.view.addSplits('Split');
       },
-      
+
       reset: function() {
         this.clearInt();
         that.model.timeReset();
         that.view.clear();
       },
-      
+
       labelInterval: '',
-      
+
       start: function() {
         that.model.initTime();
         this.setInt();
       },
-      
+
       stop: function() {
         that.model.frozen();
         this.clearInt();
+        that.view.addSplits('Stop');
       },
-      
+
       setInt: function() {
         this.labelInterval = this.labelInterval || setInterval(that.view.showTime, 1);
       },
-      
+
       clearInt: function() {
         clearInterval(this.labelInterval);
         this.labelInterval = '';

@@ -1,0 +1,22 @@
+.menu {
+  margin: 0;
+  height: 35px;
+  
+  &--header {
+
+  };
+  
+  &--aside li{
+    display: inherit;
+    
+  };
+  
+  &--breadcrumbs {
+
+  };
+}
+
+.menu li {
+  list-style: none;
+  display: inline;
+}

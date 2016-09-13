@@ -1,0 +1,50 @@
+@import 'normalize';
+@import 'menu';
+//@import 'toolbar';
+//@import 'inner';
+
+$sidebar-with: 300px;
+$menu-header-height: 35px;
+$breadcrumbs-height: 35px;
+
+#header {
+  background: red;
+}
+
+#toolbar {
+  background: blue;
+  width: $sidebar-with;
+}
+
+.inner {
+  background: yellow;
+}
+
+#breadcrumbs {
+  background: green;
+}
+
+#content {
+  overflow-y: auto;
+  $margin-top: $breadcrumbs-height + $breadcrumbs-height;
+  $margin-top: 70px;
+  height: calc(100vh - ($margin-top));
+}
+
+.main-wrapper {
+  display: flex;
+  flex-flow: row;
+  align-items: stretch;
+}
+
+.inner {
+  width: calc(100% - $sidebar-with);
+}
+
+.gallery {
+  flex-shrink: 10;
+  
+  display: flex;
+  flex-flow: row wrap;
+}
+

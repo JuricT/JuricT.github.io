@@ -1,0 +1,27 @@
+$desktop-point: 960px;
+$tablet-point: 768px;
+$mobile-point: 320px;
+
+$indent-width: 10px;
+
+$heder-height: 540px;
+
+//=============================
+//           Colors
+//=============================
+
+$white: #fff;
+$blac: #222;
+$blac2: #666;
+$red: #ff4e50;
+$yellow: #ffa507;
+$green: #1cd7ad;
+$blue: #4e73db;
+
+.clearfix:after {
+  display: block;
+  content: " ";
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}

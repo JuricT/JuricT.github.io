@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  title Note List
+  link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", crossorigin="anonymous")
+  link(rel="stylesheet", href="css/style.css")
+
+  script(data-main="js/app" src="js/lib/require.js")
+body
+  div.container
+    header.row
+      div.col-sm-11
+        div.note
+          div.addNote Добавить заметку
+          form
+            textarea.textarea.form-control
+            input(type="datetime", id="datetimepicker")
+            button.btn.btn-success(type="button") button
+    div.row
+      main.col-sm-11#notes-conteiner
+        div.note
+          div.text  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas illum, veniam consequuntur omnis hic fugiat, deleniti repudiandae pariatur eveniet voluptate!
+          div.note__date дата/время
+        div.note
+          div.text  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas illum, veniam consequuntur omnis hic fugiat, deleniti repudiandae pariatur eveniet voluptate!
+          div.note__date дата/время
+        div.note
+          div.text  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas illum, veniam consequuntur omnis hic fugiat, deleniti repudiandae pariatur eveniet voluptate!
+          div.note__date дата/время
+      aside.filter-date.col-sm-1
+        ul
+          li четверг
+          li среда
+          li вторник
+          li старые
+  include item-template.html
+  //- include filter-template.html

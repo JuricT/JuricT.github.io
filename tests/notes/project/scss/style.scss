@@ -1,0 +1,31 @@
+@import 'svg/sprite';
+@import 'svg/mq';
+
+$ieSprite: '.lt-ie9' !default;
+$sprite: map-get($icons, sprite) !default;
+$baseFontSize: 16px !default;
+
+@import 'svg/mixins';
+
+@import "core/settings";
+@import "core/mixins";
+@import "jquery.datetimepicker.min";
+
+.hide {
+  display: none;
+}
+
+.note {
+  border: 1px solid #333;
+}
+
+.filter-date {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    cursor: pointer;
+  }
+}

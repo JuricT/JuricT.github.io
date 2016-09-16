@@ -1,15 +1,19 @@
-define('app/filter', [], function () {
+define(
+  'app/filter',
+  [],
+  function () {
 
-  class Filter {
+    class Filter {
 
-    constructor(options) {
-      console.log("Filter is init");
-    }
+        constructor(options) {
+        }
 
+      }
+
+    return Filter;
   }
+);
 
-  return Filter;
-});
 
 try {
   module.exports = Filter;

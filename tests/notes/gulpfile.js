@@ -62,7 +62,7 @@ gulp.task('jade', function(){
 
 gulp.task('script', function() {
   return gulp.src([jsDir + '**/*.js'])
-  .pipe(babel())
+  // .pipe(babel())
   .pipe(gulp.dest(jsBuildPath))
   .pipe(connect.reload());
 });

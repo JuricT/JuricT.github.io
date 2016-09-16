@@ -6,7 +6,6 @@ define(
     class Filter {
 
         constructor(options) {
-          this.elements. = options.
         }
 
       }

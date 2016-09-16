@@ -1,72 +1,73 @@
-define('app/model', [], function () {
+define(
+  'app/model',
+  ['lodash'],
+  function (store) {
+    function Model() {
+      // this._data = this.loadList();
+      // this._data = store.getLocalStorage();
+      this._data = [
+        {
+          id: 1,
+          text: 'lorem isum',
+          date: new Date()
+        },
+        {
+          id: 2,
+          text: 'lorem isum 2',
+          date: new Date(2016, 1, 2, 3, 4, 5)
+        },
+        {
+          id: 3,
+          text: 'lorem isum 2',
+          date: new Date(2011, 0, 1, 2, 3, 4)
+        },
+        {
+          id: 4,
+          text: 'lorem isum',
+          date: new Date()
+        }
+      ];
 
-  const localStorageDataKey = 'TodoListData';
-
-  class Model {
-
-    constructor() {
-      this.data = this.loadList();
+      this._data = this.sortedByDate();
     }
 
-    saveList() {
-      var dataJSON;
-      var lsKey = localStorageDataKey;
+    Model.prototype.saveList = function() {
+      store.setLocalStorage();
+    };
 
-      dataJSON = JSON.stringify(this.data);
-      localStorage[lsKey] = dataJSON;
-    }
+    Model.prototype.loadList = function() {
+      this._data = store.setLocalStorage();
+    };
 
-    loadList() {
-      var lsKey = localStorageDataKey;
-      var dataJSON = localStorage[lsKey];
+    Model.prototype.addItem = function(item) {
+      if (!item.date || !item.date.getTime) return;
 
-      if (!dataJSON) {
-        return [];
+      this._data.push(inem);
+
+      store.setLocalStorage(this.sortedByDate());
+    };
+
+    Model.prototype.removeItem = function (id) {
+      if (!id) return ;
+
+      for (var i = 0; i < this._data.length; i++) {
+        if (this._data[i].id === id) {
+          this._data.splice(i, 1);
+          break;
+        }
       }
 
-      this.data = JSON.parse(dataJSON);
+      store.setLocalStorage(this._data);
+    };
 
-      return this.data;
-    }
+    Model.prototype.sortedByDate = function() {
+      return _.orderBy(this._data, 'date', 'desc');
+    };
 
-    addItem(item) {
-      if (item.length === 0) return this.data;
-
-      this.data.push({ text: item, status: true });
-      this.saveList();
-
-      return this.data;
-    }
-
-    changeItem(index, obj) {
-      this.data[index] = obj;
-      this.saveList();
-
-      return this.data;
-    }
-
-    removeItem(index) {
-      if (index < 0) return this.data;
-
-      this.data.splice(index, 1);
-      this.saveList();
-
-      return this.data;
-    }
-
-    getDate(date = new Date()) {
-      var day = date.getDate();
-      var month = date.getMonth() + 1;
-      var year = date.getFullYear();
-      var hour = date.getHours();
-      var min = date.getMinutes();
-
-      return `${ day }.${ month }.${ year } ${ hour }:${ min }`;
-    }
+    return Model;
   }
+);
 
-  return Model;
-});
 
 try {
   module.exports = Model;

@@ -1,12 +1,8 @@
 <script type="text/template" id="item-template">
-  <% for (var i = 0; i < 3; i++) { %>
+  <% for (var i = 0; i < data.length; i++) { %>
     <div class="note">
-      <div class="text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas illum, veniam consequuntur omnis hic fugiat, deleniti repudiandae pariatur eveniet voluptate!
-      </div>
-      <div class="note__date">
-        дата/время
-      </div>
+      <div class="text"> <%= data[i].text %> </div>
+      <div class="note__date"> <%= helpers.dateToStr(data[i].date) %> </div>
     </div>
   <% }; %>
 </script>

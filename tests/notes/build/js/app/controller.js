@@ -1,41 +1,44 @@
-define('app/controller', ['app/model', 'app/view'], function () {
-  class Controller {
-    constructor(model, view) {
+define(
+  'app/controller',
+  ['app/model', 'app/view'],
+  function() {
+    function Controller (model, view) {
       var that = this;
+      var ENTER = 13;
 
-      view.elements.input.keydown(e => {
-        if (e.keyCode == 13) {
+      view.elements.input.keydown(function(e) {
+        if(e.keyCode == ENTER) {
           that.addItem(model, view);
         }
       });
 
-      view.elements.listContainer.on('click', '.delete-item', function () {
+      view.elements.listContainer.on('click', '.delete-item', function() {
         that.removeItem(this, model, view);
       });
 
-      view.elements.listContainer.change(function (e) {
+      view.elements.listContainer.change( function(e) {
         var $target = $(e.target);
 
-        if ($target.hasClass('item_text') || $target.hasClass('toggle')) {
+        if (($target.hasClass('item_text')) || ($target.hasClass('toggle'))) {
           that.changeItem(e, $target, model, view);
         }
       });
     }
 
-    addItem(model, view) {
+    Controller.prototype.addItem = function(model, view) {
       var newItem = view.elements.input.val();
 
       model.addItem(newItem);
 
       view.renderList(model.data);
       view.elements.input.val('');
-    }
+    };
 
-    positionIndex($elem) {
+    Controller.prototype.positionIndex = function($elem) {
       return $elem.parent('li').data().index;
-    }
+    };
 
-    changeItem(e, $elem, model, view) {
+    Controller.prototype.changeItem = function(e, $elem, model, view) {
       var positionIndex = this.positionIndex($elem);
       var tempObj = model.data[positionIndex];
 
@@ -44,15 +47,15 @@ define('app/controller', ['app/model', 'app/view'], function () {
 
       model.changeItem(positionIndex, tempObj);
       view.renderList(model.data);
-    }
+    };
 
-    removeItem(elem, model, view) {
+    Controller.prototype.removeItem = function(elem, model, view) {
       var positionIndex = this.positionIndex($(elem));
 
       model.removeItem(positionIndex);
       view.renderList(model.data);
-    }
-  }
+    };
 
   return Controller;
-});
+  }
+);

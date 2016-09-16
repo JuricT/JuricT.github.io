@@ -55,7 +55,7 @@ define(
           return this.data;
         }
 
-        getDate (date = new Date()) {
+        dateToStr (date = new Date()) {
           var day = date.getDate();
           var month = date.getMonth() + 1;
           var year = date.getFullYear();
@@ -64,6 +64,11 @@ define(
 
           return `${day}.${month}.${year} ${hour}:${min}`;
         }
+
+        get listNodes () {
+          return ['node1', 'node2'];
+        }
+
       }
 
     return Model;

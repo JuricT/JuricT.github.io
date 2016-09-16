@@ -11,6 +11,10 @@ $baseFontSize: 16px !default;
 @import "core/mixins";
 @import "jquery.datetimepicker.min";
 
+.text {
+  max-width: 100%;
+}
+
 .hide {
   display: none;
 }

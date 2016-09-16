@@ -5,11 +5,13 @@ define(
 
     class Filter {
 
-        constructor(options) {
-          this.elements. = options.
-        }
-
+      constructor(options) {
+        // this.data = options.data;
       }
+
+      
+
+    }
 
     return Filter;
   }

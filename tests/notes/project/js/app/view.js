@@ -22,7 +22,7 @@ define(
         $.datetimepicker.setLocale('ru');
         $('#datetimepicker').datetimepicker({
           format:'d.m.Y H:i',
-          value: model.getDate(),
+          value: model.dateToStr(),
           step:1
         });
       }

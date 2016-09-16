@@ -3,7 +3,7 @@ define('app/filter', [], function () {
   class Filter {
 
     constructor(options) {
-      console.log("Filter is init");
+      // this.data = options.data;
     }
 
   }

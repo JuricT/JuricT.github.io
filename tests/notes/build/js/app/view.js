@@ -20,6 +20,18 @@ define(
         template.render(data);
       };
 
+      View.prototype.clearNew = function() {
+        this.elements.newNoteText.val('');
+      };
+
+      View.prototype.addNoteEnable = function() {
+        this.elements.newNoteAddBtn.removeAttr('disabled');
+      };
+
+      View.prototype.addNoteDisable = function() {
+        this.elements.newNoteAddBtn.attr('disabled', 'disabled');
+      };
+
     return View;
   }
 );

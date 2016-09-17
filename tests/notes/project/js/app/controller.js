@@ -12,11 +12,14 @@ define(
         that.addItem(model, view);
       });
 
-      // view.elements.input.keydown(function(e) {
-      //   if(e.keyCode == ENTER) {
-      //     that.addItem(model, view);
-      //   }
-      // });
+      view.elements.newNoteText.keyup(function(e) {
+        var val = view.elements.newNoteText.val();
+        if (val) {
+          view.addNoteEnable();
+        } else {
+          view.addNoteDisable();
+        }
+      });
 
       view.elements.listContainer.on('click', '.delete-item', function() {
         that.removeItem(this, model, view);
@@ -33,6 +36,8 @@ define(
 
       model.addItem(newNone);
       view.renderList(model.data);
+      this.datetimepickerInit(model);
+      view.clearNew();
     };
 
     Controller.prototype.removeItem = function(elem, model, view) {

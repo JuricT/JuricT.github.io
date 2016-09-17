@@ -1,25 +1,23 @@
 define(
   'app/view',
-  ['app/template', 'app/datetimepicker', 'app/model', 'jquery'],
-  function (Template, Datetimepicker) {
+  ['app/template', 'app/model', 'jquery'],
+  function (Template) {
     function View(model) {
         this.elements = {
-          input: $('.input-item'),
-          itemText: $('.item_text'),
-          listContainer: $('#notes-conteiner'),
+          newNote: $('.new-note'),
+          newNoteText: $('#new-note-text'),
+          newNoteBtn: $('.new-note-btn'),
+          newNoteDate: $('#datetimepicker'),
+          newNoteAddBtn: $('.new-note-add-btn'),
+          listContainer: $('#notes-conteiner')
         };
 
-        this.renderList(model._data);
-        this.datetimepickerInit(model);
+        this.renderList(model.data);
       }
 
       View.prototype.renderList = function(data) {
         var template = new Template('#item-template', this.elements.listContainer);
         template.render(data);
-      };
-
-      View.prototype.datetimepickerInit = function() {
-        new Datetimepicker('#datetimepicker');
       };
 
     return View;

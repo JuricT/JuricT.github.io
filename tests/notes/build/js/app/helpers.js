@@ -4,7 +4,12 @@ define(
   function () {
     helpers = {
       dateToStr: function(date) {
-        date = date || new Date();
+
+        if (date === 'undefined') {
+          date = new Date();
+        } else if (this.getClass(date) !== 'Date') {
+          return date + '';
+        }
 
         var day = this.twoDigit(date.getDate());
         var month = this.twoDigit(date.getMonth() + 1);
@@ -14,6 +19,13 @@ define(
 
         return day + '.' + month + '.' + year + ' ' + hour + ':' + min;
       },
+
+      strToDate: function(str) {
+        var arr = str.replace(/[' ', ':']/g, '.').split('.');
+        var date = new Date(+arr[2], +arr[1] - 1, +arr[0], +arr[3], +arr[4]);
+        return date;
+      },
+
       twoDigit: function(num) {
         if (!this.isNumeric(num) || (num < 0)) return '';
 
@@ -23,8 +35,27 @@ define(
           return num + '';
         }
       },
+
       isNumeric: function(num) {
         return !isNaN(parseFloat(num)) && isFinite(num);
+      },
+
+      getClass: function(obj) {
+        return {}.toString.call(obj).slice(8, -1);
+      },
+
+      escapeHtml: function(text) {
+        return text
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#039;');
+      },
+
+      unEscapeHtml: function(text) {
+        return text
+          .replace(/\n/g, '<br>');
       }
 
     };

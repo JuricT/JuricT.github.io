@@ -1,8 +1,9 @@
 <script type="text/template" id="item-template">
   <% for (var i = 0; i < data.length; i++) { %>
     <div class="note">
-      <div class="text"> <%= data[i].text %> </div>
+      <div class="text"> <%= helpers.unEscapeHtml(data[i].text) %> </div>
       <div class="note__date"> <%= helpers.dateToStr(data[i].date) %> </div>
+      <button class="delete-item" data-id="<%= data[i].id %>">×</button>
     </div>
   <% }; %>
 </script>

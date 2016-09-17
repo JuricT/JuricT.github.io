@@ -7,7 +7,10 @@ define(
     }
 
     Store.prototype.getLocalStorage = function() {
-      return this._dbData || JSON.parse(localStorage[this._dbName] || '[]');
+      return this._dbData || JSON.parse(localStorage[this._dbName] || '[]', function(key, value){
+        if (key == 'date') return new Date(value);
+        return value;
+      });
     };
 
     Store.prototype.setLocalStorage = function(data) {

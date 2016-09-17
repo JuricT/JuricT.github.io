@@ -9,12 +9,12 @@ body
   div.container
     header.row
       div.col-md-11.col-sm-8
-        div.note
-          div.addNote Добавить заметку
+        div.new-note
+          div.new-note-btn Добавить заметку
           form
-            textarea.textarea.form-control
+            textarea#new-note-text.textarea.form-control
             input(type="datetime", id="datetimepicker")
-            button.btn.btn-success(type="button") button
+            button.new-note-add-btn.btn.btn-success(type="button") Добавить
     div.row
       main.col-md-11.col-sm-8#notes-conteiner
       aside.filter-date.col-md-1.col-sm-4

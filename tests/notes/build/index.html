@@ -10,12 +10,12 @@
   <div class="container">
     <header class="row">
       <div class="col-md-11 col-sm-8">
-        <div class="note">
-          <div class="addNote">Добавить заметку</div>
+        <div class="new-note">
+          <div class="new-note-btn">Добавить заметку</div>
           <form>
-            <textarea class="textarea form-control"></textarea>
+            <textarea id="new-note-text" class="textarea form-control"></textarea>
             <input type="datetime" id="datetimepicker"/>
-            <button type="button" class="btn btn-success">button</button>
+            <button type="button" class="new-note-add-btn btn btn-success">Добавить</button>
           </form>
         </div>
       </div>
@@ -34,8 +34,9 @@
   </div><script type="text/template" id="item-template">
   <% for (var i = 0; i < data.length; i++) { %>
     <div class="note">
-      <div class="text"> <%= data[i].text %> </div>
+      <div class="text"> <%= helpers.unEscapeHtml(data[i].text) %> </div>
       <div class="note__date"> <%= helpers.dateToStr(data[i].date) %> </div>
+      <button class="delete-item" data-id="<%= data[i].id %>">×</button>
     </div>
   <% }; %>
 </script>

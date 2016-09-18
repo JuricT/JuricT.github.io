@@ -12,12 +12,7 @@ define(
       var that = this;
       this._model = model;
 
-<<<<<<< HEAD
-    constructor(options) {
-      // this.data = options.data;
-=======
       this.wrapper = $('.filter');
->>>>>>> td
     }
 
     FilterByDate.prototype.render = function() {
@@ -87,7 +82,6 @@ define(
     };
 
     FilterByDate.prototype.getQuery = function() {
-      // if (this._model.data[0].date)
 
       if (!this._model.data.length) return [];
 

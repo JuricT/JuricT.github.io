@@ -12,17 +12,6 @@ define(
       var that = this;
       this._model = model;
 
-<<<<<<< HEAD
-      constructor(options) {
-        // this.data = options.data;
-      }
-
-      
-
-    }
-
-    return Filter;
-=======
       this.wrapper = $('.filter');
     }
 
@@ -93,7 +82,6 @@ define(
     };
 
     FilterByDate.prototype.getQuery = function() {
-      // if (this._model.data[0].date)
 
       if (!this._model.data.length) return [];
 
@@ -157,7 +145,6 @@ outer:for (var i = 0; i < this._model.data.length; i++) {
     };
 
     return FilterByDate;
->>>>>>> td
   }
 );
 

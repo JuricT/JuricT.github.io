@@ -38,28 +38,11 @@ define(
       this._store.setLocalStorage(this.data);
     };
 
-<<<<<<< HEAD
-    dateToStr(date = new Date()) {
-      var day = date.getDate();
-      var month = date.getMonth() + 1;
-      var year = date.getFullYear();
-      var hour = date.getHours();
-      var min = date.getMinutes();
-
-      return `${ day }.${ month }.${ year } ${ hour }:${ min }`;
-    }
-
-    get listNodes() {
-      return ['node1', 'node2'];
-    }
-
-=======
     Model.prototype.sortedByDate = function(data) {
       return _.orderBy(data, 'date', 'desc');
     };
 
     return Model;
->>>>>>> td
   }
 );
 

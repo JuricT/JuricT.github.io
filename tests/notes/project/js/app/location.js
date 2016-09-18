@@ -12,12 +12,8 @@ define(
         saturday: 'Суббота',
         sunday: 'Воскресенье'
       },
-
       addNewNote: 'Добавить заметку',
-
       olds: 'Cтарые'
-
-
     };
 
     return location;

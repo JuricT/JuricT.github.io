@@ -23,22 +23,11 @@ define(
       filter.render();
     }
 
-<<<<<<< HEAD
-    datetimepickerInit(model) {
-      $.datetimepicker.setLocale('ru');
-      $('#datetimepicker').datetimepicker({
-        format: 'd.m.Y H:i',
-        value: model.dateToStr(),
-        step: 1
-      });
-    }
-=======
     View.prototype.renderNoteList = function() {
       var data = this._filter.getData();
       var template = new Template('#item-template', this.elements.listContainer);
       template.render(data);
     };
->>>>>>> td
 
     View.prototype.clearNew = function() {
       this.elements.newNoteText.val('');

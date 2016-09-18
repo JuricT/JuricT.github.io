@@ -1,0 +1,10 @@
+<script type="text/template" id="filter-template">
+  <ul>
+    <% for (var i = 0; i < data.length; i++) { %>
+    <li  class="filter__item" data-id="<%= data[i].id %>">
+      <span class="filter__text"><%= data[i].title %></span>
+      <div class="filter__res-btn hide">×</div>
+    </li>
+    <% }; %>
+  </ul>
+</script>

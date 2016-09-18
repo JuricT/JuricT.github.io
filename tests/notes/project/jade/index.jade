@@ -11,19 +11,14 @@ body
       div.col-md-11.col-sm-8
         div.new-note
           div.new-note-btn Добавить заметку
-          form
+          form.add-note-form.hide
             textarea#new-note-text.textarea.form-control
             input(type="datetime", id="datetimepicker")
             button.new-note-add-btn.btn.btn-success(type="button", disabled="disabled") Добавить
     div.row
       main.col-md-11.col-sm-8#notes-conteiner
-      aside.filter-date.col-md-1.col-sm-4
-        ul
-          li четверг
-          li среда
-          li вторник
-          li старые
+      aside.filter.col-md-1.col-sm-4
   include item-template.html
-  //- include filter-template.html
+  include filter-template.html
   
   script(data-main="js/app" src="js/lib/require.js")

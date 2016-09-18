@@ -18,24 +18,11 @@ define(
 
     Model.prototype.addItem = function(item) {
       var data;
-      if (!this.checkItem(item)) return false;
 
       this.data.push(item);
       this.data = this.sortedByDate(this.data);
 
       this._store.setLocalStorage(this.data);
-    };
-
-    Model.prototype.checkItem = function(item) {
-
-      if (helpers.getClass(item) !== 'Object') return false;
-      if ( !(('date' in item) && ('text' in item) && ('id' in item)) ) return false;
-      
-      if (helpers.getClass(item.id) !== 'Number') return false;
-      if (helpers.getClass(item.date) !== 'Date') return false;
-      if (helpers.getClass(item.text) !== 'String') return false;
-
-      return true;
     };
 
     Model.prototype.removeItem = function (id) {

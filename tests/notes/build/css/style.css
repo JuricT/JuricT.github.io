@@ -484,9 +484,11 @@
 .note {
   border: 1px solid #333; }
 
-.filter-date ul {
+.filter ul {
   list-style: none;
   padding: 0; }
 
-.filter-date li {
+.filter li {
   cursor: pointer; }
+  .filter li:hover {
+    color: blue; }

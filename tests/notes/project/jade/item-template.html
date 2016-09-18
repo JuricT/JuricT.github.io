@@ -1,9 +1,13 @@
 <script type="text/template" id="item-template">
-  <% for (var i = 0; i < data.length; i++) { %>
-    <div class="note">
-      <div class="text"> <%= helpers.unEscapeHtml(data[i].text) %> </div>
-      <div class="note__date"> <%= helpers.dateToStr(data[i].date) %> </div>
-      <button class="delete-item" data-id="<%= data[i].id %>">×</button>
-    </div>
+  <% if (data.length) { %>
+    <% for (var i = 0; i < data.length; i++) { %>
+      <div class="note">
+        <div class="text"> <%= helpers.unEscapeHtml(data[i].text) %> </div>
+        <div class="note__date"> <%= helpers.dateToStr(data[i].date) %> </div>
+        <div class="delete-item" data-id="<%= data[i].id %>">×</div>
+      </div>
+    <% }; %>
+  <% } else { %>
+    <h2 class="error-message">Нет записей!</h2>
   <% }; %>
 </script>

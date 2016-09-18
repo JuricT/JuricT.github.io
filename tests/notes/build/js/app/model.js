@@ -1,59 +1,44 @@
-define('app/model', [], function () {
-
-  const localStorageDataKey = 'TodoListData';
-
-  class Model {
-
-    constructor() {
-      this.data = this.loadList();
+define(
+  'app/model',
+  ['app/store', 'lodash'],
+  function () {
+    function Model(store) {
+      this._store = store;
+      this.data = store.getLocalStorage();
+      this.data = this.sortedByDate(this.data);
     }
 
-    saveList() {
-      var dataJSON;
-      var lsKey = localStorageDataKey;
+    Model.prototype.saveList = function() {
+      this._store.setLocalStorage();
+    };
 
-      dataJSON = JSON.stringify(this.data);
-      localStorage[lsKey] = dataJSON;
-    }
+    Model.prototype.loadList = function() {
+      this.data = this._store.getLocalStorage();
+    };
 
-    loadList() {
-      var lsKey = localStorageDataKey;
-      var dataJSON = localStorage[lsKey];
+    Model.prototype.addItem = function(item) {
+      var data;
 
-      if (!dataJSON) {
-        return [];
+      this.data.push(item);
+      this.data = this.sortedByDate(this.data);
+
+      this._store.setLocalStorage(this.data);
+    };
+
+    Model.prototype.removeItem = function (id) {
+      if (!id) return ;
+
+      for (var i = 0; i < this.data.length; i++) {
+        if (this.data[i].id === id) {
+          this.data.splice(i, 1);
+          break;
+        }
       }
 
-      this.data = JSON.parse(dataJSON);
+      this._store.setLocalStorage(this.data);
+    };
 
-      return this.data;
-    }
-
-    addItem(item) {
-      if (item.length === 0) return this.data;
-
-      this.data.push({ text: item, status: true });
-      this.saveList();
-
-      return this.data;
-    }
-
-    changeItem(index, obj) {
-      this.data[index] = obj;
-      this.saveList();
-
-      return this.data;
-    }
-
-    removeItem(index) {
-      if (index < 0) return this.data;
-
-      this.data.splice(index, 1);
-      this.saveList();
-
-      return this.data;
-    }
-
+<<<<<<< HEAD
     dateToStr(date = new Date()) {
       var day = date.getDate();
       var month = date.getMonth() + 1;
@@ -68,10 +53,16 @@ define('app/model', [], function () {
       return ['node1', 'node2'];
     }
 
-  }
+=======
+    Model.prototype.sortedByDate = function(data) {
+      return _.orderBy(data, 'date', 'desc');
+    };
 
-  return Model;
-});
+    return Model;
+>>>>>>> td
+  }
+);
+
 
 try {
   module.exports = Model;

@@ -4,7 +4,8 @@ requirejs.config({
     app: "../app",
     jquery: "jquery",
     tmpl: "template",
-    datetimepicker: "jquery.datetimepicker"
+    datetimepicker: "jquery.datetimepicker",
+    lodash: "lodash.min"
   },
   shim: {
     tmpl: {

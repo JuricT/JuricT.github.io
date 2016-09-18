@@ -1,58 +1,89 @@
-define('app/controller', ['app/model', 'app/view'], function () {
-  class Controller {
-    constructor(model, view) {
-      var that = this;
+define(
+  'app/controller',
+  ['app/datetimepicker', 'app/note', 'app/model', 'app/view', 'app/helpers'],
+  function(Datetimepicker, Note) {
+    'use strict';
 
-      view.elements.input.keydown(e => {
-        if (e.keyCode == 13) {
-          that.addItem(model, view);
+    function Controller (model, view, filter) {
+      var that = this;
+      that._model = model;
+      that._view = view;
+      that._filter = filter;
+
+      this.datetimepickerInit(model);
+
+      view.elements.newNoteBtn.on('click', function(e) {
+        view.showAddNoteForm();
+      });
+
+      view.elements.newNoteAddBtn.on('click', function(e){
+        that.addItem(model, view);
+      });
+
+      view.elements.newNoteText.keyup(function(e) {
+        var val = view.elements.newNoteText.val();
+        if (val) {
+          view.addNoteEnable();
+        } else {
+          view.addNoteDisable();
         }
       });
 
-      view.elements.listContainer.on('click', '.delete-item', function () {
+      view.elements.listContainer.on('click', '.delete-item', function() {
         that.removeItem(this, model, view);
       });
 
-      view.elements.listContainer.change(function (e) {
-        var $target = $(e.target);
+      filter.wrapper.on('click', '.filter__text', function() {
+        that.selectFilterItem(this);
+      });
 
-        if ($target.hasClass('item_text') || $target.hasClass('toggle')) {
-          that.changeItem(e, $target, model, view);
-        }
+      filter.wrapper.on('click', '.filter__res-btn', function() {
+        that.unSelectFilterItem(this);
       });
     }
 
-    addItem(model, view) {
-      var newItem = view.elements.input.val();
+    Controller.prototype.selectFilterItem = function(elem) {
+      var id = $(elem).closest('.filter__item').data('id');
 
-      model.addItem(newItem);
+      this._filter.select(id);
+      this._view.elementShow(this._filter.getItemElements(id, elem).buttonElem);
 
-      view.renderList(model.data);
-      view.elements.input.val('');
-    }
+      this._view.renderNoteList();
+    };
 
-    positionIndex($elem) {
-      return $elem.parent('li').data().index;
-    }
+    Controller.prototype.unSelectFilterItem = function(elem) {
+      var id = $(elem).closest('.filter__item').data('id');
 
-    changeItem(e, $elem, model, view) {
-      var positionIndex = this.positionIndex($elem);
-      var tempObj = model.data[positionIndex];
+      this._filter.unselect(id);
+      this._view.elementHide(this._filter.getItemElements(id, elem).buttonElem);
 
-      if ($elem.hasClass('item_text')) tempObj.text = $elem.val();
-      if ($elem.hasClass('toggle')) tempObj.status = $elem.prop('checked') ? false : true;
+      this._view.renderNoteList();
+    };
 
-      model.changeItem(positionIndex, tempObj);
-      view.renderList(model.data);
-    }
+    Controller.prototype.addItem = function() {
+      var newNone = new Note(this._view);
 
-    removeItem(elem, model, view) {
-      var positionIndex = this.positionIndex($(elem));
+      this._model.addItem(newNone);
+      this._view.renderNoteList();
+      this._filter.render();
 
-      model.removeItem(positionIndex);
-      view.renderList(model.data);
-    }
-  }
+      this.datetimepickerInit(this._model);
+
+      this._view.clearNew();
+    };
+
+    Controller.prototype.removeItem = function(elem) {
+      var id = $(elem).data().id;
+
+      this._model.removeItem(id);
+      this._view.renderNoteList();
+      this._filter.render();
+    };
+
+    Controller.prototype.datetimepickerInit = function() {
+      new Datetimepicker('#datetimepicker');
+    };
 
   return Controller;
-});
+  }
+);

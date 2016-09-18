@@ -23,7 +23,7 @@ $baseFontSize: 16px !default;
   border: 1px solid #333;
 }
 
-.filter-date {
+.filter {
   ul {
     list-style: none;
     padding: 0;
@@ -31,5 +31,9 @@ $baseFontSize: 16px !default;
 
   li {
     cursor: pointer;
+
+    &:hover{
+      color: blue;
+    }
   }
 }

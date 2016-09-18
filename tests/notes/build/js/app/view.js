@@ -1,20 +1,29 @@
-define('app/view', ['app/model', 'jquery', 'tmpl', 'datetimepicker'], function () {
-  class View {
-    constructor(model) {
+define(
+  'app/view',
+  ['app/template', 'app/model', 'app/filter', 'jquery'],
+  function (Template) {
+    function View(model, filter) {
+
+      var that = this;
+
+      this._model = model;
+      this._filter = filter;
+
       this.elements = {
-        input: $('.input-item'),
-        itemText: $('.item_text'),
+        newNote: $('.new-note'),
+        newNoteForm: $('.add-note-form'),
+        newNoteText: $('#new-note-text'),
+        newNoteBtn: $('.new-note-btn'),
+        newNoteDate: $('#datetimepicker'),
+        newNoteAddBtn: $('.new-note-add-btn'),
         listContainer: $('#notes-conteiner')
       };
-      this.renderList(model.data);
-      this.datetimepickerInit(model);
+
+      this.renderNoteList();
+      filter.render();
     }
 
-    renderList(data) {
-      var list = tmpl($('#item-template').html(), { data: data });
-      this.elements.listContainer.html(list);
-    }
-
+<<<<<<< HEAD
     datetimepickerInit(model) {
       $.datetimepicker.setLocale('ru');
       $('#datetimepicker').datetimepicker({
@@ -23,8 +32,40 @@ define('app/view', ['app/model', 'jquery', 'tmpl', 'datetimepicker'], function (
         step: 1
       });
     }
+=======
+    View.prototype.renderNoteList = function() {
+      var data = this._filter.getData();
+      var template = new Template('#item-template', this.elements.listContainer);
+      template.render(data);
+    };
+>>>>>>> td
 
+    View.prototype.clearNew = function() {
+      this.elements.newNoteText.val('');
+      this.addNoteDisable();
+    };
+
+    View.prototype.addNoteEnable = function() {
+      this.elements.newNoteAddBtn.removeAttr('disabled');
+    };
+
+    View.prototype.addNoteDisable = function() {
+      this.elements.newNoteAddBtn.attr('disabled', 'disabled');
+    };
+
+    View.prototype.elementHide = function(elem) {
+      elem.addClass('hide');
+    };
+
+    View.prototype.elementShow = function(elem) {
+      elem.removeClass('hide');
+    };
+
+    View.prototype.showAddNoteForm = function() {
+      this.elements.newNoteBtn.addClass('hide');
+      this.elements.newNoteForm.removeClass('hide');
+    };
+
+    return View;
   }
-
-  return View;
-});
+);

@@ -16,8 +16,12 @@ define(
 
       if (!('_listItems' in this)) {
         this._listItems = model.data.sortList;
-        console.log(this._listItems + '');
-        this.render(this._listItems);
+
+        if ((this._listItems)&&(this._listItems.length>0)) {
+          this.render(this._listItems);
+        } else {
+          this.render();
+        }
       }
 
     }
@@ -25,18 +29,13 @@ define(
     FilterByDate.prototype.render = function(data) {
       var template = new Template('#filter-template', this.wrapper);
 
-      if (!data) {
-        if ((this._listItems)&&(this._listItems.length>0)) {
+        if ((data !== this._listItems) || (data === undefined)) {
+          this._listItems =  this.getListItems();
           data = this._listItems;
         } else {
-          this._listItems =  this.getListItems();
           data = this._listItems;
         }
 
-        console.log('this._listItems', this._listItems + '');
-      }
-
-      this._listItems = data;
       template.render(data);
     };
 

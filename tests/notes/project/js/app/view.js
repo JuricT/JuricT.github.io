@@ -20,7 +20,6 @@ define(
       };
 
       this.renderNoteList();
-      filter.render();
     }
 
     View.prototype.renderNoteList = function() {

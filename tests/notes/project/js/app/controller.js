@@ -63,7 +63,7 @@ define(
 
       this._model.addItem(newNone);
       this._view.renderNoteList();
-      this._filter.render(this._filter.getListItems());
+      this._filter.render();
 
       this.datetimepickerInit(this._model);
 
@@ -75,7 +75,7 @@ define(
 
       this._model.removeItem(id);
       this._view.renderNoteList();
-      this._filter.render(this._filter.getListItems());
+      this._filter.render();
     };
 
     Controller.prototype.datetimepickerInit = function() {

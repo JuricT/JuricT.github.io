@@ -13,11 +13,31 @@ define(
       this._model = model;
 
       this.wrapper = $('.filter');
+
+      if (!('_listItems' in this)) {
+        this._listItems = model.data.sortList;
+        console.log(this._listItems + '');
+        this.render(this._listItems);
+      }
+
     }
 
-    FilterByDate.prototype.render = function() {
+    FilterByDate.prototype.render = function(data) {
       var template = new Template('#filter-template', this.wrapper);
-      template.render(this.getListItems());
+
+      if (!data) {
+        if ((this._listItems)&&(this._listItems.length>0)) {
+          data = this._listItems;
+        } else {
+          this._listItems =  this.getListItems();
+          data = this._listItems;
+        }
+
+        console.log('this._listItems', this._listItems + '');
+      }
+
+      this._listItems = data;
+      template.render(data);
     };
 
     FilterByDate.prototype.getListItems = function() {
@@ -31,6 +51,7 @@ define(
       }
 
       this._listItems = listItems;
+      this._model.addSortList(listItems);
 
       return listItems;
     };
@@ -40,7 +61,7 @@ define(
       var sortedData = this.getSortedData();
       var all = true;
 
-      if (!this._listItems) return this._model.data;
+      if (!this._listItems) return this._model.data.noteList;
 
       for (var i = 0; i < this._listItems.length; i++) {
         if ((this._listItems[i].selected) && (sortedData[i])) {
@@ -49,7 +70,7 @@ define(
         if (this._listItems[i].selected) all = false;
       }
 
-      if (all) return this._model.data;
+      if (all) return this._model.data.noteList;
 
       data = _.flatten(data);
       return data;
@@ -60,9 +81,7 @@ define(
     };
 
     FilterByDate.prototype.unselect = function(id) {
-
       this._listItems[id].selected = false;
-
     };
 
     FilterByDate.prototype.getItemElements = function(id, elem) {
@@ -71,7 +90,7 @@ define(
         var $textElem = $itemElem.find('.filter__text');
         var $buttonElem = $itemElem.find('.filter__res-btn');
 
-        this._listItems[id].elements =  {
+        return {
           itemElem: $itemElem,
           textElem: $textElem,
           buttonElem: $buttonElem
@@ -83,9 +102,9 @@ define(
 
     FilterByDate.prototype.getQuery = function() {
 
-      if (!this._model.data.length) return [];
+      if (!this._model.data.noteList.length) return [];
 
-      var lastDate = this._model.data[0].date;
+      var lastDate = this._model.data.noteList[0].date;
 
       var daysQuery = [
         this.quailTime(lastDate, 0),
@@ -101,17 +120,17 @@ define(
       query = query || this.getQuery();
 
 
-outer:for (var i = 0; i < this._model.data.length; i++) {
-        var noteDay = +this.quailTime(this._model.data[i].date, 0);
+outer:for (var i = 0; i < this._model.data.noteList.length; i++) {
+        var noteDay = +this.quailTime(this._model.data.noteList[i].date, 0);
         for (var j = 0; j < 3; j++) {
           if (noteDay === +query[j]) {
             sortedData[j] = sortedData[j] || [];
-            sortedData[j].push(this._model.data[i]);
+            sortedData[j].push(this._model.data.noteList[i]);
             continue outer;
           }
         }
         sortedData[j] = sortedData[j] || [];
-        sortedData[j].push(this._model.data[i]);
+        sortedData[j].push(this._model.data.noteList[i]);
       }
 
       return sortedData;

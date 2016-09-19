@@ -34,28 +34,26 @@ define(
       });
 
       filter.wrapper.on('click', '.filter__text', function() {
-        that.selectFilterItem(this);
+        that.selectFilterItem(this, true);
       });
 
       filter.wrapper.on('click', '.filter__res-btn', function() {
-        that.unSelectFilterItem(this);
+        that.selectFilterItem(this, false);
       });
     }
 
-    Controller.prototype.selectFilterItem = function(elem) {
+    Controller.prototype.selectFilterItem = function(elem, sel) {
       var id = $(elem).closest('.filter__item').data('id');
 
-      this._filter.select(id);
-      this._view.elementShow(this._filter.getItemElements(id, elem).buttonElem);
+      if (sel) {
+        this._filter.select(id);
+        this._view.elementShow(this._filter.getItemElements(id, elem).buttonElem);
+      } else {
+        this._filter.unselect(id);
+        this._view.elementHide(this._filter.getItemElements(id, elem).buttonElem);
+      }
 
-      this._view.renderNoteList();
-    };
-
-    Controller.prototype.unSelectFilterItem = function(elem) {
-      var id = $(elem).closest('.filter__item').data('id');
-
-      this._filter.unselect(id);
-      this._view.elementHide(this._filter.getItemElements(id, elem).buttonElem);
+      this._model.addSortList(this._filter._listItems);
 
       this._view.renderNoteList();
     };
@@ -65,7 +63,7 @@ define(
 
       this._model.addItem(newNone);
       this._view.renderNoteList();
-      this._filter.render();
+      this._filter.render(this._filter.getListItems());
 
       this.datetimepickerInit(this._model);
 
@@ -77,7 +75,7 @@ define(
 
       this._model.removeItem(id);
       this._view.renderNoteList();
-      this._filter.render();
+      this._filter.render(this._filter.getListItems());
     };
 
     Controller.prototype.datetimepickerInit = function() {

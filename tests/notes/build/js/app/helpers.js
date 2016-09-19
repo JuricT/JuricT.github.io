@@ -54,6 +54,9 @@ define(
       },
 
       unEscapeHtml: function(text) {
+        var textType = this.getClass(text);
+        if (textType !== 'String') return textType;
+
         return text
           .replace(/\n/g, '<br>');
       }

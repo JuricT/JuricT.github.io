@@ -1,0 +1,10 @@
+.box {
+  position: relative;
+  border: 1px solid $calor-main;
+  border-radius: 3px;
+
+  box-shadow: 1px 1px 6px -1px $calor-main;
+
+  margin-bottom: 10px;
+  padding: 10px;
+}

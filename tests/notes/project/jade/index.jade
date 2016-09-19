@@ -8,7 +8,7 @@ head
 body
   div.container
     header.row
-      div.col-md-11.col-sm-8
+      div.col-xs-12
         div.new-note
           div.new-note-btn Добавить заметку
           form.add-note-form.hide
@@ -16,8 +16,8 @@ body
             input(type="datetime", id="datetimepicker")
             button.new-note-add-btn.btn.btn-success(type="button", disabled="disabled") Добавить
     div.row
-      main.col-md-11.col-sm-8#notes-conteiner
-      aside.filter.col-md-1.col-sm-4
+      main.col-sm-9.col-md-10#notes-conteiner
+      aside.filter.col-sm-3.col-md-2
   include item-template.html
   include filter-template.html
   

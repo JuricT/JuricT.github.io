@@ -4,7 +4,7 @@
       <div class="note">
         <div class="text"> <%= helpers.unEscapeHtml(data[i].text) %> </div>
         <div class="note__date"> <%= helpers.dateToStr(data[i].date) %> </div>
-        <div class="delete-item" data-id="<%= data[i].id %>">×</div>
+        <div class="delete-item btn-close" data-id="<%= data[i].id %>">×</div>
       </div>
     <% }; %>
   <% } else { %>

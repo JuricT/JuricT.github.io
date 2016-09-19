@@ -5,35 +5,23 @@ $ieSprite: '.lt-ie9' !default;
 $sprite: map-get($icons, sprite) !default;
 $baseFontSize: 16px !default;
 
+$calor-main: #eee;
+
 @import 'svg/mixins';
 
 @import "core/settings";
 @import "core/mixins";
+@import "box";
+@import "button";
+@import "filter";
+@import "note";
 @import "jquery.datetimepicker.min";
 
-.text {
+
+.textarea {
   max-width: 100%;
 }
 
 .hide {
   display: none;
-}
-
-.note {
-  border: 1px solid #333;
-}
-
-.filter {
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  li {
-    cursor: pointer;
-
-    &:hover{
-      color: blue;
-    }
-  }
 }

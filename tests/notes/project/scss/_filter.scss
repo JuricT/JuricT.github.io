@@ -1,0 +1,25 @@
+.filter {
+  @extend .box;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    cursor: pointer;
+    position: relative;
+  }
+
+  &__text {
+    margin-left: 30px;
+
+  }
+
+  &__res-btn {
+    @extend .btn-close;
+    right: auto;
+    left: 5px;
+    top: 0px;
+  }
+}

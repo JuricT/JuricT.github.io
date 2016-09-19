@@ -1,3 +1,57 @@
+.box, .filter, .new-note {
+  position: relative;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  box-shadow: 1px 1px 6px -1px #eee;
+  margin-bottom: 10px;
+  padding: 10px; }
+
+.btn-close, .filter__res-btn {
+  right: 10px;
+  top: 10px;
+  display: block;
+  position: absolute;
+  padding: 0;
+  height: 18px;
+  width: 18px;
+  text-align: center;
+  color: #ecc;
+  background: #fff;
+  cursor: pointer; }
+  .btn-close:hover, .filter__res-btn:hover {
+    color: #faa; }
+  .btn-close:after, .filter__res-btn:after {
+    top: 1px;
+    display: block;
+    content: '';
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    border: 1px solid #eee;
+    border-radius: 3px; }
+  .btn-close:hover:after, .filter__res-btn:hover:after {
+    position: absolute;
+    top: 1px;
+    border-color: #66afe9;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+
+.filter ul {
+  list-style: none;
+  padding: 0; }
+
+.filter__item {
+  cursor: pointer;
+  position: relative; }
+
+.filter__text {
+  margin-left: 30px; }
+
+.filter__res-btn {
+  right: auto;
+  left: 5px;
+  top: 0px; }
+
 .xdsoft_datetimepicker {
   box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.506);
   background: #fff;
@@ -478,20 +532,8 @@
   background: linear-gradient(to bottom, #f4f8fa 0, #FFF 73%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f8fa',endColorstr='#FFF',GradientType=0); }
 
-.text {
+.textarea {
   max-width: 100%; }
 
 .hide {
   display: none; }
-
-.note {
-  border: 1px solid #333; }
-
-.filter ul {
-  list-style: none;
-  padding: 0; }
-
-.filter li {
-  cursor: pointer; }
-  .filter li:hover {
-    color: blue; }

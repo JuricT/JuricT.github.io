@@ -16,7 +16,8 @@ define(
         newNoteBtn: $('.new-note-btn'),
         newNoteDate: $('#datetimepicker'),
         newNoteAddBtn: $('.new-note-add-btn'),
-        listContainer: $('#notes-conteiner')
+        listContainer: $('#notes-conteiner'),
+        filter: $('.filter')
       };
 
       this.renderNoteList();

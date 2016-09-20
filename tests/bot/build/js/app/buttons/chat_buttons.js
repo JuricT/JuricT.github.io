@@ -42,7 +42,9 @@ define(
       this.initState();
     }
 
-
+    ChatBtn.prototype.getTarget = function () {
+      return this._elements.target;
+    };
 
     ChatBtn.prototype.initClick = function(callbck) {
       var that = this;

@@ -1,6 +1,6 @@
 define(
   'view',
-  ['buttons/chat_buttons','model', 'jquery'],
+  ['buttons/chat_buttons', 'model', 'jquery', 'fancybox'],
   function (ChatBtn) {
     'use strict';
 
@@ -31,6 +31,7 @@ define(
         }
       );
 
+      $(".fancybox").fancybox();
 
     }
 

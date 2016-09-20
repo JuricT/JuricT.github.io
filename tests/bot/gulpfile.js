@@ -5,7 +5,8 @@
 var build           = './build/';
 
 var cssBuildPath    = build + 'css/',
-    jsBuildPath     = build + 'js/';
+    jsBuildPath     = build + 'js/',
+    imagesBuildPath = build + 'img/';
 
 //===================================
 //         RESOURCE CONCTANTS
@@ -21,6 +22,8 @@ var jadeDir     = projectDir + 'jade/',
 var sassDir     = projectDir + 'scss/',
     cssRes      = projectDir + 'css/';
 
+var imgDir      = projectDir + 'img/';
+
 //===================================
 //             PLUGINS
 //===================================
@@ -31,6 +34,7 @@ var gulp        = require('gulp'),
     fs          = require('fs'),
     jade        = require('gulp-jade'),
     sass        = require('gulp-sass'),
+    imageop     = require('gulp-image-optimization'),
     rjs         = require('gulp-requirejs');
 
 //===================================
@@ -59,6 +63,27 @@ gulp.task('sass', function () {
   .pipe(connect.reload());
 });
 
+//===   IMG   ===
+
+gulp.task('copyIMG', function() {
+  gulp.src(IMG_DIR + '/*.*')
+  .pipe(gulp.dest(IMAGES_BUILD_PATH));
+});
+
+gulp.task('images', function(cb) {
+  gulp.src([imgDir + '/**/*.png',
+            imgDir + '/**/*.jpg'])
+  .pipe(imageop({
+    optimizationLevel: 5,
+    progressive: true,
+    interlaced: true
+  }))
+  .pipe(gulp.dest(imagesBuildPath))
+  .on('end', cb)
+  .on('error', cb)
+  .pipe(connect.reload());
+});
+
 //=== CONNECT ===
 
 gulp.task('connect', function(){
@@ -80,7 +105,7 @@ gulp.task('watch', function(){
 //           DEFAULT TASK
 //===================================
 gulp.task('default', function(){
-  gulp.run('jade', 'script', 'sass', 'connect', 'watch');
+  gulp.run('jade', 'script', 'sass', 'images', 'connect', 'watch');
 });
 
 //===================================

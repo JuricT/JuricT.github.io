@@ -8,16 +8,17 @@ head
 body
   div.container
     header.row
-      div.col-xs-12
+      div.col-xs-12.new-note-wrapper
         div.new-note
           div.new-note-btn Добавить заметку
-          form.add-note-form.hide
+          form.add-note-form.hide.clearfix
             textarea#new-note-text.textarea.form-control
-            input(type="datetime", id="datetimepicker")
+            input.new-note-date(type="datetime", id="datetimepicker")
             button.new-note-add-btn.btn.btn-success(type="button", disabled="disabled") Добавить
     div.row
       main.col-sm-9.col-md-10#notes-conteiner
-      aside.filter.col-sm-3.col-md-2
+      div.col-sm-3.col-md-2
+        aside.filter
   include item-template.html
   include filter-template.html
   

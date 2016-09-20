@@ -1,10 +1,10 @@
-.box, .filter, .new-note {
+.box, .filter, .new-note, .note {
   position: relative;
   border: 1px solid #eee;
   border-radius: 3px;
   box-shadow: 1px 1px 6px -1px #eee;
   margin-bottom: 10px;
-  padding: 10px; }
+  padding: 15px; }
 
 .btn-close, .filter__res-btn {
   right: 10px;
@@ -51,6 +51,23 @@
   right: auto;
   left: 5px;
   top: 0px; }
+
+.new-note-add-btn {
+  float: right;
+  margin-top: 10px; }
+
+.new-note-date {
+  float: left;
+  margin-top: 10px; }
+
+.note {
+  padding-bottom: 7px; }
+  .note__text {
+    margin-right: 15px;
+    text-indent: 15px; }
+  .note__date {
+    text-align: right;
+    font-size: 13px; }
 
 .xdsoft_datetimepicker {
   box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.506);
@@ -537,3 +554,12 @@
 
 .hide {
   display: none; }
+
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both; }
+
+@media screen and (max-width: 767px) {
+  .container {
+    margin-top: 30px; } }

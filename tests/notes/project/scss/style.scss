@@ -10,7 +10,6 @@ $calor-main: #eee;
 @import 'svg/mixins';
 
 @import "core/settings";
-@import "core/mixins";
 @import "box";
 @import "button";
 @import "filter";
@@ -24,4 +23,16 @@ $calor-main: #eee;
 
 .hide {
   display: none;
+}
+
+.clearfix:after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+@media screen and (max-width: 767px)  {
+  .container {
+    margin-top: 30px;
+  }
 }

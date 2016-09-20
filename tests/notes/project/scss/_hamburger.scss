@@ -1,4 +1,4 @@
-.hamburger{
+.hamburger {
   background:none;
   position:absolute;
   top:0;
@@ -13,20 +13,12 @@
   outline:none;
   z-index:10000000000000;
 }
-.cross{
-  background:none;
-  position:absolute;
-  top:0px;
-  right:0;
+
+.cross {
+  @extend .hamburger;
   padding:13px 15px 0px 15px;
-  color:#000;
-  border:0;
   font-size:3em;
   line-height:27px;
-  font-weight:bold;
-  cursor:pointer;
-  outline:none;
-  z-index:10000000000000;
 }
 
 @media screen and (max-width: 767px)  {
@@ -38,6 +30,7 @@
     width: calc(100% - 30px);
     position: fixed;
     top: 40px;
+    left: 15px;
     z-index: 9998;
   }
 
@@ -56,7 +49,7 @@
   }
 }
 
-@media screen and (min-width: 768px)  {
+@media screen and (min-width: 768px) {
   .container {
     margin-top: 5px;
   }

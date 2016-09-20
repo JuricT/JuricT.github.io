@@ -1,22 +1,11 @@
-@import 'svg/sprite';
-@import 'svg/mq';
-
-$ieSprite: '.lt-ie9' !default;
-$sprite: map-get($icons, sprite) !default;
-$baseFontSize: 16px !default;
-
 $calor-main: #eee;
 
-@import 'svg/mixins';
-
-@import "core/settings";
 @import "box";
 @import "button";
 @import "filter";
 @import "note";
 @import "hamburger";
 @import "jquery.datetimepicker.min";
-
 
 .textarea {
   max-width: 100%;

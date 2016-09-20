@@ -2,9 +2,10 @@ define(
   'app/helpers',
   [],
   function () {
-    helpers = {
-      dateToStr: function(date) {
+    'use strict';
 
+    var helpers = {
+      dateToStr: function(date) {
         if (date === 'undefined') {
           date = new Date();
         } else if (this.getClass(date) !== 'Date') {

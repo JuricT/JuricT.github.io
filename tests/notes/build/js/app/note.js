@@ -2,6 +2,8 @@ define(
   'app/note',
   ['app/helpers'],
   function (Helpers) {
+    'use strict';
+
     function Note(view) {
       this.id = new Date().getTime();
       this.text = helpers.escapeHtml(view.elements.newNoteText.val());
@@ -11,8 +13,3 @@ define(
     return Note;
   }
 );
-
-
-try {
-  module.exports = Note;
-} catch (e) {}

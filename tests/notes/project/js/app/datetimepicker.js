@@ -1,7 +1,9 @@
 define(
   'app/datetimepicker',
   ['app/helpers', 'jquery', 'datetimepicker'],
-  function () {
+  function (helpers) {
+    'use strict';
+
     function Datetimepicker(querySelector) {
       $.datetimepicker.setLocale('ru');
       $(querySelector).datetimepicker({

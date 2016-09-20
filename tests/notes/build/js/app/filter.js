@@ -1,7 +1,9 @@
 define(
   'app/filter',
   ['app/helpers', 'app/location', 'app/template', 'jquery'],
-  function (Helpers, location, Template) {
+  function (helpers, location, Template) {
+    'use strict';
+
     function Item(id, str) {
       this.id = id;
       this.title = str;
@@ -23,7 +25,6 @@ define(
           this.render();
         }
       }
-
     }
 
     FilterByDate.prototype.render = function(data) {
@@ -118,9 +119,10 @@ define(
       var sortedData = [];
       query = query || this.getQuery();
 
-
-outer:for (var i = 0; i < this._model.data.noteList.length; i++) {
+outer:
+      for (var i = 0; i < this._model.data.noteList.length; i++) {
         var noteDay = +this.quailTime(this._model.data.noteList[i].date, 0);
+
         for (var j = 0; j < 3; j++) {
           if (noteDay === +query[j]) {
             sortedData[j] = sortedData[j] || [];
@@ -128,6 +130,7 @@ outer:for (var i = 0; i < this._model.data.noteList.length; i++) {
             continue outer;
           }
         }
+
         sortedData[j] = sortedData[j] || [];
         sortedData[j].push(this._model.data.noteList[i]);
       }
@@ -165,8 +168,3 @@ outer:for (var i = 0; i < this._model.data.noteList.length; i++) {
     return FilterByDate;
   }
 );
-
-
-try {
-  module.exports = Filter;
-} catch (e) {}

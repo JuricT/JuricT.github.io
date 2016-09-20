@@ -2,6 +2,8 @@ define(
   'app/store',
   [],
   function () {
+    'use strict';
+
     function Store(storeName) {
       this._dbName = storeName;
     }

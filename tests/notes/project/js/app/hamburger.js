@@ -3,6 +3,8 @@ define(
   ['app/controller',
   'jquery'],
   function () {
+    'use strict';
+
     function Hamburger(options) {
       var that = this;
       this.options = options;

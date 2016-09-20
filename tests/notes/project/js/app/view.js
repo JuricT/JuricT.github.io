@@ -2,8 +2,9 @@ define(
   'app/view',
   ['app/template', 'app/model', 'app/filter', 'jquery'],
   function (Template) {
-    function View(model, filter) {
+    'use strict';
 
+    function View(model, filter) {
       var that = this;
 
       this._model = model;

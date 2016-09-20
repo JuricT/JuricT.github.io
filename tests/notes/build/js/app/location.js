@@ -2,6 +2,8 @@ define(
   'app/location',
   [],
   function () {
+    'use strict';
+    
     var location = {
       daysOfTheWeek: {
         monday: 'Понедельник',

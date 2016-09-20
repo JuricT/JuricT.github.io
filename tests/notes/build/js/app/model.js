@@ -2,6 +2,8 @@ define(
   'app/model',
   ['app/store', 'lodash'],
   function () {
+    'use strict';
+
     function Model(store) {
       this._store = store;
       this.loadData();
@@ -54,8 +56,3 @@ define(
     return Model;
   }
 );
-
-
-try {
-  module.exports = Model;
-} catch (e) {}

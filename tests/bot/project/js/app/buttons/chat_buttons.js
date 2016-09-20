@@ -1,7 +1,7 @@
 define(
   'buttons/chat_buttons',
-  ['helpers', 'jquery'],
-  function (helpers) {
+  ['jquery'],
+  function () {
     'use strict';
 
     function ChatBtn(config) {
@@ -59,12 +59,11 @@ define(
         if (that._elements.target[0] === e.target) {
           var $target = $(e.target);
 
-
-          if (helpers.getClass(callbck) === 'Function') {
+          if ($.isFunction(callbck)) {
             callbck();
           }
 
-          if (helpers.getClass(that._states[that._currenState].callback) === 'Function') {
+          if ($.isFunction(that._states[that._currenState].callback)) {
             that._states[that._currenState].callback();
           }
 

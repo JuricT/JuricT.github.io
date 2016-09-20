@@ -1,5 +1,5 @@
 define(
-  'app/helpers',
+  'helpers',
   [],
   function () {
     'use strict';

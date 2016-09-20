@@ -1,7 +1,7 @@
 define(
   'app/note',
   ['app/helpers'],
-  function (Helpers) {
+  function (helpers) {
     'use strict';
 
     function Note(view) {

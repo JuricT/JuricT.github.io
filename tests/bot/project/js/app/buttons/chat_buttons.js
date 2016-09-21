@@ -36,7 +36,7 @@ define(
 
       this._currenState = 0;
 
-      this._states = options.states;
+      this.states = options.states;
 
       this.initClick();
       this.initState();
@@ -63,8 +63,8 @@ define(
             callbck();
           }
 
-          if ($.isFunction(that._states[that._currenState].callback)) {
-            that._states[that._currenState].callback();
+          if ($.isFunction(that.states[that._currenState].callback)) {
+            that.states[that._currenState].callback();
           }
 
           that.nextState();
@@ -73,7 +73,7 @@ define(
     };
 
     ChatBtn.prototype.initState = function () {
-      this._elements.target.text(this._states[this._currenState].title);
+      this._elements.target.text(this.states[this._currenState].title);
     };
 
     ChatBtn.prototype.nextState = function () {
@@ -82,7 +82,7 @@ define(
     };
 
     ChatBtn.prototype._incState = function () {
-      this._currenState = (this._currenState < this._states.length - 1) ?
+      this._currenState = (this._currenState < this.states.length - 1) ?
       ++this._currenState : 0;
     };
 

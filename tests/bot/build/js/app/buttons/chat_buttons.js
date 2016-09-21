@@ -1,7 +1,7 @@
 define(
   'buttons/chat_buttons',
-  ['helpers', 'jquery'],
-  function (helpers) {
+  ['jquery'],
+  function () {
     'use strict';
 
     function ChatBtn(config) {
@@ -36,7 +36,7 @@ define(
 
       this._currenState = 0;
 
-      this._states = options.states;
+      this.states = options.states;
 
       this.initClick();
       this.initState();
@@ -59,13 +59,12 @@ define(
         if (that._elements.target[0] === e.target) {
           var $target = $(e.target);
 
-
-          if (helpers.getClass(callbck) === 'Function') {
+          if ($.isFunction(callbck)) {
             callbck();
           }
 
-          if (helpers.getClass(that._states[that._currenState].callback) === 'Function') {
-            that._states[that._currenState].callback();
+          if ($.isFunction(that.states[that._currenState].callback)) {
+            that.states[that._currenState].callback();
           }
 
           that.nextState();
@@ -74,7 +73,7 @@ define(
     };
 
     ChatBtn.prototype.initState = function () {
-      this._elements.target.text(this._states[this._currenState].title);
+      this._elements.target.text(this.states[this._currenState].title);
     };
 
     ChatBtn.prototype.nextState = function () {
@@ -83,7 +82,7 @@ define(
     };
 
     ChatBtn.prototype._incState = function () {
-      this._currenState = (this._currenState < this._states.length - 1) ?
+      this._currenState = (this._currenState < this.states.length - 1) ?
       ++this._currenState : 0;
     };
 

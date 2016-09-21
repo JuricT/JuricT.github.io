@@ -14,11 +14,31 @@
         <button type="button" class="chat-btn btn btn-primary"></button>
       </div>
     </header>
-    <div class="row">
-      <div class="col-sm-12">
-        <button class="fancybox">button</button>
-      </div>
+  </div><script type="text/template" id="chat-template">
+  <div class="chat">
+    <div class="message">
+      <header>
+        <div class="message__user-name">User</div>
+        <div class="message__data"></div>
+      </header>
+      <div class="message__text">Some text</div>
+    </div>
+
+    <div class="message">
+      <header>
+        <div class="message__user-name">User</div>
+        <div class="message__data"></div>
+      </header>
+      <div class="message__text">Some text</div>
     </div>
   </div>
+
+  <div class="control">
+    <div class="text-inner" contenteditable="true">some text</div>
+    <button class="btn--smile">:)</button>
+    <button class="send">Send</button>
+  </div>
+</script>
+
   <script data-main="js/app" src="js/lib/require.js"></script>
 </body>

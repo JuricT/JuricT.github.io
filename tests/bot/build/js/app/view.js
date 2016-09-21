@@ -1,7 +1,7 @@
 define(
   'view',
-  ['buttons/chat_buttons', 'model', 'jquery', 'fancybox'],
-  function (ChatBtn) {
+  ['buttons/chat_buttons', 'win', 'model', 'jquery'],
+  function (ChatBtn, Win) {
     'use strict';
 
     function View(model) {
@@ -12,7 +12,7 @@ define(
 
       };
 
-      this._chatBtn = new ChatBtn({
+      this.chatBtn = new ChatBtn({
           states: [
             {
               title: 'Открыть',
@@ -31,7 +31,7 @@ define(
         }
       );
 
-      $(".fancybox").fancybox();
+      this.win = new Win();
 
     }
 

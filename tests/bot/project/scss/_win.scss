@@ -1,0 +1,12 @@
+.win {
+  display: block;
+  position: fixed;
+
+  border: 1px solid $border-color;
+  box-shadow: 0 0 6px 0px black;
+
+  background: #fff;
+
+  margin: 0;
+  padding: 0;
+}

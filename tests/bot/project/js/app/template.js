@@ -1,5 +1,5 @@
 define(
-  'app/template',
+  'template',
   ['jquery', 'tmpl'],
   function () {
     'use strict';

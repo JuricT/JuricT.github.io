@@ -1,25 +1,68 @@
 <script type="text/template" id="chat-template">
   <div class="chat">
-    <div class="message">
-      <header>
+    <div class="message user" data-type="user">
+      <header class="message__header">
         <div class="message__user-name">User</div>
-        <div class="message__data"></div>
+        <div class="message__data">21.01.2016</div>
       </header>
       <div class="message__text">Some text</div>
     </div>
 
-    <div class="message">
+    <div class="message bot" data-type="bot">
+      <header  class="message__header">
+        <div class="message__user-name">bot</div>
+        <div class="message__data">21.01.2016</div>
+      </header>
+      <div class="message__text">Some sdfsdf sdf sdfsdfsdfsfsf sf fsdfsfdsdf sdf sdftext</div>
+    </div>
+
+    <div class="message" data-type="user">
+      <header   class="message__header">
+        <div class="message__user-name">User</div>
+        <div class="message__data">21.01.2016</div>
+      </header>
+      <div class="message__text">Some sd skjgh jsdgh kjdsgh kjdhg jdskdgh kjsdgh kjsdgh kjhg ksjhg kjgh kjsfhgslfgpirtjpoerflkg lksdjgfsdf sdf sdfsdfsdfsfsf sf fsdfsfdsdf sdf sdftext</div>
+    </div>
+
+    <div class="message"  data-type="bot">
+      <header   class="message__header">
+        <div class="message__user-name">bot</div>
+        <div class="message__data">21.01.2016</div>
+      </header>
+      <div class="message__text">Some sdfsdf sdf sdfsdfsdfsfsf sf fsdfsfdsdf sdf sdftext</div>
+    </div>
+
+    <div class="message" data-type="user">
+      <header  class="message__header">
+        <div class="message__user-name">User</div>
+        <div class="message__data">21.01.2016</div>
+      </header>
+      <div class="message__text">Some sdfsdf sdf sdfsdfsdfsfsf sf fsdfsfdsdf sdf sdftext</div>
+    </div>
+
+    <div class="message user" data-type="bot">
+      <header  class="message__header">
+        <div class="message__user-name">bot</div>
+        <div class="message__data">21.01.2016</div>
+      </header>
+      <div class="message__text">Some sdfsdf sdf sdfsdfsdfsfsf sf fsdfsfdsdf sdf sdftext</div>
+    </div>
+
+    <div class="message" data-type="user">
       <header>
         <div class="message__user-name">User</div>
         <div class="message__data"></div>
       </header>
-      <div class="message__text">Some text</div>
+      <div class="message__text">Some sdfsdf sdf sdfsdfsdfsfsf sf fsdfsfdsdf sdf sdftext</div>
     </div>
   </div>
 
   <div class="control">
     <div class="text-inner" contenteditable="true">some text</div>
-    <button class="btn--smile">:)</button>
-    <button class="send">Send</button>
+    <div class="wrapper">
+      <button class="btn--smile btn btn-default">:)</button>
+      <button class="send btn btn-default">Send</button>
+    </div>
+    <div class="smiles"></div>
   </div>
 </script>

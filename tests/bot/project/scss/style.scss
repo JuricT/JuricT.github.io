@@ -11,3 +11,7 @@ $baseFontSize: 16px !default;
 @import 'svg/mixins';
 
 @import "win";
+
+#modal {
+  opacity: 0;
+}

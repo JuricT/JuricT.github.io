@@ -11,5 +11,17 @@ body
       div.col-xs-12
         h1.tytle Имитация бота техподдержки
         button.chat-btn.btn.btn-primary(type="button")
+  div#modal.win
+    div.chat
+    div.control
+      div.text-inner(contenteditable="true")
+      div.wrapper
+        dutton.btn--smile.btn.btn-default
+        button.btn--send.btn.btn-default
+      div.smiles
+        div.smile.smile--smiling
+        div.smile.smile--happy
+        div.smile.smile--confused
+        div.smile.smile--sad
   include chat-template.html
   script(data-main="js/app" src="js/lib/require.js")

@@ -29,10 +29,12 @@ define(
 
       var options = $.extend(defaultSettings, config);
 
-      this._elements = {
-        target: options.elements.target,
-        // parent: options.elements.parent
-      };
+      // this._elements = {
+      //   target: options.elements.target,
+      //   // parent: options.elements.parent
+      // };
+
+      this._elements = options.elements;
 
       this._currenState = 0;
 
@@ -56,8 +58,9 @@ define(
       }
 
       function callback(e) {
-        if (that._elements.target[0] === e.target) {
-          var $target = $(e.target);
+        var $target = $(e.target);
+        if ((that._elements.target[0] === e.target) ||
+             that._elements.target[0] === $target.closest(that._elements.target[0])[0]){
 
           if ($.isFunction(callbck)) {
             callbck();
@@ -73,7 +76,7 @@ define(
     };
 
     Btn.prototype.initState = function () {
-      this._elements.target.text(this.states[this._currenState].title);
+      this._elements.target.html(this.states[this._currenState].title);
     };
 
     Btn.prototype.nextState = function () {
@@ -84,6 +87,15 @@ define(
     Btn.prototype._incState = function () {
       this._currenState = (this._currenState < this.states.length - 1) ?
       ++this._currenState : 0;
+    };
+
+    Btn.prototype.checkClick = function (e) {
+      var $target = $(e.target);
+      var $elem = this._elements.target;
+
+      return (($elem[0] === e.target) ||
+               $elem[0] === $target.closest($elem[0])[0]);
+
     };
 
     return Btn;

@@ -1,7 +1,7 @@
 define(
   'view',
-  ['button', 'win', 'model', 'jquery'],
-  function (Btn, Win) {
+  ['button', 'win', 'smiles', 'smile', 'model', 'jquery'],
+  function (Btn, Win, Smiles, Smile) {
     'use strict';
 
     function View(model) {
@@ -9,7 +9,11 @@ define(
       this._model = model;
 
       this.elements = {
-
+        chatBtn: $('.chat-btn'),
+        smileBtn: $('.btn--smile'),
+        sendBtn: $('.btn--send'),
+        control: $('.control'),
+        smiles: $('.smiles')
       };
 
       this.chatBtn = new Btn({
@@ -23,23 +27,43 @@ define(
           ],
 
           elements: {
-            target: $('.chat-btn')
+            target: this.elements.chatBtn
           }
-        });
+      });
+
 
       this.smileBtn = new Btn({
         states: [
           {
-            title: '<div class="smile smile--smiling"></div>'
+            title: ''// '<div class="smile smile--smiling"></div>'
           }
         ],
-
         elements: {
-          target: $('.smile-btn')
+          target: this.elements.smileBtn,
+          parent: this.elements.control
         }
       });
 
-      this.win = new Win();
+      this.sendBtn = new Btn({
+        states: [
+          {
+            title: ''//'<div class="smile smile--send"></div>'
+          }
+        ],
+        elements: {
+          target: this.elements.sendBtn,
+          parent: this.elements.control
+        }
+      });
+
+        this.smiles = new Smiles(this.elements.smiles);
+        this.smiles.add(new Smile('smiling'));
+        this.smiles.add(new Smile('happy'));
+        this.smiles.add(new Smile('confused'));
+        this.smiles.add(new Smile('sad'));
+        this.smiles.render();
+
+      this.win = new Win($('#modal'));
 
     }
 

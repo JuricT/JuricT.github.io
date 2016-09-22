@@ -12,6 +12,8 @@
   border-radius: 5px;
   background: white;
 
+  opacity: 0;
+
 }
 
 .smile {
@@ -27,6 +29,18 @@
 .btn--send {
   padding: 0;
   margin-left: 7px;
+  width: 32px;
+  height: 32px;
+}
+
+.btn--smile,
+.btn--smile:active {
+  @include sprite-ico(smiling, 3px, 3px, #fff, 25px);
+}
+
+.btn--send,
+.btn--send:active {
+  @include sprite-ico(send, 3px, 3px, #fff, 25px);
 }
 
 .smile--smiling {

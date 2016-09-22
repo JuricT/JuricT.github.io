@@ -1,3 +1,13 @@
-$border-color: #222;
-// @import "jquery.fancybox";
+$border-color: #ccc;
+$icon-dimensions: 20px;
+
+@import 'svg/sprite';
+@import 'svg/mq';
+
+$ieSprite: '.lt-ie9' !default;
+$sprite: map-get($icons, sprite) !default;
+$baseFontSize: 16px !default;
+
+@import 'svg/mixins';
+
 @import "win";

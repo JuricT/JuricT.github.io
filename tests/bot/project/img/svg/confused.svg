@@ -1,0 +1,18 @@
+<svg id="ico_confused" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 473.93 473.93">
+    <defs>
+        <style>
+        .cls-1 {
+            fill: #ffc10e;
+        }
+
+        .cls-2 {
+            fill: #333;
+        }
+        </style>
+    </defs>
+    <title>confused1</title>
+    <circle class="cls-1" cx="236.97" cy="236.97" r="236.97" />
+    <circle class="cls-2" cx="164.94" cy="155.23" r="37.22" />
+    <circle class="cls-2" cx="305.66" cy="155.23" r="37.22" />
+    <path class="cls-2" d="M105.28,326.58H364.44c12.07,0,12.07-18.71,0-18.71H105.28c-12.07,0-12.07,18.71,0,18.71h0Z" transform="translate(0 0)" />
+</svg>

@@ -1,0 +1,47 @@
+.smiles {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  position: absolute;
+  top: -15px;
+  right: 0px;
+
+  padding: 3px;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  background: white;
+
+}
+
+.smile {
+  display: block;
+  margin: 3px;
+  width: $icon-dimensions;
+  height: $icon-dimensions;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.btn--smile,
+.btn--send {
+  padding: 0;
+  margin-left: 7px;
+}
+
+.smile--smiling {
+  @include sprite-ico(smiling, 0px, 0px, #fff, $icon-dimensions);
+}
+.smile--happy {
+  @include sprite-ico(happy, 0px, 0px, #fff, $icon-dimensions);
+}
+.smile--confused {
+  @include sprite-ico(confused, 0px, 0px, #fff, $icon-dimensions);
+}
+.smile--sad {
+  @include sprite-ico(sad, 0px, 0px, #fff, $icon-dimensions);
+}
+.smile--send {
+  border-radius: 0;
+  @include sprite-ico(send, 0px, 0px, #fff, $icon-dimensions);
+}

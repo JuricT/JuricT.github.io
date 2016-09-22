@@ -1,0 +1,18 @@
+<svg id="ico_smiling" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 473.93 473.93">
+    <defs>
+        <style>
+        .cls-1 {
+            fill: #ffc10e;
+        }
+
+        .cls-2 {
+            fill: #333;
+        }
+        </style>
+    </defs>
+    <title>smiling1</title>
+    <circle class="cls-1" cx="236.97" cy="236.97" r="236.97" />
+    <circle class="cls-2" cx="164.94" cy="155.23" r="37.22" />
+    <circle class="cls-2" cx="305.67" cy="155.23" r="37.22" />
+    <path class="cls-2" d="M343.26,316.86C284,377.19,188.59,376.72,129.81,316c-8.4-8.68-21.62,4.56-13.23,13.23a167.07,167.07,0,0,0,239.9.9c8.46-8.61-4.76-21.84-13.23-13.23h0Z" transform="translate(0 0)" />
+</svg>

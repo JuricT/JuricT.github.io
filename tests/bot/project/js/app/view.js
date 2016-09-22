@@ -1,7 +1,7 @@
 define(
   'view',
   ['button', 'win', 'model', 'jquery'],
-  function (ChatBtn, Win) {
+  function (Btn, Win) {
     'use strict';
 
     function View(model) {
@@ -12,24 +12,32 @@ define(
 
       };
 
-      this.chatBtn = new ChatBtn({
+      this.chatBtn = new Btn({
           states: [
             {
               title: 'Открыть',
-              callback: null
             },
             {
               title: 'Закрыть',
-              callback: null
-            },
+            }
           ],
 
           elements: {
-            target: $('.chat-btn'),
-            parent: $('header')
+            target: $('.chat-btn')
           }
+        });
+
+      this.smileBtn = new Btn({
+        states: [
+          {
+            title: '<div class="smile smile--smiling"></div>'
+          }
+        ],
+
+        elements: {
+          target: $('.smile-btn')
         }
-      );
+      });
 
       this.win = new Win();
 

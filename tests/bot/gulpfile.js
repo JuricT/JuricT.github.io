@@ -23,6 +23,8 @@ var sassDir     = projectDir + 'scss/',
     cssRes      = projectDir + 'css/';
 
 var imgDir      = projectDir + 'img/';
+var svgDir      = imgDir + 'svg/';
+var svgMin     = imgDir + 'svg.min/';
 
 //===================================
 //             PLUGINS
@@ -34,6 +36,7 @@ var gulp        = require('gulp'),
     fs          = require('fs'),
     jade        = require('gulp-jade'),
     sass        = require('gulp-sass'),
+    svgSprite   = require('gulp-svg-sprite'),
     imageop     = require('gulp-image-optimization'),
     rjs         = require('gulp-requirejs');
 
@@ -65,9 +68,9 @@ gulp.task('sass', function () {
 
 //===   IMG   ===
 
-gulp.task('copyIMG', function() {
-  gulp.src(IMG_DIR + '/*.*')
-  .pipe(gulp.dest(IMAGES_BUILD_PATH));
+gulp.task('copySVG', function() {
+  gulp.src(imgDir + '/*.svg')
+  .pipe(gulp.dest(imagesBuildPath));
 });
 
 gulp.task('images', function(cb) {
@@ -82,6 +85,35 @@ gulp.task('images', function(cb) {
   .on('end', cb)
   .on('error', cb)
   .pipe(connect.reload());
+});
+
+gulp.task('svgSprite', function() {
+  gulp.src('*.svg', {cwd: svgDir})
+    .pipe(svgSprite({
+      shape: {
+        spacing: {
+          padding: 5
+        }
+      },
+      mode: {
+        css: {
+          dest: "./",
+          layout: "diagonal",
+          sprite: 'sprite.svg',
+          bust: false,
+          render: {
+            scss: {
+              dest: '../../' + sassDir + '/svg/_sprite.scss',
+              template: sassDir + '/svg/_sprite-template.scss'
+            }
+          }
+        }
+      },
+      variables: {
+        mapname: "icons"
+      }
+    }))
+    .pipe(gulp.dest(imagesBuildPath));
 });
 
 //=== CONNECT ===
@@ -104,13 +136,13 @@ gulp.task('watch', function(){
 //===================================
 //           DEFAULT TASK
 //===================================
-gulp.task('default', function(){
-  gulp.run('jade', 'script', 'sass', 'images', 'connect', 'watch');
+gulp.task('default', ['svgSprite'], function(){
+  gulp.run('jade', 'script', 'sass', 'connect', 'watch');
 });
 
 //===================================
 //           BUILD TASK
 //===================================
-gulp.task('build', ['svg'], function(){
+gulp.task('build', ['svgSprite'], function(){
   gulp.run('jade', 'script', 'sass');
 });

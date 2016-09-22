@@ -1,6 +1,6 @@
 define(
   'view',
-  ['buttons/chat_buttons', 'win', 'model', 'jquery'],
+  ['button', 'win', 'model', 'jquery'],
   function (ChatBtn, Win) {
     'use strict';
 

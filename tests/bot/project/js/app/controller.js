@@ -15,6 +15,7 @@ define(
       //Click "open" button
       view.chatBtn.states[0].callback = function() {
         win.show();
+        win.$textInner.focus();
       };
 
       //Click "close" button
@@ -50,15 +51,18 @@ define(
 
       //Click "send" button
       view.sendBtn.states[0].callback = function() {
-        var message = new Message('User', textInner.html(), 'user');
+        var textMessage = textInner.html();
 
-        textInner.clear();
+        if (textInner.html()) {
+          var message = new Message('User', textInner.html(), 'user');
 
-        model.addMessage(message);
-        win.addMessage(model.messages[model.messages.length - 1]);
+          textInner.clear();
 
-        bot.sendMessage(message, model, win);
+          model.addMessage(message);
+          win.addMessage(model.messages[model.messages.length - 1]);
 
+          bot.sendMessage(message, model, win);
+        }
       };
 
 

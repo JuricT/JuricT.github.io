@@ -2,7 +2,9 @@
 (function($){
 
   function textContainer() {
+    var that = this;
     this.attr('contenteditable', 'true');
+    this.addClass('textContainer');
 
     this.clear = function() {
       this.empty();
@@ -16,9 +18,13 @@
       var sel = window.getSelection();
 
       if (sel.getRangeAt && sel.rangeCount) {
-        var range = window.getSelection().getRangeAt(0);
-        range.insertNode(smile);
-        SetCursorAfterElement(smile);
+        var currentInputElement = sel.focusNode.tagName ? sel.focusNode: sel.focusNode.parentNode;
+
+        if (currentInputElement === that[0]) {
+          var range = window.getSelection().getRangeAt(0);
+          range.insertNode(smile);
+          SetCursorAfterElement(smile);
+        }
       }
 
       function GetRange() {

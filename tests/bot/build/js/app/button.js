@@ -13,11 +13,13 @@ define(
         states: [
           {
             title: 'Open',
-            callback: null
+            callback: null,
+            // styled: 'primary'
           },
           {
             title: 'Close',
-            callback: null
+            callback: null,
+            // styled: 'warning'
           },
         ],
 
@@ -76,7 +78,26 @@ define(
     };
 
     Btn.prototype.initState = function () {
-      this._elements.target.html(this.states[this._currenState].title);
+      var terget = this._elements.target;
+      var thisState = this.states[this._currenState];
+
+      terget.html(thisState.title);
+
+      var buttonClasses = [
+        'btn-default', 'btn-primary', 'btn-success', 'btn-info', 'btn-warning',
+        'btn-danger', 'btn-link'
+       ];
+
+       for (var i = 0; i < buttonClasses.length; i++) {
+         terget.removeClass(buttonClasses[i]);
+       }
+
+
+      if (thisState.styled) {
+        terget.addClass('btn-' + thisState.styled);
+      } else {
+        terget.addClass('btn-default');
+      }
     };
 
     Btn.prototype.nextState = function () {

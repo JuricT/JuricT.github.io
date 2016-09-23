@@ -10,6 +10,7 @@ define(
       this.$wrapper = wrapper.fadeTo(0, 1).hide();
 
       this.$chat = this.$wrapper.find('.chat');
+      this.$textInner = this.$wrapper.find('.text-inner');
 
       this._template = new Template('#chat-template', this.$chat);
 

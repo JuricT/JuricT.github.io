@@ -21,9 +21,11 @@ define(
           states: [
             {
               title: 'Открыть',
+              styled: 'primary'
             },
             {
               title: 'Закрыть',
+              styled: 'warning'
             }
           ],
 

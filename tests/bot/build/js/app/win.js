@@ -4,10 +4,14 @@ define(
   function (Template) {
     'use strict';
 
-    function Win() {
-      this.$wrapper = $('<div>').addClass('win').hide().appendTo('body');
+    function Win(wrapper) {
+      // this.$wrapper = $('<div>').addClass('win').hide().appendTo('body');
 
-      this._template = new Template('#chat-template', this.$wrapper);
+      this.$wrapper = wrapper.fadeTo(0, 1).hide();
+
+      var $chat = this.$wrapper.find('.chat');
+
+      this._template = new Template('#chat-template', $chat);
     }
 
     Win.prototype.render = function () {

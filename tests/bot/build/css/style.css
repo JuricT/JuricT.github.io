@@ -1,4 +1,4 @@
-.lt-ie9 .smile--smiling, .lt-ie9 .smile--happy, .lt-ie9 .smile--confused, .lt-ie9 .smile--sad, .lt-ie9 .smile--send {
+.lt-ie9 .btn--smile, .lt-ie9 .btn--smile:active, .lt-ie9 .btn--send, .lt-ie9 .btn--send:active, .lt-ie9 .smile--smiling, .lt-ie9 .smile--happy, .lt-ie9 .smile--confused, .lt-ie9 .smile--sad, .lt-ie9 .smile--send {
   background-image: url("../img/sprite.png"); }
 
 .win {
@@ -68,7 +68,8 @@
   padding: 3px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background: white; }
+  background: white;
+  opacity: 0; }
 
 .smile {
   display: block;
@@ -81,7 +82,33 @@
 .btn--smile,
 .btn--send {
   padding: 0;
-  margin-left: 7px; }
+  margin-left: 7px;
+  width: 32px;
+  height: 32px; }
+
+.btn--smile,
+.btn--smile:active {
+  background-image: url("../img/sprite.svg");
+  background-position: -125.81649px -126.02749px;
+  background-color: #fff;
+  background-size: 154.34769px 154.34769px; }
+  .lt-ie9 .btn--smile, .lt-ie9
+  .btn--smile:active {
+    width: 473.93px;
+    height: 473.93px;
+    background-position: -2447px -2451px; }
+
+.btn--send,
+.btn--send:active {
+  background-image: url("../img/sprite.svg");
+  background-position: -34.04082px -34.04082px;
+  background-color: #fff;
+  background-size: 74.64286px 74.64286px; }
+  .lt-ie9 .btn--send, .lt-ie9
+  .btn--send:active {
+    width: 980px;
+    height: 983.5px;
+    background-position: -1457px -1457px; }
 
 .smile--smiling {
   background-image: url("../img/sprite.svg");
@@ -133,3 +160,6 @@
     width: 980px;
     height: 983.5px;
     background-position: -1457px -1457px; }
+
+#modal {
+  opacity: 0; }

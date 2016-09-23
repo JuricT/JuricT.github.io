@@ -1,7 +1,7 @@
 define(
   'model',
-  [],
-  function () {
+  ['message'],
+  function (Message) {
     'use strict';
 
     function Model() {
@@ -9,15 +9,8 @@ define(
 
     }
 
-    Model.prototype.addMessage = function (name, text, type) {
-      this.messages.push({
-        id: new Date(),
-        name: name,
-        text: text,
-        date: new Date(),
-        type: type
-      });
-
+    Model.prototype.addMessage = function (message) {
+      this.messages.push(message);
     };
 
     return Model;

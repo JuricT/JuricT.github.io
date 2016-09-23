@@ -1,10 +1,10 @@
 define(
   'controller',
-  ['model', 'view'],
-  function() {
+  ['message', 'model'],
+  function(Message) {
     'use strict';
 
-    function Controller (model, view) {
+    function Controller (model, view, bot) {
       var that = this;
       that._model = model;
       that._view = view;
@@ -43,9 +43,12 @@ define(
 
       //Click "send" button
       view.sendBtn.states[0].callback = function() {
-        console.log('Send');
-        model.addMessage('User', textInner.html(), 'user');
+        var message = new Message('User', textInner.html(), 'user');
+
+        model.addMessage(message);
         win.addMessage(model.messages[model.messages.length - 1]);
+
+        bot.sendMessage(message, model, win);
 
       };
 

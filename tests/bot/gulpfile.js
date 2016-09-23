@@ -137,12 +137,12 @@ gulp.task('watch', function(){
 //           DEFAULT TASK
 //===================================
 gulp.task('default', ['svgSprite'], function(){
-  gulp.run('jade', 'script', 'sass', 'connect', 'watch');
+  gulp.run('jade', 'script', 'sass', 'images', 'connect', 'watch');
 });
 
 //===================================
 //           BUILD TASK
 //===================================
 gulp.task('build', ['svgSprite'], function(){
-  gulp.run('jade', 'script', 'sass');
+  gulp.run('jade', 'script', 'sass', 'images');
 });

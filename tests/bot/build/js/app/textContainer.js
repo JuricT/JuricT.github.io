@@ -11,8 +11,9 @@
     };
 
     this.insertSmileAtCursor = function(name) {
-      var $smile = $(document.createElement('img'));
-      $smile.addClass('smile smile--' + name).css("display","inline-block");
+      var $smile = $(document.createElement('div'));
+      $smile.addClass('smile smile--' + name).css("display","inline-block")
+      .attr('src', 'img/empy.png');
       var smile = $smile[0];
 
       var sel = window.getSelection();

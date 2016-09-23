@@ -70,15 +70,15 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   background: white;
-  opacity: 0; }
+  opacity: 0;
+  cursor: pointer; }
 
 .smile {
   display: block;
   margin: 3px;
   width: 20px;
   height: 20px;
-  border-radius: 100%;
-  cursor: pointer; }
+  border-radius: 100%; }
 
 .btn--smile,
 .btn--send {
@@ -90,7 +90,7 @@
 .btn--smile,
 .btn--smile:active {
   background-image: url("../img/sprite.svg");
-  background-position: -125.81649px -126.02749px;
+  background-position: -126.81649px -127.02749px;
   background-color: #fff;
   background-size: 154.34769px 154.34769px; }
   .lt-ie9 .btn--smile, .lt-ie9

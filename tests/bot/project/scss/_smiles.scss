@@ -14,6 +14,8 @@
 
   opacity: 0;
 
+  cursor: pointer;
+
 }
 
 .smile {
@@ -22,7 +24,6 @@
   width: $icon-dimensions;
   height: $icon-dimensions;
   border-radius: 100%;
-  cursor: pointer;
 }
 
 .btn--smile,
@@ -35,7 +36,7 @@
 
 .btn--smile,
 .btn--smile:active {
-  @include sprite-ico(smiling, 3px, 3px, #fff, 25px);
+  @include sprite-ico(smiling, 2px, 2px, #fff, 25px);
 }
 
 .btn--send,

@@ -64,7 +64,7 @@ define(
         this.smiles.add(new Smile('sad'));
         this.smiles.render();
 
-      this.win = new Win($('#modal'));
+      this.win = new Win($('#modal'), model.messages);
 
     }
 

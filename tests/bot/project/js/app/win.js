@@ -4,18 +4,27 @@ define(
   function (Template) {
     'use strict';
 
-    function Win(wrapper) {
-      // this.$wrapper = $('<div>').addClass('win').hide().appendTo('body');
+    function Win(wrapper, messages) {
+      this.messages = messages;
 
       this.$wrapper = wrapper.fadeTo(0, 1).hide();
 
-      var $chat = this.$wrapper.find('.chat');
+      this.$chat = this.$wrapper.find('.chat');
 
-      this._template = new Template('#chat-template', $chat);
+      this._template = new Template('#chat-template', this.$chat);
+
+      this._$tempMessage = $(document.createElement('div'));
+      this._messageTemplate = new Template('#chat-template', this._$tempMessage);
     }
 
     Win.prototype.render = function () {
-      this._template.render();
+      this._template.render(this.messages);
+    };
+
+    Win.prototype.addMessage = function (message) {
+      var data = new Array(message);
+      this._messageTemplate.render(data);
+      this.$chat.append(this._$tempMessage.html());
     };
 
     Win.prototype.refreshPosition = function () {

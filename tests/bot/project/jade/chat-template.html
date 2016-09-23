@@ -1,57 +1,17 @@
 <script type="text/template" id="chat-template">
-  <div class="message user" data-type="user">
-    <header class="message__header">
-      <div class="message__user-name">User</div>
-      <div class="message__data">21.01.2016</div>
-    </header>
-    <div class="message__text">Some text</div>
-  </div>
-
-  <div class="message bot" data-type="bot">
-    <header  class="message__header">
-      <div class="message__user-name">bot</div>
-      <div class="message__data">21.01.2016</div>
-    </header>
-    <div class="message__text">Some sdfsdf sdf sdfsdfsdfsfsf sf fsdfsfdsdf sdf sdftext</div>
-  </div>
-
-  <div class="message" data-type="user">
-    <header   class="message__header">
-      <div class="message__user-name">User</div>
-      <div class="message__data">21.01.2016</div>
-    </header>
-    <div class="message__text">Some sd skjgh jsdgh kjdsgh kjdhg jdskdgh kjsdgh kjsdgh kjhg ksjhg kjgh kjsfhgslfgpirtjpoerflkg lksdjgfsdf sdf sdfsdfsdfsfsf sf fsdfsfdsdf sdf sdftext</div>
-  </div>
-
-  <div class="message"  data-type="bot">
-    <header   class="message__header">
-      <div class="message__user-name">bot</div>
-      <div class="message__data">21.01.2016</div>
-    </header>
-    <div class="message__text">Some sdfsdf sdf sdfsdfsdfsfsf sf fsdfsfdsdf sdf sdftext</div>
-  </div>
-
-  <div class="message" data-type="user">
-    <header  class="message__header">
-      <div class="message__user-name">User</div>
-      <div class="message__data">21.01.2016</div>
-    </header>
-    <div class="message__text">Some sdfsdf sdf sdfsdfsdfsfsf sf fsdfsfdsdf sdf sdftext</div>
-  </div>
-
-  <div class="message user" data-type="bot">
-    <header  class="message__header">
-      <div class="message__user-name">bot</div>
-      <div class="message__data">21.01.2016</div>
-    </header>
-    <div class="message__text">Some sdfsdf sdf sdfsdfsdfsfsf sf fsdfsfdsdf sdf sdftext</div>
-  </div>
-
-  <div class="message" data-type="user">
-    <header>
-      <div class="message__user-name">User</div>
-      <div class="message__data"></div>
-    </header>
-    <div class="message__text">Some sdfsdf sdf sdfsdfsdfsfsf sf fsdfsfdsdf sdf sdftext</div>
-  </div>
+  <% for (var i = 0; i < data.length; i++) { %>
+    <div class="message user" data-type="<%= data[i].type%>">
+      <header class="message__header">
+        <div class="message__user-name"><%= data[i].name %></div>
+        <div class="message__data">
+          <%= data[i].date.toLocaleString("ru",
+          {
+            hour: 'numeric',
+            minute: 'numeric'
+          }) %>
+        </div>
+      </header>
+      <div class="message__text"><%= data[i].text %></div>
+    </div>
+  <% } %>
 </script>

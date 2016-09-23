@@ -7,7 +7,12 @@ define(
     function Smiles(elem) {
       var that = this;
       this.$wrapper = elem;
-      this.$wrapper.fadeTo(0, 1).hide();
+      this.$wrapper.fadeTo(0, 1).hide()
+      .attr({
+        unselectable: 'on',
+        onselectstart: 'return false;',
+        onmousedown: 'return false;'
+      });
       this.arr = [];
     }
 

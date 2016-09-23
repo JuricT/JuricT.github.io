@@ -1,6 +1,6 @@
 define(
   'view',
-  ['button', 'win', 'smiles', 'smile', 'model', 'jquery'],
+  ['button', 'win', 'smiles', 'smile', 'model', 'jquery', 'textContainer'],
   function (Btn, Win, Smiles, Smile) {
     'use strict';
 
@@ -13,7 +13,8 @@ define(
         smileBtn: $('.btn--smile'),
         sendBtn: $('.btn--send'),
         control: $('.control'),
-        smiles: $('.smiles')
+        smiles: $('.smiles'),
+        textInner: $('.text-inner').textContainer()
       };
 
       this.chatBtn = new Btn({

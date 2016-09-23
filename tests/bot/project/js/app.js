@@ -5,16 +5,15 @@ requirejs.config({
     jquery: '../lib/jquery',
     tmpl: '../lib/template',
     lodash: '../lib/lodash.min',
-    helpers: '../lib/helpers',
-    fancybox: '../lib/jquery.fancybox'
+    helpers: '../lib/helpers'
   },
   shim: {
     tmpl: {
         exports: 'tmpl'
       },
-    fancybox: {
+    textContainer: {
         deps: ['jquery'],
-        exports: 'fancybox'
+        exports: 'textContainer'
       }
   }
 });

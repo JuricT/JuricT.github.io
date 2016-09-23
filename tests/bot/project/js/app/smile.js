@@ -9,8 +9,11 @@ define(
       var className = 'smile smile--' + name;
       var $elem = $(document.createElement("div")).addClass(className);
 
-      $elem.on('click', function() {
-        console.log(that.name);
+      $elem.attr({
+        rel: name,
+        unselectable: 'on',
+        onselectstart: 'return false;',
+        onmousedown: 'return false;'
       });
 
       this.name = name;

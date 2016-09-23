@@ -34,6 +34,13 @@ define(
         onmousedown: 'return false;'
       });
 
+      //Disabled focus "smile" button
+      view.sendBtn.getTarget().attr({
+        unselectable: 'on',
+        onselectstart: 'return false;',
+        onmousedown: 'return false;'
+      });
+
       // Click on smile
       view.smiles.$wrapper.on('click', function (e) {
         var name = $(e.target).attr('rel');
@@ -44,6 +51,8 @@ define(
       //Click "send" button
       view.sendBtn.states[0].callback = function() {
         var message = new Message('User', textInner.html(), 'user');
+
+        textInner.clear();
 
         model.addMessage(message);
         win.addMessage(model.messages[model.messages.length - 1]);

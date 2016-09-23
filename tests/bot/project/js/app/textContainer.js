@@ -4,6 +4,10 @@
   function textContainer() {
     this.attr('contenteditable', 'true');
 
+    this.clear = function() {
+      this.empty();
+    };
+
     this.insertSmileAtCursor = function(name) {
       var $smile = $(document.createElement('img'));
       $smile.addClass('smile smile--' + name).css("display","inline-block");

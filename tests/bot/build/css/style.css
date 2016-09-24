@@ -25,7 +25,7 @@
       .chat .message .message__header .message__data {
         margin: 0 10px; }
     .chat .message__text {
-      text-indent: 15px; }
+      padding: 5px; }
   .chat [data-type="user"] {
     background: #E6E6FA;
     margin-right: 50px; }
@@ -152,7 +152,7 @@
   height: 200px;
   display: flex;
   padding: 8px;
-  max-height: 40%; }
+  max-height: 30%; }
   .control .wrapper {
     display: flex;
     align-items: center;

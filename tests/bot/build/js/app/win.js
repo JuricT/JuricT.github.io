@@ -52,9 +52,6 @@ define(
       this.$wrapper
       .width(winWidth).height(winHight)
       .offset(position);
-      console.log('left', ((windowWith - winWidth) / 2));
-      console.log('right', ((windiwHeight - winHight) / 2));
-      console.log('offset', position);
       return this;
     };
 

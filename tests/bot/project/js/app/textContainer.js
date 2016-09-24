@@ -21,7 +21,7 @@
       if (sel.getRangeAt && sel.rangeCount) {
         var currentInputElement = sel.focusNode.tagName ? sel.focusNode: sel.focusNode.parentNode;
 
-        if (currentInputElement === that[0]) {
+        if ($(currentInputElement).closest(that[0])[0] === that[0]) {
           var range = window.getSelection().getRangeAt(0);
           range.insertNode(smile);
           SetCursorAfterElement(smile);

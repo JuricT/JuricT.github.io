@@ -167,4 +167,5 @@
       box-shadow: none; }
 
 #modal {
-  opacity: 0; }
+  opacity: 0;
+  top: -9999px; }

@@ -7,7 +7,10 @@ define(
     function Win(wrapper, messages) {
       this.messages = messages;
 
-      this.$wrapper = wrapper.fadeTo(0, 1).hide();
+      this.$wrapper = wrapper.css({
+        'top': '-9999px',
+        'opacity': '0'
+      });
 
       this.$chat = this.$wrapper.find('.chat');
       this.$textInner = this.$wrapper.find('.text-inner');
@@ -41,24 +44,32 @@ define(
       var winHight = windiwHeight / multiplier;
       var winWidth = windowWith / multiplier;
 
-      this.$wrapper
-      .width(winWidth).height(winHight)
-      .offset({
+      var position = {
         left: ((windowWith - winWidth) / 2),
         top: ((windiwHeight - winHight) / 2)
-      });
+      };
+
+      this.$wrapper
+      .width(winWidth).height(winHight)
+      .offset(position);
+      console.log('left', ((windowWith - winWidth) / 2));
+      console.log('right', ((windiwHeight - winHight) / 2));
+      console.log('offset', position);
       return this;
     };
 
     Win.prototype.show = function () {
       this.render();
-      this.$wrapper.show();
+      this.$wrapper.animate({opacity: 1}, 'slow');
       this.refreshPosition();
       return this;
     };
 
     Win.prototype.hide = function () {
-      this.$wrapper.hide();
+      var that = this;
+      this.$wrapper.animate({opacity: 0}, 'fast', function() {
+        that.$wrapper.offset({left:-9999,top:-9999});
+      });
       return this;
     };
 

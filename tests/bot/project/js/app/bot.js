@@ -46,7 +46,7 @@ define(
       for (var i = 0; i < dummy.length; i++) {
         for (var j = 0; j < dummy[i].in.length; j++) {
           if (~userText.indexOf(dummy[i].in[j])){
-            textMessage += dummy[i].out.replace('UserNeme', userName) + '\r';
+            textMessage += dummy[i].out.replace('UserNeme', userName) + '<br>';
           }
         }
       }

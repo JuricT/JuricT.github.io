@@ -6,11 +6,12 @@ define(
 
     function Model() {
       this.messages = [];
-
+      return this;
     }
 
     Model.prototype.addMessage = function (message) {
       this.messages.push(message);
+      return this;
     };
 
     return Model;

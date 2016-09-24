@@ -6,6 +6,7 @@ define(
 
     function Smiles(elem) {
       var that = this;
+      
       this.$wrapper = elem;
       this.$wrapper.fadeTo(0, 1).hide()
       .attr({
@@ -13,19 +14,24 @@ define(
         onselectstart: 'return false;',
         onmousedown: 'return false;'
       });
+
       this.arr = [];
+      return this;
     }
 
     Smiles.prototype.show = function () {
       this.$wrapper.show();
+      return this;
     };
 
     Smiles.prototype.hide = function () {
       this.$wrapper.hide();
+      return this;
     };
 
     Smiles.prototype.add = function (smile) {
       this.arr.push(smile);
+      return this;
     };
 
     Smiles.prototype.render = function () {
@@ -34,7 +40,7 @@ define(
       for (var i = 0; i < this.arr.length; i++) {
         $box.append(this.arr[i].$elem);
       }
-
+      return this;
     };
 
     Smiles.prototype.checkClick = function (e) {

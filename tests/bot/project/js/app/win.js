@@ -16,16 +16,20 @@ define(
 
       this._$tempMessage = $(document.createElement('div'));
       this._messageTemplate = new Template('#chat-template', this._$tempMessage);
+
+      return this;
     }
 
     Win.prototype.render = function () {
       this._template.render(this.messages);
+      return this;
     };
 
     Win.prototype.addMessage = function (message) {
       var data = new Array(message);
       this._messageTemplate.render(data);
       this.$chat.append(this._$tempMessage.html());
+      return this;
     };
 
     Win.prototype.refreshPosition = function () {
@@ -43,16 +47,19 @@ define(
         left: ((windowWith - winWidth) / 2),
         top: ((windiwHeight - winHight) / 2)
       });
+      return this;
     };
 
     Win.prototype.show = function () {
       this.render();
       this.$wrapper.show();
       this.refreshPosition();
+      return this;
     };
 
     Win.prototype.hide = function () {
       this.$wrapper.hide();
+      return this;
     };
 
     return Win;

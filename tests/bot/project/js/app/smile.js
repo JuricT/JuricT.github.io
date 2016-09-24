@@ -18,10 +18,13 @@ define(
 
       this.name = name;
       this.$elem = $elem;
+
+      return this;
     }
 
     Smile.prototype.push = function ($parent) {
       $parent.append(this.$elem);
+      return this;
     };
 
     Smile.prototype.checkClick = function (e) {

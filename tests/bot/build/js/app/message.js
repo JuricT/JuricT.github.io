@@ -10,15 +10,9 @@ define(
       this.text = text;
       this.date = new Date();
       this.type = type;
+
+      return this;
     }
-
-    Message.prototype.createMessage = function () {
-
-    };
-
-    Message.prototype.getMessage = function () {
-
-    };
 
     return Message;
   }

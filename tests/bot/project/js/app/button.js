@@ -14,27 +14,19 @@ define(
           {
             title: 'Open',
             callback: null,
-            // styled: 'primary'
           },
           {
             title: 'Close',
             callback: null,
-            // styled: 'warning'
           },
         ],
 
         elements: {
           target: defaultTarget,
-          // parent: defaultTarget.parent()
         }
       };
 
       var options = $.extend(defaultSettings, config);
-
-      // this._elements = {
-      //   target: options.elements.target,
-      //   // parent: options.elements.parent
-      // };
 
       this._elements = options.elements;
 
@@ -44,6 +36,8 @@ define(
 
       this.initClick();
       this.initState();
+
+      return this;
     }
 
     Btn.prototype.getTarget = function () {
@@ -62,7 +56,7 @@ define(
       function callback(e) {
         var $target = $(e.target);
         if ((that._elements.target[0] === e.target) ||
-             that._elements.target[0] === $target.closest(that._elements.target[0])[0]){
+     that._elements.target[0] === $target.closest(that._elements.target[0])[0]){
 
           if ($.isFunction(callbck)) {
             callbck();
@@ -75,6 +69,8 @@ define(
           that.nextState();
         }
       }
+
+      return this;
     };
 
     Btn.prototype.initState = function () {
@@ -98,16 +94,22 @@ define(
       } else {
         terget.addClass('btn-default');
       }
+
+      return this;
     };
 
     Btn.prototype.nextState = function () {
       this._incState();
       this.initState();
+
+      return this;
     };
 
     Btn.prototype._incState = function () {
       this._currenState = (this._currenState < this.states.length - 1) ?
       ++this._currenState : 0;
+
+      return this;
     };
 
     Btn.prototype.checkClick = function (e) {
@@ -116,7 +118,6 @@ define(
 
       return (($elem[0] === e.target) ||
                $elem[0] === $target.closest($elem[0])[0]);
-
     };
 
     return Btn;

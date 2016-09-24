@@ -1,4 +1,3 @@
-
 (function($){
 
   function textContainer() {
@@ -8,6 +7,7 @@
 
     this.clear = function() {
       this.empty();
+      return this;
     };
 
     this.insertSmileAtCursor = function(name) {
@@ -56,12 +56,12 @@
         range.collapse(false);
         SetRange(range);
       }
-  };
+
+      return this;
+    };
 
     return this;
   }
-
-
 
   //bind in jquery
   $.fn.extend({

@@ -77,7 +77,6 @@ define(
       $(window).resize(function(e) {
         if (win.$wrapper.is(':visible')) win.refreshPosition();
       });
-
     }
 
   return Controller;

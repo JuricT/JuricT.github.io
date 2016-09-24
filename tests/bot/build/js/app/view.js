@@ -18,27 +18,25 @@ define(
       };
 
       this.chatBtn = new Btn({
-          states: [
-            {
-              title: 'Открыть',
-              styled: 'primary'
-            },
-            {
-              title: 'Закрыть',
-              styled: 'warning'
-            }
-          ],
-
-          elements: {
-            target: this.elements.chatBtn
+        states: [
+          {
+            title: 'Открыть',
+            styled: 'primary'
+          },
+          {
+            title: 'Закрыть',
+            styled: 'warning'
           }
+        ],
+        elements: {
+          target: this.elements.chatBtn
+        }
       });
-
 
       this.smileBtn = new Btn({
         states: [
           {
-            title: ''// '<div class="smile smile--smiling"></div>'
+            title: ''
           }
         ],
         elements: {
@@ -50,7 +48,7 @@ define(
       this.sendBtn = new Btn({
         states: [
           {
-            title: ''//'<div class="smile smile--send"></div>'
+            title: ''
           }
         ],
         elements: {
@@ -59,15 +57,14 @@ define(
         }
       });
 
-        this.smiles = new Smiles(this.elements.smiles);
-        this.smiles.add(new Smile('smiling'));
-        this.smiles.add(new Smile('happy'));
-        this.smiles.add(new Smile('confused'));
-        this.smiles.add(new Smile('sad'));
-        this.smiles.render();
+      this.smiles = new Smiles(this.elements.smiles)
+      .add(new Smile('smiling'))
+      .add(new Smile('happy'))
+      .add(new Smile('confused'))
+      .add(new Smile('sad'))
+      .render();
 
       this.win = new Win($('#modal'), model.messages);
-
     }
 
     return View;

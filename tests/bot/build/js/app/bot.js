@@ -23,6 +23,8 @@ define(
           out: 'Ну Вы там держитесь, всего Вам доброго, хорошего настроения и здоровья!'
         }
       ];
+
+      return this;
     }
 
     Bot.prototype.sendMessage = function (message, model, win) {
@@ -31,6 +33,7 @@ define(
         model.addMessage(this.message);
         win.addMessage(model.messages[model.messages.length - 1]);
       }
+      return this;
     };
 
     Bot.prototype.createMessage = function () {
@@ -63,6 +66,7 @@ define(
 
     Bot.prototype.setUserMessage = function (message) {
       this._userMassege = message;
+      return this;
     };
 
     return Bot;

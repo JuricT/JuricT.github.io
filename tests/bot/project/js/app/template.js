@@ -1,7 +1,7 @@
 define(
   'template',
-  ['helpers', 'jquery', 'tmpl'],
-  function (helpers) {
+  ['jquery', 'tmpl'],
+  function () {
     'use strict';
 
     function Template(querySelector, element) {

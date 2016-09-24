@@ -3,9 +3,7 @@ requirejs.config({
   paths: {
     lib: '../lib',
     jquery: '../lib/jquery',
-    tmpl: '../lib/template',
-    lodash: '../lib/lodash.min',
-    helpers: '../lib/helpers'
+    tmpl: '../lib/template'
   },
   shim: {
     tmpl: {

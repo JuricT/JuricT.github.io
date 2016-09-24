@@ -24,6 +24,10 @@
   width: $icon-dimensions;
   height: $icon-dimensions;
   border-radius: 100%;
+
+  &:hover {
+    box-shadow: 0 0 4px 0px blue;
+  }
 }
 
 .btn--smile,
@@ -48,7 +52,7 @@
   @include sprite-ico(smiling, 0px, 0px, #fff, $icon-dimensions);
 }
 .smile--happy {
-  @include sprite-ico(happy, 0px, 0px, #fff, $icon-dimensions);
+  @include sprite-ico(happy, -1px, -1px, #fff, $icon-dimensions + 1px);
 }
 .smile--confused {
   @include sprite-ico(confused, 0px, 0px, #fff, $icon-dimensions);

@@ -1,3 +1,5 @@
+@import "smiles";
+
 .control {
   position: relative;
   border-top: 2px solid #aaa;
@@ -18,7 +20,9 @@
     flex-grow: 40;
     padding: 4px;
     overflow: auto;
+
+    .smile:hover {
+      box-shadow: none;
+    }
   }
 }
-
-@import "smiles";

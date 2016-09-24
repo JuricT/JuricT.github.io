@@ -41,24 +41,6 @@
       .chat [data-type="bot"] .message__header .message__data {
         color: #337ab7; }
 
-.control {
-  position: relative;
-  border-top: 2px solid #aaa;
-  height: 200px;
-  display: flex;
-  padding: 8px;
-  max-height: 40%; }
-  .control .wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-around; }
-  .control .text-inner {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    flex-grow: 40;
-    padding: 4px;
-    overflow: auto; }
-
 .smiles {
   display: flex;
   align-items: center;
@@ -79,6 +61,8 @@
   width: 20px;
   height: 20px;
   border-radius: 100%; }
+  .smile:hover {
+    box-shadow: 0 0 4px 0px blue; }
 
 .btn--smile,
 .btn--send {
@@ -123,9 +107,9 @@
 
 .smile--happy {
   background-image: url("../img/sprite.svg");
-  background-position: -20.42496px -20.42496px;
+  background-position: -22.44621px -22.44621px;
   background-color: #fff;
-  background-size: 123.47815px 123.47815px; }
+  background-size: 129.65206px 129.65206px; }
   .lt-ie9 .smile--happy {
     width: 473.93px;
     height: 473.93px;
@@ -161,6 +145,26 @@
     width: 980px;
     height: 983.5px;
     background-position: -1457px -1457px; }
+
+.control {
+  position: relative;
+  border-top: 2px solid #aaa;
+  height: 200px;
+  display: flex;
+  padding: 8px;
+  max-height: 40%; }
+  .control .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; }
+  .control .text-inner {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    flex-grow: 40;
+    padding: 4px;
+    overflow: auto; }
+    .control .text-inner .smile:hover {
+      box-shadow: none; }
 
 #modal {
   opacity: 0; }

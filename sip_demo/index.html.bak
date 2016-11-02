@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<!--
+* Copyright (C) 2012-2016 Doubango Telecom <http://www.doubango.org>
+* License: BSD
+* This file is part of Open Source sipML5 solution <http://www.sipml5.org>
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>sipML5 - The world's first open source HTML5 SIP client</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Keywords" content="doubango, VoIP, HTML5, WebRTC, RTCWeb, SIP, IMS, Video chat, VP8 " />
+    <meta name="Description" content="HTML5 SIP client using WebRTC framework" />
+    <meta name="author" content="Doubango Telecom" />
+
+    <!-- Le styles -->
+    <link href="./assets/css/bootstrap.css" rel="stylesheet" />
+    <style type="text/css">
+      body {
+        padding-top: 80px;
+        padding-bottom: 40px;
+      }
+      tr.spaceUnder > td {
+        padding-bottom: 2em;
+      }
+    </style>
+    <link href="./assets/css/bootstrap-responsive.css" rel="stylesheet" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="./assets/ico/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png" />
+    
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+  </head>
+
+  <body>
+
+    <h1>Hello world</h1>
+    <div id="phone"></div>
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="./assets/js/jquery.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-transition.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-alert.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-modal.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-scrollspy.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-tab.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-tooltip.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-popover.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-button.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-collapse.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-carousel.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap-typeahead.js"></script>
+
+    <script src="../libraries/jQuery.prosip/jQuery.prosip.js"></script>
+
+    <!-- click-to-call widget -->
+    <script type='text/javascript' src='https://www.doubango.org/click2dial/c2c-api.js'></script>
+    <script type='text/javascript'>
+	    c2c.from = 'ZGlvcG1hbWFkb3VAZG91YmFuZ28ub3Jn';
+	    c2c.text = 'call us &raquo;';
+	    c2c.cls = 'btn btn-large btn-success';
+        c2c.glass = true;
+	    c2c.config = {
+    		    http_service_url: null,
+    		    websocket_proxy_url: null,
+    		    sip_outbound_proxy_url: null
+	    };
+	    c2c.init();
+    </script>
+
+    <script>
+      console.log('Инициализация ');
+      options = {
+        login: '94404',
+        password: '%9a5e0ad80469da49911094cc3a73d7c6',
+        server: 'voip02.prostoy.ru',
+        // debug: true
+      };
+      $('#phone').prosip(options);
+      $('#phone').prosip('initSipml');
+
+    </script>
+
+  </body>
+</html>

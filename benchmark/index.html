@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Бенчмаркинг</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="template.js"></script>
+</head>
+<body>
+<h1>Бенчмаркинг template</h1>
+<div id="template-box"></div>
+<div id="string-box"></div>
+<script type="text/template" id="template">
+    <div class="nfd-tabs-bodies">
+        <div class="nfd-tabs-body selected" id="tab_news">
+            <div class="winhistory-ntfs-wrap">
+
+                <% for (var i = 0; i < 5000; i++) { %>
+                <% var title = 'заголовок ' + i; %>
+                <div class="winhistory-ntfs-task" id="<%= i %>">
+                    <div class="winhistory-ntfs-task-head">
+                        <div title="<%= title %>" class="winhistory-ntfs-task-name"><%= title %></div>
+                        <div class="ns winhistory-ntfs-task-tcontroll">
+                            <div id="totask" class="ns winhistory-ntfs-task-tcontroll-but" title="Перейти к задаче">
+                                Перейти к задаче
+                            </div>
+                            <div id="closeall" class="ns winhistory-ntfs-task-tcontroll-but"
+                                 title="Очистить оповещения по задаче"></div>
+                        </div>
+                    </div>
+                    <div class="winhistory-ntfs-task-body">
+                        <div class="winhistory-ntfs-com" id="<%= i + 1000 %>">
+                            <div class="winhistory-ntfs-com-l">
+                                <div class="winhistory-ntfs-com-avatar"
+                                     style="background-image: url(http://file.prostoy.ru/236207E5664E12FE.JPG);"></div>
+                            </div>
+                            <div class="winhistory-ntfs-com-r">
+                                <div class="winhistory-ntfs-com-author"><%= 'Автор' + i %></div>
+                                <div class="winhistory-ntfs-com-title"><%= 'Нужен отклик от ' + i - 1000 %></div>
+                                <div class="winhistory-ntfs-com-time">Сегодня в 08:21</div>
+                                <div class="winhistory-ntfs-com-close" title="Закрыть оповещение"></div>
+                                <div class="winhistory-ntfs-com-text" rel="Читать дальше..."> +</div>
+                                <div class="ns winhistory-ntfs-com-ccontroll">
+                                    <div id="response" title="Комментировать"
+                                         class="ns winhistory-ntfs-com-tcontroll-but"></div>
+                                    <div id="copy" title="Копировать"
+                                         class="ns winhistory-ntfs-com-tcontroll-but"></div>
+                                    <div id="move" title="Перенести" class="ns winhistory-ntfs-com-tcontroll-but"></div>
+                                    <div id="category" title="Категория"
+                                         class="ns winhistory-ntfs-com-tcontroll-but"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <% }; %>
+
+            </div>
+        </div>
+        <div class="nfd-tabs-body" id="tab_tasks"></div>
+        <div class="nfd-tabs-body" id="tab_files"></div>
+    </div>
+</script>
+<script>
+    var timerTitle = 'template';
+    console.time(timerTitle);
+    $('#template-box').html(tmpl($('#template').html()));
+    console.timeEnd(timerTitle);
+
+    timerTitle = 'Вставка строки';
+    console.time(timerTitle);
+    var str = `
+    <div class="nfd-tabs-bodies">
+            <div class="nfd-tabs-body selected" id="tab_news">
+            <div class="winhistory-ntfs-wrap">`;
+
+    for (var i = 0; i < 5000; i++) {
+        var title = 'заголовок ' + i;
+        str += `<div class="winhistory-ntfs-task" id="%{i}">
+                <div class="winhistory-ntfs-task-head">
+                <div title="<%= title %>" class="winhistory-ntfs-task-name">${title}</div>
+                <div class="ns winhistory-ntfs-task-tcontroll">
+                <div id="totask" class="ns winhistory-ntfs-task-tcontroll-but" title="Перейти к задаче">
+                Перейти к задаче
+        </div>
+        <div id="closeall" class="ns winhistory-ntfs-task-tcontroll-but"
+        title="Очистить оповещения по задаче"></div>
+                </div>
+                </div>
+                <div class="winhistory-ntfs-task-body">
+                <div class="winhistory-ntfs-com" id="<%= i + 1000 %>">
+                <div class="winhistory-ntfs-com-l">
+                <div class="winhistory-ntfs-com-avatar"
+        style="background-image: url(http://file.prostoy.ru/236207E5664E12FE.JPG);"></div>
+                </div>
+                <div class="winhistory-ntfs-com-r">
+                <div class="winhistory-ntfs-com-author">Автор %{i}</div>
+                <div class="winhistory-ntfs-com-title"><%= 'Нужен отклик от ' + i - 1000 %></div>
+                <div class="winhistory-ntfs-com-time">Сегодня в 08:21</div>
+        <div class="winhistory-ntfs-com-close" title="Закрыть оповещение"></div>
+                <div class="winhistory-ntfs-com-text" rel="Читать дальше..."> +</div>
+                <div class="ns winhistory-ntfs-com-ccontroll">
+                <div id="response" title="Комментировать"
+    class="ns winhistory-ntfs-com-tcontroll-but"></div>
+                <div id="copy" title="Копировать"
+    class="ns winhistory-ntfs-com-tcontroll-but"></div>
+                <div id="move" title="Перенести" class="ns winhistory-ntfs-com-tcontroll-but"></div>
+                <div id="category" title="Категория"
+    class="ns winhistory-ntfs-com-tcontroll-but"></div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>`;
+
+                };
+
+    str += `</div>
+    </div>
+    <div class="nfd-tabs-body" id="tab_tasks"></div>
+            <div class="nfd-tabs-body" id="tab_files"></div>
+            </div>
+                    `;
+    $('#string-box').html(str);
+    console.timeEnd(timerTitle);
+</script>
+
+</body>
+
+</html>

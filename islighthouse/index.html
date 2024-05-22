@@ -19,12 +19,12 @@
           margin-bottom: 5px;
           color: whitesmoke;
       }
-      #result {
+      .result {
           font-size: 400px;
           font-weight: bold;
           color: #00dd1c;
       }
-      #result.lighthouse {
+      .result.is-bot {
           color: red;
       }
       .brand-container {
@@ -32,6 +32,7 @@
           color: whitesmoke;
       }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/isbot@5"></script>
   <script>
     window.detectLighthouse = () => {
       const brands = navigator?.userAgentData?.brands
@@ -58,7 +59,11 @@
 <body>
 <div class="block">
   <span class="block__title">lighthouse detection</span>
-  <span id="result"></span>
+  <span id="result" class="result"></span>
+</div>
+<div class="block">
+  <span class="block__title">isbot</span>
+  <span id="is-bot" class="result"></span>
 </div>
 <div class="block" >
   <div class="block__title">brands: <span id="brands-length"></span></div>
@@ -70,7 +75,15 @@
   const isLighthouse = window.detectLighthouse()
   resultElem.textContent = isLighthouse
   if (isLighthouse) {
-    resultElem.classList.add('lighthouse')
+    resultElem.classList.add('is-bot')
+  }
+
+
+  const isBotElem = document.getElementById('is-bot')
+  const isBotValue = window.isbot(navigator.userAgent)
+  isBotElem.textContent = isBotValue
+  if (isBotValue) {
+    isBotElem.classList.add('is-bot')
   }
 
   const brandsElem = document.getElementById('brands')

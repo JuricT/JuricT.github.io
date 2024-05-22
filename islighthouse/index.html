@@ -60,8 +60,8 @@
   <span class="block__title">lighthouse detection</span>
   <span id="result"></span>
 </div>
-<div class="block">
-  <div class="block__title">brands:</div>
+<div class="block" >
+  <div class="block__title">brands: <span id="brands-length"></span></div>
   <div id="brands" class="brands-list"></div>
 </div>
 </body>
@@ -76,15 +76,13 @@
   const brandsElem = document.getElementById('brands')
   const brands = navigator?.userAgentData?.brands
   if (brands) {
+    document.getElementById('brands-length').textContent = brands.length
     brands.forEach((item) => {
       const containerElem = document.createElement('div')
       containerElem.classList.add('brand-container')
       brandsElem.append(containerElem)
 
-      containerElem.innerHTML = `
-<div>brand: ${item.brand}</div>
-<div>version: ${item.version}</div>
-`
+      containerElem.innerHTML = `<div class="brand">brand: ${item.brand}</div>`
     })
   }
 </script>

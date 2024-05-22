@@ -4,46 +4,44 @@
   <meta charset="UTF-8">
   <title>islighthouse</title>
   <style>
-    .block {
-        font-family: Arial;
-        font-size: 40px;
-        padding: 10px;
-    }
-    .block__title {
-        margin-bottom: 5px;
-    }
-    .brand-container {
-        margin-bottom: 5px;
-    }
+      body {
+          background-color: #2c2c2c;
+      }
+      .block {
+          font-family: Arial, Helvetica, sans-serif;
+          padding: 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+      .block__title {
+          font-size: 40px;
+          margin-bottom: 5px;
+          color: #f3b61b;
+      }
+      #result {
+          font-size: 100px;
+          font-weight: bold;
+          color: #00dd1c;
+      }
+      .lighthouse {
+          color: red;
+      }
   </style>
+  <script>window.detectLighthouse=()=>{let e=navigator?.userAgentData?.brands;return!(!e||2!==e.length||"Chromium"!==e[0].brand||"Google Chrome"!==e[1].brand)};</script>
 </head>
 <body>
 <div class="block">
-  <div class="block__title">user-agent:</div>
-  <div id="user-agent"></div>
-</div>
-<div class="block">
-  <div class="block__title">brands:</div>
-  <div id="brands" class="brands-list"></div>
+  <span class="block__title">lighthouse detection</span>
+  <span id="result"></span>
 </div>
 </body>
 <script>
-  const userAgentElem = document.getElementById('user-agent')
-  userAgentElem.textContent = navigator.userAgent
-
-  const brandsElem = document.getElementById('brands')
-  const brands = navigator?.userAgentData?.brands
-  if (brands) {
-    brands.forEach((item) => {
-      const containerElem = document.createElement('div')
-      containerElem.classList.add('brand-container')
-      brandsElem.append(containerElem)
-
-      containerElem.innerHTML = `
-<div>brand: ${item.brand}</div>
-<div>version: ${item.version}</div>
-`
-    })
+  const resultElem = document.getElementById('result')
+  const isLighthouse = window.detectLighthouse()
+  resultElem.textContent = isLighthouse
+  if (isLighthouse) {
+    resultElem
   }
 </script>
 </html>

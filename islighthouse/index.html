@@ -34,7 +34,10 @@
   </style>
   <script src="https://cdn.jsdelivr.net/npm/isbot@5"></script>
   <script>
-    window.detectLighthouse = () => {
+    window.detectBot = () => {
+      if (window.isbot(navigator.userAgent)) {
+        return true
+      }
       const brands = navigator?.userAgentData?.brands
       if (!brands) {
         return false
@@ -61,10 +64,6 @@
   <span class="block__title">lighthouse detection</span>
   <span id="result" class="result"></span>
 </div>
-<div class="block">
-  <span class="block__title">isbot</span>
-  <span id="is-bot" class="result"></span>
-</div>
 <div class="block" >
   <div class="block__title">brands: <span id="brands-length"></span></div>
   <div id="brands" class="brands-list"></div>
@@ -72,18 +71,10 @@
 </body>
 <script>
   const resultElem = document.getElementById('result')
-  const isLighthouse = window.detectLighthouse()
+  const isLighthouse = window.detectBot()
   resultElem.textContent = isLighthouse
   if (isLighthouse) {
     resultElem.classList.add('is-bot')
-  }
-
-
-  const isBotElem = document.getElementById('is-bot')
-  const isBotValue = window.isbot(navigator.userAgent)
-  isBotElem.textContent = isBotValue
-  if (isBotValue) {
-    isBotElem.classList.add('is-bot')
   }
 
   const brandsElem = document.getElementById('brands')

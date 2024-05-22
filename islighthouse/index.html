@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>islighthouse</title>
+  <style>
+    .block {
+        font-family: Arial;
+        padding: 10px;
+    }
+    .block__title {
+        margin-bottom: 5px;
+    }
+    .brand-container {
+        margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+<div class="block">
+  <div class="block__title">user-agent:</div>
+  <div id="user-agent"></div>
+</div>
+<div class="block">
+  <div class="block__title">brands:</div>
+  <div id="brands" class="brands-list"></div>
+</div>
+</body>
+<script>
+  const userAgentElem = document.getElementById('user-agent')
+  userAgentElem.textContent = navigator.userAgent
+
+  const brandsElem = document.getElementById('brands')
+  const brands = navigator?.userAgentData?.brands
+  if (brands) {
+    brands.forEach((item) => {
+      const containerElem = document.createElement('div')
+      containerElem.classList.add('brand-container')
+      brandsElem.append(containerElem)
+
+      containerElem.innerHTML = `
+<div>brand: ${item.brand}</div>
+<div>version: ${item.version}</div>
+`
+    })
+  }
+</script>
+</html>

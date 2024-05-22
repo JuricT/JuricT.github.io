@@ -24,7 +24,7 @@
           font-weight: bold;
           color: #00dd1c;
       }
-      .lighthouse {
+      #result.lighthouse {
           color: red;
       }
       .brand-container {
@@ -32,7 +32,28 @@
           color: whitesmoke;
       }
   </style>
-  <script>window.detectLighthouse=()=>{let e=navigator?.userAgentData?.brands;return!(!e||2!==e.length||"Chromium"!==e[0].brand||"Google Chrome"!==e[1].brand)};</script>
+  <script>
+    window.detectLighthouse = () => {
+      const brands = navigator?.userAgentData?.brands
+      if (!brands) {
+        return false
+      }
+      if (brands.length === 2
+        && brands[0].brand === 'Chromium'
+        && brands[1].brand === 'Google Chrome'
+      ) {
+        return true
+      }
+      if (brands.length === 3
+        && brands[0].brand === 'Chromium'
+        && brands[1].brand === 'Google Chrome'
+        && brands[2].brand === 'Lighthouse'
+      ) {
+        return true
+      }
+      return false
+    }
+  </script>
 </head>
 <body>
 <div class="block">

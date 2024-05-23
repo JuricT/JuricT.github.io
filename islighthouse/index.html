@@ -88,7 +88,7 @@
 </body>
 <script>
   const resultElem = document.getElementById('result')
-  const isLighthouse = window.detectBot()
+  const isLighthouse = window.isbot()
   resultElem.textContent = isLighthouse
   if (isLighthouse) {
     resultElem.classList.add('is-bot')

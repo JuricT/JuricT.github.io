@@ -67,7 +67,7 @@
       }
 
       let res = null
-      window.isbot = () => {
+      window.detectBot = () => {
         if (res === null) {
           res = _detectBot()
         }
@@ -88,7 +88,7 @@
 </body>
 <script>
   const resultElem = document.getElementById('result')
-  const isLighthouse = window.isbot()
+  const isLighthouse = window.detectBot()
   resultElem.textContent = isLighthouse
   if (isLighthouse) {
     resultElem.classList.add('is-bot')
